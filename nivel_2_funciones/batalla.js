@@ -5,5 +5,9 @@ let ciudadH1 = "América";
 let superH1 = "golpe de embestida";
 
 
-
+let nombreH2 = "Tony";
+let poderH2 = "Trueno";
+let energiaH2 = 180;
+let ciudadH2 = "Nueva York";
+let superH2 = "rayo letal";
 
