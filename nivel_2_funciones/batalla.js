@@ -1,5 +1,5 @@
 let nombreH1 = "Stark";
-let poderH1 = "velocidad y alta resistencia";
+let poderH1 = "velocidad";
 let energiaH1 = 170;
 let ciudadH1 = "América";
 let superH1 = "golpe de embestida";
@@ -20,7 +20,11 @@ function defensa2() {
 }
 
 function ataque2() {
-    console.log("Tras la defensa del heroe " + nombreH2 + "  usa un contrataque, usando su " + poderH2 + " al también héroe " + nombreH1 + ", enviandolo lejos de donde se encontraban.");
+    console.log("Tras la defensa del heroe, " + nombreH2 + "  usa un contrataque, usando su " + poderH2 + " al también héroe " + nombreH1 + ", enviandolo lejos de donde se encontraban.");
+}
+
+function defensa1() {
+    console.log("Pero " + nombreH1 + " no se rinde y usa nuevamente su poder de " + poderH1 + " para aterrizar en " + ciudadH1 + " sin hacerse daño luego del ataque de " + nombreH2 + ", logrando resistirlo.");
 }
 
 
@@ -28,3 +32,4 @@ function ataque2() {
 ataque1();
 defensa2();
 ataque2();
+defensa1()
