@@ -15,6 +15,10 @@ function ataque1() {
     console.log("El héroe " + nombreH1 + " va a la ciudad de " + ciudadH2 + " para atacar con su poder de " + poderH1 + " al también héroe " + nombreH2 + " en un suceso totalmente inesperado.");
 }
 
+function defensa2() {
+    console.log("Al ver el ataque inesperado, " + nombreH2 + " utiliza su poder de " + poderH2 + " para crear una defensa poderosa en " + ciudadH2 + ", logrando resistir el ataque de " + nombreH1 + ".");
+}
 
 
 ataque1();
+defensa2(); 
