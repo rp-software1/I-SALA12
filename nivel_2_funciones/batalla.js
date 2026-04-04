@@ -19,6 +19,12 @@ function defensa2() {
     console.log("Al ver el ataque inesperado, " + nombreH2 + " utiliza su poder de " + poderH2 + " para crear una defensa poderosa en " + ciudadH2 + ", logrando resistir el ataque de " + nombreH1 + ".");
 }
 
+function ataque2() {
+    console.log("Tras la defensa del heroe " + nombreH2 + "  usa un contrataque, usando su " + poderH2 + " al también héroe " + nombreH1 + ", enviandolo lejos de donde se encontraban.");
+}
+
+
 
 ataque1();
-defensa2(); 
+defensa2();
+ataque2();
