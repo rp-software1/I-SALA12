@@ -27,9 +27,14 @@ function defensa1() {
     console.log("Pero " + nombreH1 + " no se rinde y usa nuevamente su poder de " + poderH1 + " para aterrizar en " + ciudadH1 + " sin hacerse daño luego del ataque de " + nombreH2 + ", logrando resistirlo.");
 }
 
+function recargarEnergia1() {
+    console.log("Posterior a esto, " + nombreH1 + " va a recargar su energía al centro de la ciudad de " + ciudadH1 + ", haciendo que esta suba a " + (energiaH1 + 100) + " por ciento.");
+}
+
 
 
 ataque1();
 defensa2();
 ataque2();
 defensa1()
+recargarEnergia1();
