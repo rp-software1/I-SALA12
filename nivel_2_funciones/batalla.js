@@ -31,6 +31,9 @@ function recargarEnergia1() {
     console.log("Posterior a esto, " + nombreH1 + " va a recargar su energía al centro de la ciudad de " + ciudadH1 + ", haciendo que esta suba a " + (energiaH1 + 100) + " por ciento.");
 }
 
+function recargarEnergia2() {
+    console.log("Al ver esto, " + nombreH2 + " empieza tambien a recargarse de energía al ver que  " + nombreH1 + ", esta elevando su poder " + (energiaH2 + 100) + " para asi poder seguir con la batalla.");
+}
 
 
 ataque1();
@@ -38,3 +41,4 @@ defensa2();
 ataque2();
 defensa1()
 recargarEnergia1();
+recargarEnergia2();
