@@ -22,5 +22,16 @@ function curarse(jugador1) {
     console.log("Posteriormente " + jugador1.nombre + " se cura con las pociones dropeadas; por lo tanto ahora tiene " + jugador1.vida + " de vida");
 }
 
+function subirnivel(jugador1) {
+    jugador1.nivel += 10;
+    jugador1.fuerza += 10;
+    jugador1.vida += 20;
+    jugador1.pociones -= 7
+
+    console.log("Asu vez después de matar varios jefes más con ayuda de más pociones que le quedaba, " + jugador1.nombre + " sube al nivel " + jugador1.nivel + ".");
+}
+
 entrenar(jugador1);
-curarse(jugador1)
+curarse(jugador1);
+subirnivel(jugador1);
+
