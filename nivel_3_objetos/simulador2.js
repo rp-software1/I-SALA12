@@ -11,7 +11,7 @@ function ordenarComida(cliente) {
 function pagar(cliente) {
     cliente.dinero -= 70
     cliente.hambre -= 40
-    console.log(cliente.nombre + " canselo su comida y ahora tiene " + cliente.dinero + " soles.");
+    console.log(cliente.nombre + " cancelo su comida y ahora tiene " + cliente.dinero + " soles.");
 }
 
 function mostrar(cliente) {
