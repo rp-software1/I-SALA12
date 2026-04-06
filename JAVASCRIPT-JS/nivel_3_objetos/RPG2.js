@@ -3,7 +3,9 @@ let jugador2 = {
     vida: 100,
     fuerza: 20,
     nivel: 5,
-    armas: "espada"
+    armas: "espada",
+    monedas: 100,
+    objeto: "armamento"
 }
 
 function atacar(jugador2) {
@@ -25,7 +27,25 @@ function subirnivel(jugador2) {
     console.log("Al derrotar o cumplir misiones el " + jugador2.nombre + " de nivel 5, sube al nivel " + jugador2.nivel + " y junto a ello sube su fuerza a " + jugador2.fuerza + " y su vida a " + jugador2.vida);
 }
 
+function tienda(jugador2) {
+    jugador2.monedas -= 20
+    console.log("El " + jugador2.nombre + " se puede dirigir a una tienda para comprar  " + jugador2.objeto + " con el que puede mejorar sus habilidades con un valor de apartir de 20 monedas de oro  ")
+
+}
+
+function estado(jugador2) {
+    console.log("Las estadísticas del " + jugador2.nombre + " son: ");
+    console.log("Vida: " + jugador2.vida);
+    console.log("Fuerza: " + jugador2.fuerza);
+    console.log("Nivel: " + jugador2.nivel);
+    console.log("Armas: " + jugador2.armas);
+    console.log("Monedas de oro: " + jugador2.monedas);
+    console.log("Objeto especial: " + jugador2.objeto);
+}
+
 atacar(jugador2);
 curarse(jugador2);
 subirnivel(jugador2);
+tienda(jugador2);
+estado(jugador2);
 
