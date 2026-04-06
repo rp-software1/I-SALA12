@@ -6,4 +6,4 @@ let ciudad = "Nueva York";
 let enemigo = "Spiderman";
 
 // 2. Historia usando console
-console.log("El nombre del héroe es: " + nombreHeroe + ", cuyo poder que domina es el del: " + poder + ", con una energia en poder de: " + niveldeEnergia + ", es de la ciudad de: " + ciudad + ", y su mayor enemigo es: " + enemigo + ".");
+console.log("\n El nombre del héroe es: " + nombreHeroe + "\n Cuyo poder que domina es el del: " + poder + "\n Con una energia en poder de: " + niveldeEnergia + "\n Es de la ciudad de: " + ciudad + "\n Y su mayor enemigo es: " + enemigo + ".\n");
