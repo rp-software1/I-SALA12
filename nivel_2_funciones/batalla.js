@@ -36,9 +36,17 @@ function recargarEnergia2() {
 }
 
 
+function superAtaque1() {
+    console.log("Con su poder al máximo, " + nombreH1 + " lanza su " + superH1 + " contra " + nombreH2 + ", causando un gran impacto en " + ciudadH2 + " y  reduciendo su energía a " + (energiaH2 - 100) + " por ciento.");
+}
+
+
+
 ataque1();
 defensa2();
 ataque2();
 defensa1()
 recargarEnergia1();
 recargarEnergia2();
+
+superAtaque1();
