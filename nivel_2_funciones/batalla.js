@@ -10,6 +10,8 @@ let poderH2 = "Trueno";
 let energiaH2 = 180;
 let ciudadH2 = "Nueva York";
 let superH2 = "rayo letal";
+let escudo = "escudo magico";
+
 
 function ataque1() {
     console.log("El héroe " + nombreH1 + " va a la ciudad de " + ciudadH2 + " para atacar con su poder de " + poderH1 + " al también héroe " + nombreH2 + " en un suceso totalmente inesperado.");
@@ -40,6 +42,9 @@ function superAtaque1() {
     console.log("Con su poder al máximo, " + nombreH1 + " lanza su " + superH1 + " contra " + nombreH2 + ", causando un gran impacto en " + ciudadH2 + " y  reduciendo su energía a " + (energiaH2 - 100) + " por ciento.");
 }
 
+function superescudo2() {
+    console.log("Tras ver el imenso ataque que venia, procedi a defenderme con un, " + escudo + " que terminaria por agotar la mayoria de mi energia acumulada, para poder asi resistir el ataque de " + nombreH1);
+}
 
 
 ataque1();
@@ -48,5 +53,5 @@ ataque2();
 defensa1()
 recargarEnergia1();
 recargarEnergia2();
-
 superAtaque1();
+superescudo2();
