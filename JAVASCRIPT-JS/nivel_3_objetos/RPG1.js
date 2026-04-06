@@ -37,13 +37,23 @@ function subirnivel(jugador1) {
 
 function tienda(jugador1) {
     jugador1.dinero -= 60
-    console.log("Entonces " + jugador1.nombre + " abre la tienda del juego para comprar algo, en este caso un " + jugador1.objeto + " por el valor de 60 monedas")
+    console.log("Entonces " + jugador1.nombre + " abre la tienda del juego para comprar algo, en este caso un " + jugador1.objeto + " especial por el valor de 60 monedas")
 
 }
 
+function estado(jugador1) {
+    console.log("Quedando las estadísticas de " + jugador1.nombre + " así: ");
+    console.log("Vida: " + jugador1.vida);
+    console.log("Fuerza: " + jugador1.fuerza);
+    console.log("Nivel: " + jugador1.nivel);
+    console.log("Cantidad de pociones: " + jugador1.pociones);
+    console.log("Dinero: " + jugador1.dinero);
+    console.log("Objeto especial: " + jugador1.objeto);
+}
 
 entrenar(jugador1);
 curarse(jugador1);
 subirnivel(jugador1);
 tienda(jugador1);
+estado(jugador1);
 
