@@ -2,7 +2,9 @@
 let menu = [
     { nombre: "Arroz con pollo", precio: 12, stock: 5 },
     { nombre: "Lomo saltado", precio: 18, stock: 3 },
-    { nombre: "Sopa", precio: 8, stock: 10 }
+    { nombre: "Sopa", precio: 8, stock: 10 },
+    { nombre: "Milanesa", precio: 12, stock: 4 },
+    { nombre: "Ceviche", precion: 25, stock: 8 }
 ];
 
 // 2) FUNCIÓN: renderizar (mostrar) el menú en pantalla
