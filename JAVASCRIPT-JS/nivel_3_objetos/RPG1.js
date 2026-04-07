@@ -10,39 +10,40 @@ let jugador1 = {
 
 
 function entrenar(jugador1) {
-    jugador1.pociones += 5
-    jugador1.nivel += 20
-    jugador1.vida -= 10
-    jugador1.dinero += 5
+    jugador1.pociones += 5;
+    jugador1.nivel += 5;
+    jugador1.vida -= 10;
+    jugador1.dinero += 5;
+    jugador1.fuerza += 15;
 
-    console.log(jugador1.nombre + " entrena duramente contra un dragón, al vencerlo este les dropea pociones de vida y su fuerza incrementa a " + jugador1.fuerza + ".");
+    console.log("\n" + jugador1.nombre + " entrena duramente contra un dragón. Al vencerlo, obtiene pociones de vida y su fuerza incrementa a " + jugador1.fuerza + ".");
 }
 
 function curarse(jugador1) {
     jugador1.vida += 24;
     jugador1.pociones -= 1;
 
-    console.log("Posteriormente " + jugador1.nombre + " se cura con las pociones dropeadas; por lo tanto ahora tiene " + jugador1.vida + " de vida");
+    console.log("\n" + jugador1.nombre + " se cura con las pociones dropeadas; por lo tanto ahora tiene " + jugador1.vida + " de vida");
 }
 
 function subirnivel(jugador1) {
     jugador1.nivel += 10;
     jugador1.fuerza += 10;
     jugador1.vida += 20;
-    jugador1.pociones -= 7
-    jugador1.dinero += 25
+    jugador1.pociones -= 7;
+    jugador1.dinero += 25;
 
-    console.log("Asu vez después de matar varios jefes más con ayuda de más pociones que le quedaba, " + jugador1.nombre + " sube al nivel " + jugador1.nivel + ".");
+    console.log("\nAsu vez, después de matar varios jefes, con ayuda de las pociones que le quedaban, " + jugador1.nombre + " sube al nivel " + jugador1.nivel + ".");
 }
 
 function tienda(jugador1) {
     jugador1.dinero -= 60
-    console.log("Entonces " + jugador1.nombre + " abre la tienda del juego para comprar algo, en este caso un " + jugador1.objeto + " especial por el valor de 60 monedas")
+    console.log("\n" + jugador1.nombre + " abre la tienda del juego para comprar un " + jugador1.objeto + " especial por el valor de 60 monedas")
 
 }
 
 function estado(jugador1) {
-    console.log("Quedandolas estadísticas de " + jugador1.nombre + " así: ");
+    console.log("\nQuedandolas estadísticas de " + jugador1.nombre + " así: ");
     console.log("Vida: " + jugador1.vida);
     console.log("Fuerza: " + jugador1.fuerza);
     console.log("Nivel: " + jugador1.nivel);
