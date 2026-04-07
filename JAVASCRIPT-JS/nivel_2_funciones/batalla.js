@@ -3,6 +3,8 @@ let poderH1 = "velocidad";
 let energiaH1 = 170;
 let ciudadH1 = "América";
 let superH1 = "golpe de embestida";
+let vidaH1 = 100;
+let dañoH1 = 80;
 
 
 let nombreH2 = "Tony";
@@ -11,10 +13,12 @@ let energiaH2 = 180;
 let ciudadH2 = "Nueva York";
 let superH2 = "rayo letal";
 let escudo = "escudo magico";
+let vidaH2 = 100;
+let dañoH2 = 90;
 
 
 function ataque1() {
-    console.log("El héroe " + nombreH1 + " va a la ciudad de " + ciudadH2 + " para atacar con su poder de " + poderH1 + " al también héroe " + nombreH2 + " en un suceso totalmente inesperado.");
+    console.log("El héroe " + nombreH1 + " va a la ciudad de " + ciudadH2 + " para atacar con su poder de " + poderH1 + " al también héroe " + nombreH2 + " en un suceso totalmente inesperado. Dejandolo a " + (vidaH2 - 20) + " de vida con un daño de " + dañoH1 + " por ciento");
 }
 
 function defensa2() {
@@ -22,11 +26,11 @@ function defensa2() {
 }
 
 function ataque2() {
-    console.log("Tras la defensa del heroe, " + nombreH2 + "  usa un contrataque, usando su " + poderH2 + " al también héroe " + nombreH1 + ", enviandolo lejos de donde se encontraban.");
+    console.log("Tras la defensa del heroe, " + nombreH2 + "  usa un contrataque, usando su " + poderH2 + " al también héroe " + nombreH1 + ", enviandolo lejos de donde se encontraban y dejándolo con una vida de " + (vidaH1 - 5) + " por el daño de " + dañoH2 + " por ciento.");
 }
 
 function defensa1() {
-    console.log("Pero " + nombreH1 + " no se rinde y usa nuevamente su poder de " + poderH1 + " para aterrizar en " + ciudadH1 + " sin hacerse daño luego del ataque de " + nombreH2 + ", logrando resistirlo.");
+    console.log("Pero " + nombreH1 + " no se rinde y usa nuevamente su poder de " + poderH1 + " para aterrizar en " + ciudadH1 + " sin hacerse mucho daño luego del ataque de " + nombreH2 + ", logrando resistirlo.");
 }
 
 function recargarEnergia1() {
@@ -46,7 +50,9 @@ function superescudo2() {
     console.log("Tras ver el imenso ataque que venia, procedi a defenderme con un, " + escudo + " que terminaria por agotar la mayoria de mi energia acumulada, para poder asi resistir el ataque de " + nombreH1);
 }
 
-
+function finalbatalla() {
+    console.log("Al final después de que se disipe todo el polvo tras el impacto y batallas, se alcanza a ver un vencedor de pie, siendo " + nombreH2 + ".");
+}
 ataque1();
 defensa2();
 ataque2();
@@ -55,3 +61,4 @@ recargarEnergia1();
 recargarEnergia2();
 superAtaque1();
 superescudo2();
+finalbatalla();

@@ -4,6 +4,7 @@ let cliente = {
     hambre: 90
 };
 
+
 function ordenarComida(cliente) {
     console.log(cliente.nombre + " ordenó comida en Burger King.");
 }

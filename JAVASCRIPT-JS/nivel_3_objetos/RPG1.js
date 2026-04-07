@@ -42,7 +42,7 @@ function tienda(jugador1) {
 }
 
 function estado(jugador1) {
-    console.log("Quedando las estadísticas de " + jugador1.nombre + " así: ");
+    console.log("Quedandolas estadísticas de " + jugador1.nombre + " así: ");
     console.log("Vida: " + jugador1.vida);
     console.log("Fuerza: " + jugador1.fuerza);
     console.log("Nivel: " + jugador1.nivel);
