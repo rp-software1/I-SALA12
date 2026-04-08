@@ -4,7 +4,7 @@ let menu = [
     { nombre: "Lomo satado", precio: 18, stock: 3 },
     { nombre: "Sopa", precio: 8, stock: 10 },
     { nombre: "Milanesa", precio: 12, stock: 4 },
-    { nombre: "Ceviche", precion: 25, stock: 8 }
+    { nombre: "Ceviche", precio: 25, stock: 8 }
 ];
 
 // 2) FUNCIÓN: renderizar (mostrar) el menú en pantalla
@@ -21,6 +21,7 @@ function renderMenu() {
     }
 
     html += "</ul>";
+    html += `<p>Total de platos en el menu: ${cotarPlatos()}</p>`;
     output.innerHTML = html;
 }
 
@@ -30,6 +31,11 @@ function agregarPlatoDemo() {
     const nuevoPlato2 = { nombre: "Causa", precio: 10, stock: 2 };
     menu.push(nuevoPlato);
     menu.push(nuevoPlato2)
+}
+
+// Funcios de contar platos
+function contarPlatos() {
+    return menu.length;
 }
 
 // 4) EVENTOS: conectar botones con funciones
