@@ -21,7 +21,7 @@ function renderMenu() {
     }
 
     html += "</ul>";
-    html += `<p>Total de platos en el menu: ${cotarPlatos()}</p>`;
+    html += `<p>Total de platos en el menu: ${contarPlatos()}</p>`;
     output.innerHTML = html;
 }
 
