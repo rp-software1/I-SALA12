@@ -1,7 +1,7 @@
 // 1) VARIABLES + OBJETOS + ARRAYS
 let menu = [
     { nombre: "Arroz con pollo", precio: 12, stock: 5 },
-    { nombre: "Lomo saltado", precio: 18, stock: 3 },
+    { nombre: "Lomo satado", precio: 18, stock: 3 },
     { nombre: "Sopa", precio: 8, stock: 10 },
     { nombre: "Milanesa", precio: 12, stock: 4 },
     { nombre: "Ceviche", precion: 25, stock: 8 }
@@ -27,7 +27,9 @@ function renderMenu() {
 // 3) FUNCIÓN: agregar un plato demo al menú
 function agregarPlatoDemo() {
     const nuevoPlato = { nombre: "Pollo a la brasa", precio: 20, stock: 4 };
+    const nuevoPlato2 = { nombre: "Causa", precio: 10, stock: 2 };
     menu.push(nuevoPlato);
+    menu.push(nuevoPlato2)
 }
 
 // 4) EVENTOS: conectar botones con funciones
