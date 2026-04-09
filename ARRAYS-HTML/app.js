@@ -33,9 +33,22 @@ function agregarPlatoDemo() {
     menu.push(nuevoPlato2)
 }
 
-// Funcios de contar platos
+// Función de contar platos
 function contarPlatos() {
     return menu.length;
+}
+
+// Función renderizar lista
+function renderLista(título, listaDeTextos) {
+    const output = document.getElementById("output");
+    let html = `<h3>${titulo}</h3>`;
+    html += "<ul>";
+    for (let i = 0; i < listaDeTextos.length; i++) {
+        html += `<li>${listaDeTextos[i]}</li>`;
+    }
+    html += "</ul>";
+    output.innerHTML = html;
+
 }
 
 // 4) EVENTOS: conectar botones con funciones
