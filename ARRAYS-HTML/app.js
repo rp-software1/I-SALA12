@@ -3,8 +3,8 @@ let menu = [
     { nombre: "Arroz con pollo", precio: 12, stock: 5 },
     { nombre: "Lomo saltado", precio: 18, stock: 3 },
     { nombre: "Sopa", precio: 8, stock: 10 },
-    { nombre: "Milanesa", precio: 12, stock: 4 },
-    { nombre: "Ceviche", precio: 25, stock: 8 }
+    { nombre: "Milanesa", precio: 12, stock: 1 },
+    { nombre: "Ceviche", precio: 25, stock: 2 }
 ];
 
 // 2) FUNCIÓN: renderizar (mostrar) el menú en pantalla
@@ -55,12 +55,27 @@ function buscarPlatoPorNombre(nombre) {
     const plato = menu.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
 
     if (plato) {
-        console.log("Plato encontrado: ", plato)
+        const texto = `${plato.nombre} - S/ ${plato.precio} - Stock: ${platos.stock}`;
+        renderLista("Resultado de busqueda", [texto]);
     }
     else {
-        console.log("Plato no encontrado");
+        renderLista("Resultado de busqueda", ["No encontrado"]);
     }
 }
+
+function filtrarStockBajo() {
+    const bajos = menu.filter(p => p.stock <= 3);
+    if (bajos.length > 0) {
+        resultado.innerHTML = "";
+        bajos.forEach(p => {
+            resultado.innerHTML += `${p.nombre} - Stock: ${p.stock} `;
+        });
+    }
+    else {
+        resultado.textContent = "No hay platos en stock";
+    };
+}
+
 
 // 4) EVENTOS: conectar botones con funciones
 document.getElementById("btnMostrar").addEventListener("click", () => {
