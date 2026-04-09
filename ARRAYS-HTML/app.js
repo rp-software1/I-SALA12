@@ -51,6 +51,7 @@ function renderLista(título, listaDeTextos) {
 
 }
 
+// Función buscar por nombre
 function buscarPlatoPorNombre(nombre) {
     const plato = menu.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
 
@@ -63,19 +64,27 @@ function buscarPlatoPorNombre(nombre) {
     }
 }
 
+// Función filtro por stock bajo < 3
 function filtrarStockBajo() {
-    const bajos = menu.filter(p => p.stock <= 3);
-    if (bajos.length > 0) {
-        resultado.innerHTML = "";
-        bajos.forEach(p => {
-            resultado.innerHTML += `${p.nombre} - Stock: ${p.stock} `;
-        });
+    const platosBajoStock = menu.filter(plato => plato.stock <= 3);
+
+    if (platosBajoStock.length > 0) {
+        const listaDeTextos = platosBajoStock.map(plato =>
+            `${plato.nombre} — S/ ${plato.precio} — Stock: ${plato.stock}`
+        );
+        renderLista("Platos con stock bajo", listaDeTextos);
+    } else {
+        renderLista("Platos con stock bajo", ["No hay platos con stock bajo"]);
     }
-    else {
-        resultado.textContent = "No hay platos en stock";
-    };
 }
 
+
+// Función  resumen del menú
+
+function obtenerResumenMenu() {
+    const resumen = menu.map(plato => `${plato.nombre} - S/ ${plato.precio}`);
+    renderLista("Reusmen del menú", resumen);
+}
 
 // 4) EVENTOS: conectar botones con funciones
 document.getElementById("btnMostrar").addEventListener("click", () => {
