@@ -38,6 +38,8 @@ function contarPlatos() {
     return menu.length;
 }
 
+
+
 // 4) EVENTOS: conectar botones con funciones
 document.getElementById("btnMostrar").addEventListener("click", () => {
     renderMenu();
