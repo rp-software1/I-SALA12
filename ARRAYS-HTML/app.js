@@ -51,6 +51,17 @@ function renderLista(título, listaDeTextos) {
 
 }
 
+function buscarPlatoPorNombre(nombre) {
+    const plato = menu.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
+
+    if (plato) {
+        console.log("Plato encontrado: ", plato)
+    }
+    else {
+        console.log("Plato no encontrado");
+    }
+}
+
 // 4) EVENTOS: conectar botones con funciones
 document.getElementById("btnMostrar").addEventListener("click", () => {
     renderMenu();
@@ -62,3 +73,4 @@ document.getElementById("btnAgregar").addEventListener("click", () => {
 
     document.getElementById("btnAgregar").disabled = true;
 });
+
