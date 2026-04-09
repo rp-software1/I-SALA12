@@ -1,7 +1,7 @@
 // 1) VARIABLES + OBJETOS + ARRAYS
 let menu = [
     { nombre: "Arroz con pollo", precio: 12, stock: 5 },
-    { nombre: "Lomo satado", precio: 18, stock: 3 },
+    { nombre: "Lomo saltado", precio: 18, stock: 3 },
     { nombre: "Sopa", precio: 8, stock: 10 },
     { nombre: "Milanesa", precio: 12, stock: 4 },
     { nombre: "Ceviche", precio: 25, stock: 8 }
@@ -46,4 +46,6 @@ document.getElementById("btnMostrar").addEventListener("click", () => {
 document.getElementById("btnAgregar").addEventListener("click", () => {
     agregarPlatoDemo();
     renderMenu();
+
+    document.getElementById("btnAgregar").disabled = true;
 });
