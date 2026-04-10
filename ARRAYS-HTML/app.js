@@ -39,7 +39,7 @@ function contarPlatos() {
 }
 
 // Función renderizar lista
-function renderLista(título, listaDeTextos) {
+function renderLista(titulo, listaDeTextos) {
     const output = document.getElementById("output");
     let html = `<h3>${titulo}</h3>`;
     html += "<ul>";
@@ -56,7 +56,7 @@ function buscarPlatoPorNombre(nombre) {
     const plato = menu.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
 
     if (plato) {
-        const texto = `${plato.nombre} - S/ ${plato.precio} - Stock: ${platos.stock}`;
+        const texto = `${plato.nombre} - S/ ${plato.precio} - Stock: ${plato.stock}`;
         renderLista("Resultado de busqueda", [texto]);
     }
     else {
@@ -98,3 +98,17 @@ document.getElementById("btnAgregar").addEventListener("click", () => {
     document.getElementById("btnAgregar").disabled = true;
 });
 
+document.getElementById("btnBuscar").addEventListener("click", () => {
+    const valor = document.getElementById("inputBuscar").value;
+    buscarPlatoPorNombre(valor);
+
+});
+
+document.getElementById("btnStockBajo").addEventListener("click", () => {
+    filtrarStockBajo();
+
+});
+
+document.getElementById("btnResumen").addEventListener("click", () => {
+    obtenerResumenMenu();
+})
