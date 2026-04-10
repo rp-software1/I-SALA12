@@ -56,11 +56,9 @@ function buscarPlatoPorNombre(nombre) {
     const plato = menu.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
 
     if (plato) {
-        const texto = `${plato.nombre} - S/ ${plato.precio} - Stock: ${plato.stock}`;
-        renderLista("Resultado de busqueda", [texto]);
-    }
-    else {
-        renderLista("Resultado de busqueda", ["No encontrado"]);
+        return `${plato.nombre} - S/ ${plato.precio} - Stock: ${plato.stock}`;
+    } else {
+        return "No encontrado";
     }
 }
 
@@ -78,6 +76,21 @@ function filtrarStockBajo() {
     }
 }
 
+// Función  resumen del menú
+function venderPLato(nombre, cantidad) {
+    const plato = menu.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
+
+    if (!plato) {
+        return "No encontrado";
+    }
+
+    if (plato.stock < cantidad) {
+        return "Stock insuficiente"
+    }
+
+    plato.stock -= cantidad;
+    return "Venta realizada";
+}
 
 // Función  resumen del menú
 
@@ -85,6 +98,8 @@ function obtenerResumenMenu() {
     const resumen = menu.map(plato => `${plato.nombre} - S/ ${plato.precio}`);
     renderLista("Reusmen del menú", resumen);
 }
+
+
 
 // 4) EVENTOS: conectar botones con funciones
 document.getElementById("btnMostrar").addEventListener("click", () => {
@@ -100,8 +115,16 @@ document.getElementById("btnAgregar").addEventListener("click", () => {
 
 document.getElementById("btnBuscar").addEventListener("click", () => {
     const valor = document.getElementById("inputBuscar").value;
-    buscarPlatoPorNombre(valor);
 
+    let listaFinal = [];
+
+    listaFinal.push(buscarPlatoPorNombre(valor));
+    listaFinal.push(venderPLato(valor, 1));
+
+    const menuTexto = menu.map(p => `${p.nombre} - S/ ${p.precio} - Stock: ${p.stock}`);
+    listaFinal = listaFinal.concat(menuTexto);
+
+    renderLista("", listaFinal);
 });
 
 document.getElementById("btnStockBajo").addEventListener("click", () => {
