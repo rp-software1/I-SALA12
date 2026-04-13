@@ -17,7 +17,19 @@ function renderMenu() {
 
     for (let i = 0; i < menu.length; i++) {
         const plato = menu[i];
-        html += `<li>${plato.nombre} — S/ ${plato.precio} — Stock: ${plato.stock}</li>`;
+        let estadotexto = "";
+
+        if (plato.stock === 0) {
+            estadotexto = "AGOTADO";
+            clase = "agotado";
+        } else if (plato.stock >= 1 && plato.stock <= 3) {
+            estadotexto = "STOCK BAJO";
+            clase = "bajo";
+        } else {
+            estadotexto = "DISPONIBLE";
+            clase = "normal";
+        }
+        html += `<li class ="${clase}">${plato.nombre} — S/ ${plato.precio} — Stock: ${plato.stock} - ${estadotexto}</li>`;
     }
 
     html += "</ul>";
@@ -83,12 +95,17 @@ function venderPLato(nombre, cantidad) {
     if (!plato) {
         return "No encontrado";
     }
+    if (plato.stock === 0) {
+        return "No disponible";
+    }
 
     if (plato.stock < cantidad) {
         return "Stock insuficiente"
     }
 
     plato.stock -= cantidad;
+
+    renderMenu();
     return "Venta realizada";
 }
 
@@ -97,6 +114,44 @@ function venderPLato(nombre, cantidad) {
 function obtenerResumenMenu() {
     const resumen = menu.map(plato => `${plato.nombre} - S/ ${plato.precio}`);
     renderLista("Resumen del menú", resumen);
+}
+
+//Funcion obtener estado
+
+function obtenerEstado(stock) {
+    if (stock === 0) {
+        return "AGOTADO";
+    } else if (stock >= 1 && stock <= 3) {
+        return "CRITICO";
+    } else {
+        return "DISPONIBLE";
+    }
+};
+
+//Funcion verificar estadoGeneral
+
+function verificarEstadoGeneral() {
+    let agotado = 0;
+    let bajos = 0;
+
+    for (let i = 0; i < menu.length; i++) {
+        const plato = menu[i];
+
+        if (plato.stock === 0) {
+            agotado++;
+        } else if (plato.stock <= 3) {
+            bajos++;
+        }
+    }
+    if (agotado > 0) {
+        return "Hay platos agotados";
+    }
+    else if (bajos > 0) {
+        return "Hay platos con stock bajo";
+    }
+    else {
+        return "Todo en orden";
+    }
 }
 
 
@@ -116,15 +171,14 @@ document.getElementById("btnAgregar").addEventListener("click", () => {
 document.getElementById("btnBuscar").addEventListener("click", () => {
     const valor = document.getElementById("inputBuscar").value;
 
-    let listaFinal = [];
+    let resultadoBusqueda = buscarPlatoPorNombre(valor);
+    let resultadoVenta = venderPLato(valor, 1);
+    let estadoGeneral = verificarEstadoGeneral();
 
-    listaFinal.push(buscarPlatoPorNombre(valor));
-    listaFinal.push(venderPLato(valor, 1));
 
-    const menuTexto = menu.map(p => `${p.nombre} - S/ ${p.precio} - Stock: ${p.stock}`);
-    listaFinal = listaFinal.concat(menuTexto);
-
-    renderLista("", listaFinal);
+    const output = document.getElementById("output");
+    renderMenu();
+    output.innerHTML = `<p>${resultadoBusqueda}</p><p>${resultadoVenta}</p><p>${estadoGeneral}</p>` + output.innerHTML;
 });
 
 document.getElementById("btnStockBajo").addEventListener("click", () => {
