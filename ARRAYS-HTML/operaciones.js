@@ -11,3 +11,62 @@ export function buscarPlato(nombre) {
         return "No encontrado";
     }
 }
+export function filtrarStock() {
+    return menu.filter(plato => plato.sotck <= 3);
+}
+export function venderPlato(nombre, cantidad) {
+    const plato = menu.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
+
+    if (!plato) {
+        return "No encontrado";
+    }
+    if (plato.stock === 0) {
+        return "No disponible";
+    }
+
+    if (plato.stock < cantidad) {
+        return "Stock insuficiente"
+    }
+
+    plato.stock -= cantidad;
+
+    return "Venta realizada";
+
+}
+
+export function obtenerEstado(stock) {
+    if (stock === 0) {
+        return "AGOTADO";
+    } else if (stock >= 1 && stock <= 3) {
+        return "CRITICO";
+    } else {
+        return "DISPONIBLE";
+    }
+
+}
+
+export function estadoGeneral() {
+    let agotado = 0;
+    let bajos = 0;
+
+    for (let i = 0; i < menu.length; i++) {
+        const plato = menu[i];
+
+        if (plato.stock === 0) {
+            agotado++;
+        } else if (plato.stock <= 3) {
+            bajos++;
+        }
+    }
+    if (agotado > 0) {
+        return "Hay platos agotados";
+    }
+    else if (bajos > 0) {
+        return "Hay platos con stock bajo";
+    }
+    else {
+        return "Todo en orden";
+    }
+
+
+}
