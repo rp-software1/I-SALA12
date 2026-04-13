@@ -76,7 +76,7 @@ function filtrarStockBajo() {
     }
 }
 
-// Función  resumen del menú
+// Función  vender plato
 function venderPLato(nombre, cantidad) {
     const plato = menu.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
 
@@ -96,7 +96,7 @@ function venderPLato(nombre, cantidad) {
 
 function obtenerResumenMenu() {
     const resumen = menu.map(plato => `${plato.nombre} - S/ ${plato.precio}`);
-    renderLista("Reusmen del menú", resumen);
+    renderLista("Resumen del menú", resumen);
 }
 
 
