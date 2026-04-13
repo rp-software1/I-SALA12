@@ -99,6 +99,18 @@ function obtenerResumenMenu() {
     renderLista("Resumen del menú", resumen);
 }
 
+//Funcion obtener estado
+
+function obtenerEstado(stock) {
+    if (stock === 0) {
+        return "AGOTADO";
+    } else if (stock >= 1 && stock <= 3) {
+        return "CRITICO";
+    } else {
+        return "DISPONIBLE";
+    }
+};
+
 
 
 // 4) EVENTOS: conectar botones con funciones
