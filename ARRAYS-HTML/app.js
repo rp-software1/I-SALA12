@@ -173,11 +173,12 @@ document.getElementById("btnBuscar").addEventListener("click", () => {
 
     let resultadoBusqueda = buscarPlatoPorNombre(valor);
     let resultadoVenta = venderPLato(valor, 1);
+    let estadoGeneral = verificarEstadoGeneral();
 
-    renderMenu();
 
     const output = document.getElementById("output");
-    output.innerHTML = `<p>${resultadoBusqueda}</p><p>${resultadoVenta}</p>` + output.innerHTML;
+    renderMenu();
+    output.innerHTML = `<p>${resultadoBusqueda}</p><p>${resultadoVenta}</p><p>${estadoGeneral}</p>` + output.innerHTML;
 });
 
 document.getElementById("btnStockBajo").addEventListener("click", () => {
