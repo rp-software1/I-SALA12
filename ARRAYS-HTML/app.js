@@ -95,12 +95,17 @@ function venderPLato(nombre, cantidad) {
     if (!plato) {
         return "No encontrado";
     }
+    if (plato.stock === 0) {
+        return "No disponible";
+    }
 
     if (plato.stock < cantidad) {
         return "Stock insuficiente"
     }
 
     plato.stock -= cantidad;
+
+    renderMenu();
     return "Venta realizada";
 }
 
@@ -140,15 +145,13 @@ document.getElementById("btnAgregar").addEventListener("click", () => {
 document.getElementById("btnBuscar").addEventListener("click", () => {
     const valor = document.getElementById("inputBuscar").value;
 
-    let listaFinal = [];
+    let resultadoBusqueda = buscarPlatoPorNombre(valor);
+    let resultadoVenta = venderPLato(valor, 1);
 
-    listaFinal.push(buscarPlatoPorNombre(valor));
-    listaFinal.push(venderPLato(valor, 1));
+    renderMenu();
 
-    const menuTexto = menu.map(p => `${p.nombre} - S/ ${p.precio} - Stock: ${p.stock}`);
-    listaFinal = listaFinal.concat(menuTexto);
-
-    renderLista("", listaFinal);
+    const output = document.getElementById("output");
+    output.innerHTML = `<p>${resultadoBusqueda}</p><p>${resultadoVenta}</p>` + output.innerHTML;
 });
 
 document.getElementById("btnStockBajo").addEventListener("click", () => {
