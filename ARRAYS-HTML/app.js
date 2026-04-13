@@ -17,6 +17,14 @@ function renderMenu() {
 
     for (let i = 0; i < menu.length; i++) {
         const plato = menu[i];
+        let estadotexto = "";
+        if (plato.stock === 0) {
+            estadotexto = "AGOTADO";
+        } else if (plato.stock >= 1 && plato.stock <= 3) {
+            estadotexto = "STOCK BAJO";
+        } else {
+            estadotexto = "DISPONIBLE";
+        }
         html += `<li>${plato.nombre} — S/ ${plato.precio} — Stock: ${plato.stock}</li>`;
     }
 
