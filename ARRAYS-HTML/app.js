@@ -18,14 +18,18 @@ function renderMenu() {
     for (let i = 0; i < menu.length; i++) {
         const plato = menu[i];
         let estadotexto = "";
+
         if (plato.stock === 0) {
             estadotexto = "AGOTADO";
+            clase = "agotado";
         } else if (plato.stock >= 1 && plato.stock <= 3) {
             estadotexto = "STOCK BAJO";
+            clase = "bajo";
         } else {
             estadotexto = "DISPONIBLE";
+            clase = "normal";
         }
-        html += `<li>${plato.nombre} — S/ ${plato.precio} — Stock: ${plato.stock}</li>`;
+        html += `<li class ="${clase}">${plato.nombre} — S/ ${plato.precio} — Stock: ${plato.stock} - ${estadotexto}</li>`;
     }
 
     html += "</ul>";
