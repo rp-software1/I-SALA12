@@ -128,6 +128,32 @@ function obtenerEstado(stock) {
     }
 };
 
+//Funcion verificar estadoGeneral
+
+function verificarEstadoGeneral() {
+    let agotado = 0;
+    let bajos = 0;
+
+    for (let i = 0; i < menu.length; i++) {
+        const plato = menu[i];
+
+        if (plato.stock === 0) {
+            agotado++;
+        } else if (plato.stock <= 3) {
+            bajos++;
+        }
+    }
+    if (agotado > 0) {
+        return "Hay platos agotados";
+    }
+    else if (bajos > 0) {
+        return "Hay platos con stock bajo";
+    }
+    else {
+        return "Todo en orden";
+    }
+}
+
 
 
 // 4) EVENTOS: conectar botones con funciones
