@@ -1,7 +1,7 @@
 import { buscarPlato, filtrarStock, venderPLato, estadoGeneral } from "./operaciones.js";
 import { menu } from "./menu.js";
 
-function renderMenu() {
+export function renderMenu() {
     const output = document.getElementById("output");
     output.innerHTML = ""; // limpiar
 
@@ -31,7 +31,7 @@ function renderMenu() {
 }
 
 // Función renderizar lista
-function renderLista(titulo, listaDeTextos) {
+export function renderLista(titulo, listaDeTextos) {
     const output = document.getElementById("output");
     let html = `<h3>${titulo}</h3>`;
     html += "<ul>";
@@ -43,9 +43,9 @@ function renderLista(titulo, listaDeTextos) {
 
 }
 
-//Funcion verificar estadoGeneral
+//Funcion mostrar mensajes
 
-function mostrarMensajes(texto) {
+export function mostrarMensajes(texto) {
     const output = document.getElementById("output");
     output.innerHTML = `<p> ${texto} </p>`
 }
