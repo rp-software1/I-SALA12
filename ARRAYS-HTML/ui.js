@@ -1,16 +1,17 @@
 import {
     buscarPlato,
     filtrarStock,
-    venderPLato,
+    venderPlato,
     estadoGeneral
 } from "./operaciones.js";
+
 import { menu } from "./menu.js";
+
 
 export function renderMenu() {
     const output = document.getElementById("output");
-    output.innerHTML = ""; // limpiar
+    output.innerHTML = "";
 
-    // crear una lista HTML simple
     let html = "<ul>";
 
     for (let i = 0; i < menu.length; i++) {
@@ -21,78 +22,90 @@ export function renderMenu() {
         if (plato.stock === 0) {
             estadotexto = "AGOTADO";
             clase = "agotado";
-        } else if (plato.stock >= 1 && plato.stock <= 3) {
+        } else if (plato.stock <= 3) {
             estadotexto = "STOCK BAJO";
             clase = "bajo";
         } else {
             estadotexto = "DISPONIBLE";
             clase = "normal";
         }
-        html += `<li class ="${clase}">${plato.nombre} — S/ ${plato.precio} — Stock: ${plato.stock} - ${estadotexto}</li>`;
+
+        html += `<li class="${clase}">
+            ${plato.nombre} — S/ ${plato.precio} — Stock: ${plato.stock} - ${estadotexto}
+        </li>`;
     }
 
     html += "</ul>";
     html += `<p>Total de platos en el menu: ${menu.length}</p>`;
+
     output.innerHTML = html;
 }
 
-// Función renderizar lista
+
+
 export function renderLista(titulo, listaDeTextos) {
     const output = document.getElementById("output");
-    let html = `<h3>${titulo}</h3>`;
-    html += "<ul>";
-    for (let i = 0; i < listaDeTextos.length; i++) {
-        html += `<li>${listaDeTextos[i]}</li>`;
-    }
-    html += "</ul>";
-    output.innerHTML = html;
 
+    let html = `<h3>${titulo}</h3><ul>`;
+
+    for (let texto of listaDeTextos) {
+        html += `<li>${texto}</li>`;
+    }
+
+    html += "</ul>";
+
+    output.innerHTML = html;
 }
 
-//Funcion mostrar mensajes
 
 export function mostrarMensajes(texto) {
     const output = document.getElementById("output");
-    output.innerHTML = `<p> ${texto} </p>`
+    output.innerHTML = `<p>${texto}</p>`;
 }
-
-// 4) EVENTOS: conectar botones con funciones
 
 
 
 export function conectarEventos() {
+
     document.getElementById("btnMostrar").addEventListener("click", () => {
         renderMenu();
     });
 
     document.getElementById("btnAgregar").addEventListener("click", () => {
-        alert("Plato agregado (pendiente integracion)");
+        alert("Plato agregado (pendiente integración)");
     });
 
     document.getElementById("btnBuscar").addEventListener("click", () => {
         const valor = document.getElementById("inputBuscar").value;
 
         let resultadoBusqueda = buscarPlato(valor);
-        let resultadoVenta = venderPLato(valor, 1);
+        let resultadoVenta = venderPlato(valor, 1);
         let estado = estadoGeneral();
 
         renderMenu();
+
         const output = document.getElementById("output");
-        output.innerHTML = `<p>${resultadoBusqueda}</p><p>${resultadoVenta}</p><p>${estado}</p>` + output.innerHTML;
+        output.innerHTML =
+            `<p>${resultadoBusqueda}</p>
+             <p>${resultadoVenta}</p>
+             <p>${estado}</p>` + output.innerHTML;
     });
 
     document.getElementById("btnStockBajo").addEventListener("click", () => {
         const lista = filtrarStock();
 
-        const textos = lista.map(plato => `${plato.nombre} - S/ ${plato.precio} - Stock: ${plato.stock}`
+        const textos = lista.map(plato =>
+            `${plato.nombre} - S/ ${plato.precio} - Stock: ${plato.stock}`
         );
-        renderLista("Platos con stock bajo", textos);
 
+        renderLista("Platos con stock bajo", textos);
     });
 
     document.getElementById("btnResumen").addEventListener("click", () => {
-        const resumen = menu.map(plato => `${plato.nombre} - S/ ${plato.precio}`
+        const resumen = menu.map(plato =>
+            `${plato.nombre} - S/ ${plato.precio}`
         );
+
         renderLista("Resumen del menú", resumen);
     });
 }

@@ -10,9 +10,8 @@ export function obtenerMenu() {
     return menu;
 }
 
-
 export function agregarPlato(plato) {
-    menu.push(plato)
+    menu.push(plato);
 }
 
 export function actualizarStock(nombre, cantidad) {

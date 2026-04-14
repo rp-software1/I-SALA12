@@ -5,4 +5,5 @@ function iniciarApp() {
     conectarEventos();
     renderMenu();
 }
+
 iniciarApp();
