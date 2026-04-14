@@ -5,7 +5,7 @@ import {
     estadoGeneral
 } from "./operaciones.js";
 
-import { menu } from "./menu.js";
+import { menu, agregarPlato } from "./menu.js";
 
 
 export function renderMenu() {
@@ -72,7 +72,9 @@ export function conectarEventos() {
     });
 
     document.getElementById("btnAgregar").addEventListener("click", () => {
-        alert("Plato agregado (pendiente integración)");
+        const nuevoPlato = { nombre: "Pizza", precio: 15, stock: 10 };
+        agregarPlato(nuevoPlato);
+        renderMenu();
     });
 
     document.getElementById("btnBuscar").addEventListener("click", () => {
