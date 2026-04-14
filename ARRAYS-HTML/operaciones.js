@@ -12,7 +12,7 @@ export function buscarPlato(nombre) {
     }
 }
 export function filtrarStock() {
-    return menu.filter(plato => plato.sotck <= 3);
+    return menu.filter(plato => plato.stock <= 3);
 }
 export function venderPlato(nombre, cantidad) {
     const plato = menu.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
