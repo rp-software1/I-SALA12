@@ -1,4 +1,9 @@
-import { buscarPlato, filtrarStock, venderPLato, estadoGeneral } from "./operaciones.js";
+import {
+    buscarPlato,
+    filtrarStock,
+    venderPLato,
+    estadoGeneral
+} from "./operaciones.js";
 import { menu } from "./menu.js";
 
 export function renderMenu() {
@@ -11,6 +16,7 @@ export function renderMenu() {
     for (let i = 0; i < menu.length; i++) {
         const plato = menu[i];
         let estadotexto = "";
+        let clase = "";
 
         if (plato.stock === 0) {
             estadotexto = "AGOTADO";
@@ -26,7 +32,7 @@ export function renderMenu() {
     }
 
     html += "</ul>";
-    html += `<p>Total de platos en el menu: ${contarPlatos()}</p>`;
+    html += `<p>Total de platos en el menu: ${menu.length}</p>`;
     output.innerHTML = html;
 }
 
@@ -66,9 +72,9 @@ export function conectarEventos() {
     document.getElementById("btnBuscar").addEventListener("click", () => {
         const valor = document.getElementById("inputBuscar").value;
 
-        let resultadoBusqueda = buscarPlatoPorNombre(valor);
+        let resultadoBusqueda = buscarPlato(valor);
         let resultadoVenta = venderPLato(valor, 1);
-        let estadoGeneral = estadoGeneral();
+        let estado = estadoGeneral();
 
         renderMenu();
         const output = document.getElementById("output");
@@ -76,11 +82,17 @@ export function conectarEventos() {
     });
 
     document.getElementById("btnStockBajo").addEventListener("click", () => {
-        filtrarStockBajo();
+        const lista = filtrarStock();
+
+        const textos = lista.map(plato => `${plato.nombre} - S/ ${plato.precio} - Stock: ${plato.stock}`
+        );
+        renderLista("Platos con stock bajo", textos);
 
     });
 
     document.getElementById("btnResumen").addEventListener("click", () => {
-        obtenerResumenMenu();
-    })
+        const resumen = menu.map(plato => `${plato.nombre} - S/ ${plato.precio}`
+        );
+        renderLista("Resumen del menú", resumen);
+    });
 }
