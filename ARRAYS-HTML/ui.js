@@ -51,35 +51,36 @@ export function mostrarMensajes(texto) {
 }
 
 // 4) EVENTOS: conectar botones con funciones
-document.getElementById("btnMostrar").addEventListener("click", () => {
-    renderMenu();
-});
-
-document.getElementById("btnAgregar").addEventListener("click", () => {
-    agregarPlatoDemo();
-    renderMenu();
-
-    document.getElementById("btnAgregar").disabled = true;
-});
-
-document.getElementById("btnBuscar").addEventListener("click", () => {
-    const valor = document.getElementById("inputBuscar").value;
-
-    let resultadoBusqueda = buscarPlatoPorNombre(valor);
-    let resultadoVenta = venderPLato(valor, 1);
-    let estadoGeneral = verificarEstadoGeneral();
 
 
-    const output = document.getElementById("output");
-    renderMenu();
-    output.innerHTML = `<p>${resultadoBusqueda}</p><p>${resultadoVenta}</p><p>${estadoGeneral}</p>` + output.innerHTML;
-});
 
-document.getElementById("btnStockBajo").addEventListener("click", () => {
-    filtrarStockBajo();
+export function conectarEventos() {
+    document.getElementById("btnMostrar").addEventListener("click", () => {
+        renderMenu();
+    });
 
-});
+    document.getElementById("btnAgregar").addEventListener("click", () => {
+        alert("Plato agregado (pendiente integracion)");
+    });
 
-document.getElementById("btnResumen").addEventListener("click", () => {
-    obtenerResumenMenu();
-})
+    document.getElementById("btnBuscar").addEventListener("click", () => {
+        const valor = document.getElementById("inputBuscar").value;
+
+        let resultadoBusqueda = buscarPlatoPorNombre(valor);
+        let resultadoVenta = venderPLato(valor, 1);
+        let estadoGeneral = estadoGeneral();
+
+        renderMenu();
+        const output = document.getElementById("output");
+        output.innerHTML = `<p>${resultadoBusqueda}</p><p>${resultadoVenta}</p><p>${estado}</p>` + output.innerHTML;
+    });
+
+    document.getElementById("btnStockBajo").addEventListener("click", () => {
+        filtrarStockBajo();
+
+    });
+
+    document.getElementById("btnResumen").addEventListener("click", () => {
+        obtenerResumenMenu();
+    })
+}
