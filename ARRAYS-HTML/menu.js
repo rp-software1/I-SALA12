@@ -6,7 +6,7 @@ export let menu = [
     { nombre: "Ceviche", precio: 25, stock: 2 }
 ];
 
-export function obetenerMenu() {
+export function obtenerMenu() {
     return menu;
 }
 

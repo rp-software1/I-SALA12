@@ -1,8 +1,8 @@
-// main.js
-// Punto de entrada del Sistema
-// (Imports se completarán luego)
-// import { conectarEventos } from "./ui.js";
+import { conectarEventos, renderMenu } from "./ui.js";
 
-export function iniciarApp() {
-    console.log("Sistema iniciado ( pendiente conexion completa)");
+function iniciarApp() {
+    console.log("Sistema iniciado");
+    conectarEventos();
+    renderMenu();
 }
+iniciarApp();
