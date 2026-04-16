@@ -46,3 +46,18 @@ export function estadoGeneral() {
         return "Hay platos con stock bajo";
     return "Todo en orden";
 }
+
+// funcion de Crear simulación
+
+export function simularRespuestaServidor(resultado) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const falla = Math.random() < 0.3;
+            if (falla) {
+                reject("Error del servidor simulado.");
+            } else {
+                resolve(resultado);
+            }
+        }, 2000);
+    });
+}
