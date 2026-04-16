@@ -25,6 +25,18 @@ export function venderPlato(nombre, cantidad) {
     return "Venta realizada";
 }
 
+export async function venderPlatoAsync(nombre, cantidad) {
+    const resultado = venderPlato(nombre, cantidad);
+
+    if (!resultado.ok) {
+        throw new Error(resultado.mensaje);
+    }
+
+    const respuesta = await simularRespuestaServidor(resultado.mensaje);
+    return respuesta;
+}
+
+
 export function obtenerEstado(stock) {
     if (stock === 0) return "AGOTADO";
     if (stock <= 3) return "CRITICO";
