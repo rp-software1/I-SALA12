@@ -58,9 +58,14 @@ export function renderLista(titulo, listaDeTextos) {
 
 
 
-export function mostrarMensajes(texto) {
+export function mostrarMensajes(texto, tipo = "normal") {
     const output = document.getElementById("output");
-    output.innerHTML = `<p>${texto}</p>`;
+    let color = "black";
+    if (tipo === "procesando") color = "blue";
+    if (tipo === "ok") color = "green";
+    if (tipo === "error") color = "red";
+
+    output.innerHTML = `<p style="color:${color}">${texto}</p>` + output.innerHTML;
 }
 
 export function conectarEventos() {
@@ -78,29 +83,13 @@ export function conectarEventos() {
     });
 
 
-    document.getElementById("btnBuscar").addEventListener("click", async () => {
+    document.getElementById("btnBuscar").addEventListener("click", () => {
 
         const valor = document.getElementById("inputBuscar").value;
 
         let resultadoBusqueda = buscarPlato(valor);
-        let estado = estadoGeneral();
 
-        try {
-            mostrarMensajes("Procesando pedido...");
-
-            let resultadoVenta = await venderPlatoAsync(valor, 1);
-
-            renderMenu();
-
-            const output = document.getElementById("output");
-            output.innerHTML =
-                `<p>${resultadoBusqueda}</p>
-                 <p>${resultadoVenta}</p>
-                 <p>${estado}</p>` + output.innerHTML;
-
-        } catch (error) {
-            mostrarMensajes(error.message);
-        }
+        mostrarMensajes(resultadoBusqueda);
     });
 
 
@@ -121,5 +110,31 @@ export function conectarEventos() {
         );
 
         renderLista("Resumen del menú", resumen);
+    });
+
+    document.getElementById("btnVender").addEventListener("click", async () => {
+
+        const valor = document.getElementById("inputBuscar").value;
+
+        let resultadoBusqueda = buscarPlato(valor);
+        let estado = estadoGeneral();
+
+        try {
+
+            mostrarMensajes("Procesando pedido...", "procesando");
+
+            let resultadoVenta = await venderPlatoAsync(valor, 1);
+
+            renderMenu();
+            mostrarMensajes(resultadoBusqueda, "ok");
+            mostrarMensajes(resultadoVenta, "ok");
+            mostrarMensajes(estado, "ok");
+
+        } catch (error) {
+
+            mostrarMensajes(resultadoBusqueda, "error");
+            mostrarMensajes(error.message, "error");
+            mostrarMensajes(estado, "error");
+        }
     });
 }
