@@ -40,7 +40,9 @@ export function estadoGeneral() {
         else if (plato.stock <= 3) bajos++;
     }
 
-    if (agotado > 0) return "Hay platos agotados";
-    if (bajos > 0) return "Hay platos con stock bajo";
+    if (agotado > 0)
+        return "Hay platos agotados";
+    if (bajos > 0)
+        return "Hay platos con stock bajo";
     return "Todo en orden";
 }
