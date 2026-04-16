@@ -1,8 +1,8 @@
 import {
     buscarPlato,
     filtrarStock,
-    venderPlato,
-    estadoGeneral
+    estadoGeneral,
+    venderPlatoAsync
 } from "./operaciones.js";
 
 import { menu, agregarPlato } from "./menu.js";
@@ -42,7 +42,6 @@ export function renderMenu() {
 }
 
 
-
 export function renderLista(titulo, listaDeTextos) {
     const output = document.getElementById("output");
 
@@ -58,18 +57,19 @@ export function renderLista(titulo, listaDeTextos) {
 }
 
 
+
 export function mostrarMensajes(texto) {
     const output = document.getElementById("output");
     output.innerHTML = `<p>${texto}</p>`;
 }
 
-
-
 export function conectarEventos() {
+
 
     document.getElementById("btnMostrar").addEventListener("click", () => {
         renderMenu();
     });
+
 
     document.getElementById("btnAgregar").addEventListener("click", () => {
         const nuevoPlato = { nombre: "Pizza", precio: 15, stock: 10 };
@@ -77,21 +77,32 @@ export function conectarEventos() {
         renderMenu();
     });
 
-    document.getElementById("btnBuscar").addEventListener("click", () => {
+
+    document.getElementById("btnBuscar").addEventListener("click", async () => {
+
         const valor = document.getElementById("inputBuscar").value;
 
         let resultadoBusqueda = buscarPlato(valor);
-        let resultadoVenta = venderPlato(valor, 1);
         let estado = estadoGeneral();
 
-        renderMenu();
+        try {
+            mostrarMensajes("Procesando pedido...");
 
-        const output = document.getElementById("output");
-        output.innerHTML =
-            `<p>${resultadoBusqueda}</p>
-             <p>${resultadoVenta}</p>
-             <p>${estado}</p>` + output.innerHTML;
+            let resultadoVenta = await venderPlatoAsync(valor, 1);
+
+            renderMenu();
+
+            const output = document.getElementById("output");
+            output.innerHTML =
+                `<p>${resultadoBusqueda}</p>
+                 <p>${resultadoVenta}</p>
+                 <p>${estado}</p>` + output.innerHTML;
+
+        } catch (error) {
+            mostrarMensajes(error.message);
+        }
     });
+
 
     document.getElementById("btnStockBajo").addEventListener("click", () => {
         const lista = filtrarStock();
@@ -102,6 +113,7 @@ export function conectarEventos() {
 
         renderLista("Platos con stock bajo", textos);
     });
+
 
     document.getElementById("btnResumen").addEventListener("click", () => {
         const resumen = menu.map(plato =>

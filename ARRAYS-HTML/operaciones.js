@@ -17,12 +17,18 @@ export function filtrarStock() {
 export function venderPlato(nombre, cantidad) {
     const plato = menu.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
 
-    if (!plato) return "No encontrado";
-    if (plato.stock === 0) return "No disponible";
-    if (plato.stock < cantidad) return "Stock insuficiente";
+    if (!plato) {
+        return { ok: false, mensaje: "No encontrado" };
+    }
+    if (plato.stock === 0) {
+        return { ok: false, mensaje: "No disponible" };
+    }
+    if (plato.stock < cantidad) {
+        return { ok: false, mensaje: "Stock insuficiente" };
+    }
 
     plato.stock -= cantidad;
-    return "Venta realizada";
+    return { ok: true, mensaje: "Venta realizada" };
 }
 
 export async function venderPlatoAsync(nombre, cantidad) {
