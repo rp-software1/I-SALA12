@@ -1,8 +1,8 @@
 import {
     buscarPlato,
     filtrarStock,
-    venderPlato,
-    estadoGeneral
+    estadoGeneral,
+    venderPlatoAsync
 } from "./operaciones.js";
 
 import { menu, agregarPlato } from "./menu.js";
@@ -42,7 +42,6 @@ export function renderMenu() {
 }
 
 
-
 export function renderLista(titulo, listaDeTextos) {
     const output = document.getElementById("output");
 
@@ -58,18 +57,24 @@ export function renderLista(titulo, listaDeTextos) {
 }
 
 
-export function mostrarMensajes(texto) {
+
+export function mostrarMensajes(texto, tipo = "normal") {
     const output = document.getElementById("output");
-    output.innerHTML = `<p>${texto}</p>`;
+    let color = "black";
+    if (tipo === "procesando") color = "blue";
+    if (tipo === "ok") color = "green";
+    if (tipo === "error") color = "red";
+
+    output.innerHTML = `<p style="color:${color}">${texto}</p>` + output.innerHTML;
 }
 
-
-
 export function conectarEventos() {
+
 
     document.getElementById("btnMostrar").addEventListener("click", () => {
         renderMenu();
     });
+
 
     document.getElementById("btnAgregar").addEventListener("click", () => {
         const nuevoPlato = { nombre: "Pizza", precio: 15, stock: 10 };
@@ -77,21 +82,16 @@ export function conectarEventos() {
         renderMenu();
     });
 
+
     document.getElementById("btnBuscar").addEventListener("click", () => {
+
         const valor = document.getElementById("inputBuscar").value;
 
         let resultadoBusqueda = buscarPlato(valor);
-        let resultadoVenta = venderPlato(valor, 1);
-        let estado = estadoGeneral();
 
-        renderMenu();
-
-        const output = document.getElementById("output");
-        output.innerHTML =
-            `<p>${resultadoBusqueda}</p>
-             <p>${resultadoVenta}</p>
-             <p>${estado}</p>` + output.innerHTML;
+        mostrarMensajes(resultadoBusqueda);
     });
+
 
     document.getElementById("btnStockBajo").addEventListener("click", () => {
         const lista = filtrarStock();
@@ -103,11 +103,38 @@ export function conectarEventos() {
         renderLista("Platos con stock bajo", textos);
     });
 
+
     document.getElementById("btnResumen").addEventListener("click", () => {
         const resumen = menu.map(plato =>
             `${plato.nombre} - S/ ${plato.precio}`
         );
 
         renderLista("Resumen del menú", resumen);
+    });
+
+    document.getElementById("btnVender").addEventListener("click", async () => {
+
+        const valor = document.getElementById("inputBuscar").value;
+
+        let resultadoBusqueda = buscarPlato(valor);
+        let estado = estadoGeneral();
+
+        try {
+
+            mostrarMensajes("Procesando pedido...", "procesando");
+
+            let resultadoVenta = await venderPlatoAsync(valor, 1);
+
+            renderMenu();
+            mostrarMensajes(resultadoBusqueda, "ok");
+            mostrarMensajes(resultadoVenta, "ok");
+            mostrarMensajes(estado, "ok");
+
+        } catch (error) {
+
+            mostrarMensajes(resultadoBusqueda, "error");
+            mostrarMensajes(error.message, "error");
+            mostrarMensajes(estado, "error");
+        }
     });
 }

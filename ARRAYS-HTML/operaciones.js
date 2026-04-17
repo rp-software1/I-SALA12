@@ -17,13 +17,31 @@ export function filtrarStock() {
 export function venderPlato(nombre, cantidad) {
     const plato = menu.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
 
-    if (!plato) return "No encontrado";
-    if (plato.stock === 0) return "No disponible";
-    if (plato.stock < cantidad) return "Stock insuficiente";
+    if (!plato) {
+        return { ok: false, mensaje: "No encontrado" };
+    }
+    if (plato.stock === 0) {
+        return { ok: false, mensaje: "No disponible" };
+    }
+    if (plato.stock < cantidad) {
+        return { ok: false, mensaje: "Stock insuficiente" };
+    }
 
     plato.stock -= cantidad;
-    return "Venta realizada";
+    return { ok: true, mensaje: "Venta realizada" };
 }
+
+export async function venderPlatoAsync(nombre, cantidad) {
+    const resultado = venderPlato(nombre, cantidad);
+
+    if (!resultado.ok) {
+        throw new Error(resultado.mensaje);
+    }
+
+    const respuesta = await simularRespuestaServidor(resultado.mensaje);
+    return respuesta;
+}
+
 
 export function obtenerEstado(stock) {
     if (stock === 0) return "AGOTADO";
@@ -45,4 +63,19 @@ export function estadoGeneral() {
     if (bajos > 0)
         return "Hay platos con stock bajo";
     return "Todo en orden";
+}
+
+// funcion de Crear simulación
+
+export function simularRespuestaServidor(resultado) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const falla = Math.random() < 0.3;
+            if (falla) {
+                reject("Error del servidor simulado.");
+            } else {
+                resolve(resultado);
+            }
+        }, 2000);
+    });
 }
