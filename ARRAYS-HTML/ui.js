@@ -125,7 +125,7 @@ export function conectarEventos() {
             return mostrarMensajes("Cantidad invslida", "error");
         }
         if (cantidad <= 0) {
-            return mostrarMensajes("Cantoidad debe ser mayor a 0", "error");
+            return mostrarMensajes("Cantidad debe ser mayor a 0", "error");
         }
 
 

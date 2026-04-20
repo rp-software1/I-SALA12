@@ -49,10 +49,10 @@ export async function venderPlatoAsync(nombre, cantidad) {
     if (plato.stock < cantidad) {
         throw new ErrorNegocio("Stock insuficiente");
     }
+    const respuesta = await simularRespuestaServidor("Venta realizada");
 
     plato.stock -= cantidad;
 
-    const respuesta = await simularRespuestaServidor("Venta realizada");
     return respuesta;
 }
 
