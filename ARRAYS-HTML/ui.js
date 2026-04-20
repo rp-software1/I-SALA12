@@ -115,6 +115,7 @@ export function conectarEventos() {
     document.getElementById("btnVender").addEventListener("click", async () => {
 
         const valor = document.getElementById("inputBuscar").value.trim();
+        const cantidad = parseInt(document.getElementById("inputCantidad").value);
 
         if (!valor) {
             return mostrarMensajes("Nombre vacío", "error");
@@ -123,7 +124,7 @@ export function conectarEventos() {
         try {
             mostrarMensajes("Procesando pedido...", "procesando");
 
-            const resultado = await venderPlatoAsync(valor, 1);
+            const resultado = await venderPlatoAsync(valor, cantidad);
 
             renderMenu();
             mostrarMensajes(resultado, "ok");
