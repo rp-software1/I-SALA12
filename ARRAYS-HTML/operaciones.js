@@ -79,3 +79,10 @@ export function simularRespuestaServidor(resultado) {
         }, 2000);
     });
 }
+
+export class ErrorNegocio extends Error {
+    constructor(mensaje) {
+        super(mensaje);
+        this.name = "ErrorNegocio";
+    }
+}
