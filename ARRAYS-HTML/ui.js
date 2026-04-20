@@ -128,9 +128,6 @@ export function conectarEventos() {
             return mostrarMensajes("Cantoidad debe ser mayor a 0", "error");
         }
 
-        if (cantidad > plato.stock) {
-            return mostrarMensajes("Cantidad del stock disponible", "error");
-        }
 
         try {
             mostrarMensajes("Procesando pedido...", "procesando");

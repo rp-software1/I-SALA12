@@ -43,11 +43,7 @@ export async function venderPlatoAsync(nombre, cantidad) {
     }
 
     if (cantidad <= 0 || isNaN(cantidad)) {
-        throw new ErrorNegocio("Cantidad inválida");
-    }
-
-    if (plato.stock === 0) {
-        throw new ErrorNegocio("Plato agotado");
+        throw new ErrorNegocio("Cantidad invalida");
     }
 
     if (plato.stock < cantidad) {
