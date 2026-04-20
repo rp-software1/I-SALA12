@@ -90,7 +90,7 @@ export function simularRespuestaServidor(resultado) {
         setTimeout(() => {
             const falla = Math.random() < 0.3;
             if (falla) {
-                reject("Error del servidor simulado.");
+                reject(new Error("Error del servidor simulado."));
             } else {
                 resolve(resultado);
             }

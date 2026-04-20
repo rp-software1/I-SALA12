@@ -114,27 +114,27 @@ export function conectarEventos() {
 
     document.getElementById("btnVender").addEventListener("click", async () => {
 
-        const valor = document.getElementById("inputBuscar").value;
+        const valor = document.getElementById("inputBuscar").value.trim();
 
-        let resultadoBusqueda = buscarPlato(valor);
-        let estado = estadoGeneral();
+        if (!valor) {
+            return mostrarMensajes("Nombre vacío", "error");
+        }
 
         try {
-
             mostrarMensajes("Procesando pedido...", "procesando");
 
-            let resultadoVenta = await venderPlatoAsync(valor, 1);
+            const resultado = await venderPlatoAsync(valor, 1);
 
             renderMenu();
-            mostrarMensajes(resultadoBusqueda, "ok");
-            mostrarMensajes(resultadoVenta, "ok");
-            mostrarMensajes(estado, "ok");
+            mostrarMensajes(resultado, "ok");
 
         } catch (error) {
 
-            mostrarMensajes(resultadoBusqueda, "error");
-            mostrarMensajes(error.message, "error");
-            mostrarMensajes(estado, "error");
+            if (error.name === "ErrorNegocio") {
+                mostrarMensajes(error.message, "error");
+            } else {
+                mostrarMensajes("Error del sistema: " + error.message, "error");
+            }
         }
     });
 }
