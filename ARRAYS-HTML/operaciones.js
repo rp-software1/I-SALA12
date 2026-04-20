@@ -32,13 +32,27 @@ export function venderPlato(nombre, cantidad) {
 }
 
 export async function venderPlatoAsync(nombre, cantidad) {
-    const resultado = venderPlato(nombre, cantidad);
+    const plato = menu.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
 
-    if (!resultado.ok) {
-        throw new Error(resultado.mensaje);
+    if (!nombre || nombre.trim() === "") {
+        throw new ErrorNegocio("Nombre vacío");
     }
 
-    const respuesta = await simularRespuestaServidor(resultado.mensaje);
+    if (!plato) {
+        throw new ErrorNegocio("Plato no encontrado");
+    }
+
+    if (cantidad <= 0 || isNaN(cantidad)) {
+        throw new ErrorNegocio("Cantidad invalida");
+    }
+
+    if (plato.stock < cantidad) {
+        throw new ErrorNegocio("Stock insuficiente");
+    }
+    const respuesta = await simularRespuestaServidor("Venta realizada");
+
+    plato.stock -= cantidad;
+
     return respuesta;
 }
 
@@ -72,10 +86,17 @@ export function simularRespuestaServidor(resultado) {
         setTimeout(() => {
             const falla = Math.random() < 0.3;
             if (falla) {
-                reject("Error del servidor simulado.");
+                reject(new Error("Error del servidor simulado."));
             } else {
                 resolve(resultado);
             }
         }, 2000);
     });
+}
+
+export class ErrorNegocio extends Error {
+    constructor(mensaje) {
+        super(mensaje);
+        this.name = "ErrorNegocio";
+    }
 }
