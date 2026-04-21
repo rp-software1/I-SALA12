@@ -30,7 +30,7 @@
                     <ul>
                         {platos.map(plato => (
                             <li key={plato.id}>
-                                {plato.nombre} - S/ {plato.precio} - Stock {plato.stock} - plato {plato.disponible ? "Disponible" : "Agotado"}
+                                {plato.nombre} - S/ {plato.precio} - Categoria: {plato.categoria} - Stock: {plato.stock} - {plato.disponible ? "Disponible" : "Agotado"}
                             </li>
                         ))}
                     </ul>
