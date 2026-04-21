@@ -11,6 +11,7 @@
     <h1>Carta del Restaurante</h1>
 
     <div id="carta"></div>
+    <button id="btnAgregar">Agregar plato </button>
 
     <script>
         let platos = [
@@ -42,6 +43,12 @@
         }
 
         renderCarta(platos);
+
+        document.getElementById("btnAgregar").addEventListener("click", () => {
+            const nuevoPlato = { id: 4, nombre: "Juane", categoria: "segundos", precio: 12, stock: 15, disponible: true };
+            platos.push(nuevoPlato);
+            renderCarta(platos);
+        });
 
     </script>
 
