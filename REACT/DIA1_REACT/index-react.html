@@ -29,7 +29,7 @@
                     <h1>Carta de restaurantes</h1>
                     <ul>
                         {platos.map(plato => (
-                            <li key={plato.id}>
+                            <li key={plato.id} className="rojo">
                                 {plato.nombre} - S/ {plato.precio} - Categoria: {plato.categoria} - Stock: {plato.stock} - {plato.disponible ? "Disponible" : "Agotado"}
                             </li>
                         ))}
