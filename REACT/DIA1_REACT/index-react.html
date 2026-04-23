@@ -3,20 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurante Marcos</title>
 </head>
 
 <body>
 
     <div id="root"></div>
+
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script type="text/babel">
 
-        const platosMock = [
+        const platos = [
             { id: 1, nombre: "Lomo saltado", categoria: "segundos", precio: 18, stock: 3, disponible: true },
             { id: 2, nombre: "Arroz con pollo", categoria: "segundos", precio: 12, stock: 5, disponible: true },
             { id: 3, nombre: "Sopa de verduras", categoria: "entradas", precio: 8, stock: 0, disponible: false },
@@ -28,27 +28,25 @@
             return (
                 <div>
                     <h2>{nombre}</h2>
-                    <p>S/ {precio}</p>
-                    <p>Categoria:  {categoria}</p>
+                    <p>Categoría: {categoria}</p>
+                    <p>Precio: S/ {precio}</p>
                     <p>Stock: {stock}</p>
                     <p style={{ color: disponible ? "black" : "red" }}>{disponible ? "✅ Disponible" : "❌ Agotado"}</p>
                 </div>
             );
         }
 
-
-
         function Carta() {
             return (
                 <div>
-                    <h1>Carta de restaurantes</h1>
+                    <h1>Carta del Restaurante</h1>
 
-                    {platosMock.map(plato => (
+                    {platos.map(plato => (
                         <PlatoCard
                             key={plato.id}
                             nombre={plato.nombre}
-                            precio={plato.precio}
                             categoria={plato.categoria}
+                            precio={plato.precio}
                             stock={plato.stock}
                             disponible={plato.disponible}
                         />
@@ -60,6 +58,7 @@
 
         const root = ReactDOM.createRoot(document.getElementById("root"));
         root.render(<Carta />);
+
     </script>
 
 </body>

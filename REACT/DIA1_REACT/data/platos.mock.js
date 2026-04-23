@@ -1,6 +1,4 @@
-// data/platos.mock.js
-// Forma exacta del contrato API acordado con el equipo de Node
-// Cuando GET /api/platos esté listo, solo cambia de dónde vienen — PlatoCard no cambia
+
 export const platosMock = [
     { id: 1, nombre: "Lomo saltado", categoria: "segundos", precio: 18, stock: 3, disponible: true },
     { id: 2, nombre: "Arroz con pollo", categoria: "segundos", precio: 12, stock: 5, disponible: true },
