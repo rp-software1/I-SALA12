@@ -22,18 +22,36 @@
             { id: 3, nombre: "Sopa de verduras", categoria: "entradas", precio: 8, stock: 0, disponible: false }
         ];
 
+        function platocard([nombre, categoria, precio, stock, disponible]) {
+            return (
+                <div>
+                    <h2>{nombre}</h2>
+                    <p>S/ {precio}</p>
+                    <p>categoria:  {categoria}</p>
+                    <p>Stock: {stock}</p>
+                    <p>{disponible ? "Disponible" : "Agotado"}</p>
+                </div>
+            );
+        }
+
+
 
         function Carta() {
             return (
                 <div>
                     <h1>Carta de restaurantes</h1>
-                    <ul>
-                        {platos.map(plato => (
-                            <li key={plato.id} className="rojo">
-                                {plato.nombre} - S/ {plato.precio} - Categoria: {plato.categoria} - Stock: {plato.stock} - {plato.disponible ? "Disponible" : "Agotado"}
-                            </li>
-                        ))}
-                    </ul>
+
+                    {platos.map(plato => (
+                        <platocard
+                            key={plato.id}
+                            nombre={plato.nombre}
+                            precio={plato.precio}
+                            categoria={plato.categoria}
+                            stock={plato.stock}
+                            disponible={plato.disponible}
+                        />
+                    ))}
+
                 </div>
             );
         }
