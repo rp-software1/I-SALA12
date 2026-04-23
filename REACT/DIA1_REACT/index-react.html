@@ -4,6 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Restaurante Marcos</title>
+    <style>
+        .disponible {
+            color: black;
+        }
+
+        .agotado {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,7 +40,7 @@
                     <p>Categoría: {categoria}</p>
                     <p>Precio: S/ {precio}</p>
                     <p>Stock: {stock}</p>
-                    <p style={{ color: disponible ? "black" : "red" }}>{disponible ? "✅ Disponible" : "❌ Agotado"}</p>
+                    <p className={disponible ? "disponible" : "agotado"}>{disponible ? "✅ Disponible" : "❌ Agotado"}</p>
                 </div>
             );
         }
