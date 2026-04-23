@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurante Marco</title>
+</head>
+
+<body>
+
+    <h1>Carta del Restaurante</h1>
+
+    <div id="carta"></div>
+    <button id="btnAgregar">Agregar plato </button>
+
+    <script>
+        let platos = [
+            { id: 1, nombre: "Lomo saltado", categoria: "segundos", precio: 18, stock: 3, disponible: true },
+            { id: 2, nombre: "Arroz con pollo", categoria: "segundos", precio: 12, stock: 5, disponible: true },
+            { id: 3, nombre: "Sopa de verduras", categoria: "entradas", precio: 8, stock: 0, disponible: false }
+        ];
+
+
+        function renderCarta(platos) {
+            const carta = document.getElementById("carta");
+            carta.innerHTML = "";
+
+            let html = "<ul>";
+
+            for (let i = 0; i < platos.length; i++) {
+                const p = platos[i];
+
+                let estado = p.disponible ? "Disponible" : "Agotado";
+
+                html += `<li>
+          ${p.nombre} — S/ ${p.precio} — Stock: ${p.stock} — ${estado}
+        </li>`;
+            }
+
+            html += "</ul>";
+
+            carta.innerHTML = html;
+        }
+
+        renderCarta(platos);
+
+        document.getElementById("btnAgregar").addEventListener("click", () => {
+            const nuevoPlato = { id: 4, nombre: "Juane", categoria: "segundos", precio: 12, stock: 15, disponible: true };
+            platos.push(nuevoPlato);
+            renderCarta(platos);
+        });
+
+    </script>
+
+</body>
+
+</html>

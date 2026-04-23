@@ -1,0 +1,20 @@
+1.  En el Sprint 0 tenías renderMenu() con innerHTML. Hoy construiste PlatoCard. 
+    ¿Qué diferencia concreta hay en cómo cada uno actualiza la pantalla cuando cambia un solo plato? 
+    Menciona el Virtual DOM en tu respuesta.
+
+-   Cada vez que cambia un plato, se vuelve a renderizar todo el contenido, lo cual el navegador borra todo y construye todo 
+    el DOM.
+
+2.  ¿Qué es JSX exactamente? ¿Es HTML? ¿Es JavaScript? ¿Qué hace Vite con él antes de que llegue al navegador?
+
+-   jsx es una extencion de JavaScript, que se suele parecer a html y vite es un transformador que transforma jsx a JavaScript.
+
+3.  PlatoCard recibe los mismos campos que va a devolver GET /api/platos del equipo de Node. 
+    ¿Por qué eso importa? ¿Qué van a tener que cambiar en PlatoCard cuando el endpoint esté listo?
+
+-   importaya qie eso esta diseñado con una misma estructura de datos que se da en el backend, platocard solo cambiaria la fuente 
+    de datos, mas no la logica ni la estructura.
+
+4.  Mañana instalan Vite y crean el proyecto real. ¿Qué problema resuelve Vite que hoy resolvieron con el CDN de React?
+
+-   vite resuelve la mejora de rendimiento, una compilacion automatica, usa modulos modernos y etc, vite es mas moderno, rapido y automatizado.
