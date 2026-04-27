@@ -1,0 +1,12 @@
+¿Que es el StackBlitz y que ventajas tiene?
+
+- La ventaja es que nos ayuda a generan un proyecto creado con vite y react en tan solo unos segundos y 
+otra ventaja es que es de una ejecucion automatica.
+
+¿Con que librerias trabaja StackBlitz?
+
+- Por lo que se esta biendo en estos momentos, el StackBlitz trabaja con las librerias de react, vite y typeScript
+
+¿Que es para ti el StackBlitz?
+
+- Es una pagina que nos ayuda a programar directanente de nuestro navegador web que tengamos.
