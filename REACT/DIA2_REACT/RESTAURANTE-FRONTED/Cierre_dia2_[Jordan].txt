@@ -1,0 +1,21 @@
+--Jordna Brandon Soplin Natorce
+
+1-  ¿Qué hace main.jsx exactamente? ¿Qué pasaría si lo borraras del proyecto?
+
+Un main.jsx suele ser el punto de entrada de alguna aplicacion que vayamos a crear, especial mente si usamos react y vite, y si 
+no se llega a tener el main nuestro react no arrancaria y no se terminaria viendo nada en pantalla.
+
+2-  ¿Por qué PlatoCard vive en components/ y Home vive en pages/? ¿Cuál es la diferencia concreta entre los dos?
+
+En lo que es components, nos sirve para tener pieza pequeñas que se puedan reutilizar, estos no representan una pagina completa,
+solo reciben datos. Y en paes, es donde va la pantalla completa de la app, se suele usar varios componetes y tambien se puede conectar nuestras rutas de navegacion.
+
+3-  En el Día 1 usabas import { platosMock } from "./data/platos.mock.js". ¿Por qué ese import funciona ahora con Vite y no funcionaba con el CDN del Día 1?
+
+Por que con vite puedo trabajar mi proyecto con modulos, lo cual entiende y ejecuta sin que se configure casi nada. Y con cdn 
+era mas un entorno mas simple y no suele estar configurado del todo y eso se suele usar en proyectos mas simples.
+
+4-  hooks/, services/ y context/ están vacías hoy. ¿Qué va a vivir en cada una y desde qué día del proyecto se van a usar?
+
+hooks, services y context lo usaremos mas en manejo de estado reutilizable por si se quiere usar varios componentes, se llamara 
+diferentes conecciones  y hacer un estado global.

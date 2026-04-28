@@ -3,4 +3,11 @@ EVALUADO: Yojan Yobriner Lavado Limaylla
 ESCENARIO ELEGIDO: Tengo este JSX: <li class="plato">{if(plato.disponible){"✅"}}</li>. Hay dos errores. Encuéntralos, explica por qué cada uno es un error y corrígelos.
 RESUMEN DE LA RESPUESTA: Explico que el primer error es la creación de un class, ya que en un archivo react se estaria usando un class Name para asi asignar clases, y el otro error seria que jsx no acepta sentecias directamente sino tercearios, en la parte de la condicion if.
 QUÉ ENTENDIÓ BIEN: Entendio el problema y supo decir que correcciones se deberia hacer.
-QUÉ NECESITA REPASAR: se necesitaria repasar un poco la manera de explicacion en la parte del jsx.
+QUÉ NECESITA REPASAR: Se necesitaria repasar un poco la manera de explicacion en la parte del jsx.
+
+EVALUADOR: Yojan Yobriner Lavado Limaylla 
+EVALUADO: Jordan Brandon Soplin Natorce
+ESCENARIO ELEGIDO: En el Sprint 0 tenían renderMenu() con innerHTML. Hoy construyeron PlatoCard. Si el restaurante tiene 50 platos y cambia el stock de uno solo, ¿qué hace cada solución? ¿Cuántos nodos del DOM toca cada una?
+RESUMEN DE LA RESPUESTA: Que básicamente PlatoCard solo llamaría al plato afectado en este caso el cambio de stock realizado, entonces solo se vería afectado la cantidad de nodos que se desean cambiar.
+QUÉ ENTENDIÓ BIEN: Que al seprarlo todo en otro archivo aparte como es PlatoCard esto ayuda a tener un mejor orden para los cambios que se quieran realizar en las propiedades de los objetos del array. 
+QUÉ NECESITA REPASAR: Se necesita repasar un poco la expliación en sobre para que otras cosas sirve PlatoCard.
