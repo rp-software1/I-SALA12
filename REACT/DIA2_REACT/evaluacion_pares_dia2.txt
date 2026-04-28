@@ -5,9 +5,16 @@ RESUMEN DE LA RESPUESTA: Que por ejemplo CDN no es una instalación de librerias
 QUÉ ENTENDIÓ BIEN: Entendie que el CDN no instala librerias y que Vite si trabaja con dependencias instaladas mediante npm, a su vez que Vite es una herramientas de desarrollo que permite trabajar con un proyecto estructurado.
 QUÉ NECESITA REPASAR: Debe reforzar las ventajas prácticas de Vite frente al CDN como el hot reload, el uso de módulos y el porqué esto mejora el desarrolo en proyectos grandes.
 
+--------------------------------------------------------------------------------------------------------------------------------
+
 EVALUADOR: Jordan Brandon Soplin Natorce
 EVALUADO: Yojan Yobriner Lavado Limaylla
-ESCENARIO ELEGIDO: 
-QUÉ ENTENDIÓ BIEN: 
-QUÉ NECESITA REPASAR: 
+ESCENARIO ELEGIDO: Abre main.jsx sin mirarlo primero. Explícame línea por línea qué hace cada una. Sin leer — explicando.
+QUÉ ENTENDIÓ BIEN: Entendio bien lo que hace cada linea de codigo que aparecio en el main, como el los import, los from, los createrooot y etx
+QUÉ NECESITA REPASAR: Por mejorar solo la explicacion de manera mas profecional.
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
 
