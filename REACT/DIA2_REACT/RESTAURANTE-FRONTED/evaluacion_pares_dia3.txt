@@ -1,0 +1,18 @@
+EVALUADOR: Yojan Yobriner Lavado Limaylla 
+EVALUADO: Jordan Brandon Soplin Natorce
+ESCENARIO ELEGIDO: ¿Por qué NavBar no necesita el mock de mesas ni el de platos? ¿De dónde vienen sus datos? ¿Qué tipo de componente es NavBar comparado con MesaCard?
+RESUMEN DE LA RESPUESTA: El archivo NavBar no necesita de datos dinámicos ya que los otros son componentes dinámicos, en cambio NavBar es estático. En cuanto a los datos estos vienen desde la función Navbar donde llama los parámetros. Sobre que tipo de componenete es Navbar este es simple y estático a comparación de MesaCard que es  dinámico.
+QUÉ ENTENDIÓ BIEN: Entendió bien la diferencias que tienen Navbar a otros componentes en el mismo proyecto que uno es estático y el los otros más dinámicos.
+QUÉ NECESITA REPASAR: Mejorar ampliamente de donde más pueden venir los datos directamente para NavBar. 
+--------------------------------------------------------------------------------------------------------------------------------
+
+EVALUADOR: Jordan Brandon Soplin Natorce
+EVALUADO: Yojan Yobriner Lavado Limaylla
+ESCENARIO ELEGIDO: 
+QUÉ ENTENDIÓ BIEN: 
+QUÉ NECESITA REPASAR: 
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
