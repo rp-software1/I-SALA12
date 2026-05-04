@@ -1,0 +1,15 @@
+¿Cuántos componentes MesaCard hay en el árbol?
+Los mismos que en mesasMock o sea 6.
+
+Selecciona el MesaCard de la mesa ocupada. ¿Qué props recibe exactamente?
+número, capacidad, estado y comensales.
+
+Cambia el valor de capacidad en el mock. ¿Cuándo se actualiza en DevTools?
+Se actualiza automáticamente al guardar el archivo sin recargar.
+
+¿Cuál es el componente raíz de toda la aplicación?
+App.
+
+¿PlatoCard y MesaCard son hermanos o uno está dentro del otro?
+Si, porque ambos están dentro de App a través ded Home y MesasPage.
+

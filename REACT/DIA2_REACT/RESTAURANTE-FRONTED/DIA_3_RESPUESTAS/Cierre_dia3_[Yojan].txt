@@ -1,0 +1,11 @@
+- ¿Qué diferencia hay entre props y estado? Explícalo con el ejemplo de MesaCard — ¿cuál de sus datos es una prop y cuál podría ser estado en el futuro?
+En que  props son los datos que recibe un componenete desde su padre y en cambio estado es información que el propio componente puede cambiar por si mismo. Sobre MesaCard los datos como números, capacidad, el estado o los comensales son props porque vienen del mock, pero en futuro podría darse un cambio cuando una persona se sienta o se le levanta.
+
+- ¿Por qué las props son de solo lectura dentro del componente hijo? ¿Qué pasaría si MesaCard pudiera modificar la prop estado directamente?
+Pasa que no se pueden modificar ya que vienen del padre y ese es el flujo de datos en una sola dirección. Por eso si MesaCardpudiera cambiar el estado por su cuenta ya no sabriamos cual es el valor real lo cual traería varios errores.
+
+- Hoy NavBar muestra "Carta", "Mesas" y "Comandas" como texto. En el Día 7 se convierte en navegación real. ¿Qué tendrás que cambiar en NavBar ese día y qué NO tendrás que tocar?
+Supoongo en que los textos se cambiarían en enlaces, pero la estructura del componenete no cambiaría, solo la forma en como se navega.
+
+- En DevTools viste el árbol de componentes. ¿Cómo sabes si un componente recibió las props correctas sin tener que leer el código del padre?
+Usando la extensión podemos acceder a inspeccionar el elemento de la página y posteriormente en la pestaña componentes ver cuales props se estan recibiendo en la parte derecha, todo esto claro en tiempo real.
