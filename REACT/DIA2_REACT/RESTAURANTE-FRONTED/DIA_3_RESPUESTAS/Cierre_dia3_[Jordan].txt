@@ -1,0 +1,30 @@
+1) ¿Qué diferencia hay entre props y estado? Explícalo con el ejemplo de MesaCard — ¿cuál de sus datos es una prop y cuál podría ser estado en el futuro?
+
+Los props son mayormente componente pades que no se pueden mejor dentro del hijo y el estado es un dato dentro del componente y si se puede cambiar.
+function MesaCard({ numero, capacidad, estado, comensales }) {
+  return (
+    <div>
+      <h3>Mesa {numero}</h3>
+      <p>Capacidad: {capacidad}</p>
+      <p>Comensales: {comensales}</p>
+      <p
+        className={
+          estado === 'libre'
+            ? 'verde'
+            : estado === 'ocupada'
+            ? 'rojo'
+            : 'amarillo'
+        }
+Los props son los numeros, capacidad, estado y comensales. Y los estados seria como cambiar de libre a ocupada basicamente si el cliente hace clic para reservar una mesa, ya no seria fija sino un estado dinamico.
+
+2) ¿Por qué las props son de solo lectura dentro del componente hijo? ¿Qué pasaría si MesaCard pudiera modificar la prop estado directamente?
+
+Por que react es un flujo unidireccionaln, en la que el padre controla los datos y el hijo los muestra.- Si MesaCard modifica directamente un estado habria datos inconsistentes y ya no habria control del padre.
+
+3) Hoy NavBar muestra "Carta", "Mesas" y "Comandas" como texto. En el Día 7 se convierte en navegación real. ¿Qué tendrás que cambiar en NavBar ese día y qué NO tendrás que tocar?
+
+Si tengo que esos datos, para que sea una navegacion real, ya dejaria de ser una lista, sino un enlace real para poder navegar y se podria usar un <a>href=</a> y no tendria que tocar los props y tampoco el diiseño de la base.
+
+4) En DevTools viste el árbol de componentes. ¿Cómo sabes si un componente recibió las props correctas sin tener que leer el código del padre?
+
+Cuando se selecciona un componente como MesaCard, se lograria ver los props en el panel derecho, donde podras vereficar los valores, los tipos y si los props estan completos.
