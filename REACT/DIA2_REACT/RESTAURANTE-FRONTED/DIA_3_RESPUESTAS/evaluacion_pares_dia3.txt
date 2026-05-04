@@ -6,13 +6,14 @@ QUÉ ENTENDIÓ BIEN: Entendió bien la diferencias que tienen Navbar a otros com
 QUÉ NECESITA REPASAR: Mejorar ampliamente de donde más pueden venir los datos directamente para NavBar. 
 --------------------------------------------------------------------------------------------------------------------------------
 
-EVALUADOR: Jordan Brandon Soplin Natorce
-EVALUADO: Yojan Yobriner Lavado Limaylla
-ESCENARIO ELEGIDO: 
-QUÉ ENTENDIÓ BIEN: 
-QUÉ NECESITA REPASAR: 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
+EVALUADOR:Jordan Brandon Soplin Natorce
+EVALUADO: Yojan Yobriner Lavado Limaylla 
+ESCENARIO ELEGIDO:  Abre DevTools en la pestaña Components. Selecciona cualquier MesaCard. Explícame qué ves en el panel derecho y qué significa cada campo
+RESUMEN DE LA RESPUESTA: Puede ver los prop de los datos de los que agregamos, se ve los datos que llegan correctamente y los datos que recive el padre sin la necesidad de revisar el codigo 
+QUÉ ENTENDIÓ BIEN: Entendio bien lo que se ve en el panel de control de mesacard y que se esta cumpliendo 
+QUÉ NECESITA REPASAR: Se necesitaria repasar en tener un poco ser mas presiso y detallado sobre lo que ve.
 
 
