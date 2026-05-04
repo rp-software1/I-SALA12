@@ -1,0 +1,17 @@
+EVALUADOR: Yojan Yobriner Lavado Limaylla 
+EVALUADO: Jordan Brandon Soplin Natorce
+ESCENARIO ELEGIDO: ¿Por qué OrderForm.clase.jsx tiene .bind(this) en el constructor y OrderForm.jsx no? Si quitaras el .bind() de la clase, ¿qué error aparecería y en qué momento exacto?
+RESUMEN DE LA RESPUESTA: El bind en el OrdenForm.clase se asegura que el método sea aceptado para que pueda tener un buen funcionamiento y OrderForm.jsx no se una porque ya no es necesario el this. Entonces el error al quitar bind saldría un método error cuando se ejecute el evento.
+QUÉ ENTENDIÓ BIEN: Entendió que .bind(this) es necesario en clases para mantener el acceso así como los eventos
+QUÉ NECESITA REPASAR: Se puede reforzar más en que momento exacto se pierde el contexto de this cuando se ejecutan los handlres.
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+EVALUADOR:Jordan Brandon Soplin Natorce
+EVALUADO: Yojan Yobriner Lavado Limaylla 
+ESCENARIO ELEGIDO:  
+RESUMEN DE LA RESPUESTA: 
+QUÉ ENTENDIÓ BIEN: 
+QUÉ NECESITA REPASAR: 
