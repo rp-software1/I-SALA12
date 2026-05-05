@@ -1,0 +1,17 @@
+EVALUADOR: Yojan Yobriner Lavado Limaylla 
+EVALUADO: Jordan Brandon Soplin Natorce
+ESCENARIO ELEGIDO: ¿Por qué OrderForm.clase.jsx tiene .bind(this) en el constructor y OrderForm.jsx no? Si quitaras el .bind() de la clase, ¿qué error aparecería y en qué momento exacto?
+RESUMEN DE LA RESPUESTA: El bind en el OrdenForm.clase se asegura que el método sea aceptado para que pueda tener un buen funcionamiento y OrderForm.jsx no se una porque ya no es necesario el this. Entonces el error al quitar bind saldría un método error cuando se ejecute el evento.
+QUÉ ENTENDIÓ BIEN: Entendió que .bind(this) es necesario en clases para mantener el acceso así como los eventos
+QUÉ NECESITA REPASAR: Se puede reforzar más en que momento exacto se pierde el contexto de this cuando se ejecutan los handlres.
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+EVALUADOR:Jordan Brandon Soplin Natorce
+EVALUADO: Yojan Yobriner Lavado Limaylla 
+ESCENARIO ELEGIDO:  : En OrderForm.jsx, ¿por qué el useEffect tiene un array vacío []? ¿Qué pasaría si lo quitaras? ¿Qué pasaría si pusieras [mesaNumero] en vez de []?
+RESUMEN DE LA RESPUESTA: Para que el codigo se ejecute una sola vez al mostrarse en pantalla,  si lo quitaramos el efecto de orderfrom se ejecutaria en cada render por si es que cambio algo del estado todo cambiaria, el fecto se ejecutaria cada ves que cambie la mesa seleccionada 
+QUÉ ENTENDIÓ BIEN: Entendio bien que ocacinaria cada paso que se podria dar 
+QUÉ NECESITA REPASAR: Se puede reforzar los ejemplos brindados durante la explicacion.
