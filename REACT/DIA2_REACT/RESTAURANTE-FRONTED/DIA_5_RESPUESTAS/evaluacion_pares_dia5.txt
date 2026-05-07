@@ -1,0 +1,16 @@
+EVALUADOR:Jordan Brandon Soplin Natorce
+EVALUADO:Yojan Yobriner Lavado Limaylla 
+ESCENARIO ELEGIDO: ¿Qué pasaría si quitaras el [] del useEffect que carga el menú? Describe exactamente qué vería el usuario en pantalla y por qué.
+RESUMEN DE LA RESPUESTA: Si se lo quitaras el menu podria recargarse o incluso ponerse lenta, saliendo asi un error y para evitar eso se unaria el useEffect.  
+QUÉ ENTENDIÓ BIEN: Lo entendio bine en ciertos aspectos 
+QUÉ NECESITA REPASAR:La interpretacion.
+
+--------------------------------------------------------------------------------------------------------
+
+EVALUADOR:Yojan Yobriner Lavado Limaylla 
+EVALUADO: Jordan Brandon Soplin Natorce
+ESCENARIO ELEGIDO:
+RESUMEN DE LA RESPUESTA:
+QUÉ ENTENDIÓ BIEN:
+QUÉ NECESITA REPASAR:
+
