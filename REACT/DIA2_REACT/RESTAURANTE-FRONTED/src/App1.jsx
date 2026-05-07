@@ -1,4 +1,4 @@
-import NavBar from './components/NavBar.jsx';
+import NavBar from './components1/NavBar.jsx';
 import Home from './pages/Home.jsx';
 import MesasPage from './pages/MesasPage.jsx';
 import ComandasPage from './pages/ComandasPage';

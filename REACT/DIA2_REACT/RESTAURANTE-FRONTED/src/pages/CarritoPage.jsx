@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { platosmock } from '../data1/platos.mock1';
+import { platosmock1 } from '../data1/platos.mock1';
 
 export default function CarritoPage() {
     const [platos, setPlatos] = useState([]);
@@ -7,7 +7,7 @@ export default function CarritoPage() {
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         setTimeout(() => {
-            setPlatos(platosmock);
+            setPlatos(platosmock1);
             setLoading(false);
         }, 4000);
     }, []);
@@ -38,7 +38,7 @@ export default function CarritoPage() {
     return (
         <div>
             <h2>Armar Comanda</h2>
-            {platosmock.map((plato) => (
+            {platosmock1.map((plato) => (
                 <div key={plato.id}>
                     <span>
                         {plato.nombre} — S/ {plato.precio}
