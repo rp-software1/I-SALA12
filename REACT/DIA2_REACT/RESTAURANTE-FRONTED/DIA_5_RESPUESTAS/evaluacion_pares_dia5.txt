@@ -1,0 +1,16 @@
+EVALUADOR:Jordan Brandon Soplin Natorce
+EVALUADO:Yojan Yobriner Lavado Limaylla 
+ESCENARIO ELEGIDO: ¿Qué pasaría si quitaras el [] del useEffect que carga el menú? Describe exactamente qué vería el usuario en pantalla y por qué.
+RESUMEN DE LA RESPUESTA: Si se lo quitaras el menu podria recargarse o incluso ponerse lenta, saliendo asi un error y para evitar eso se unaria el useEffect.  
+QUÉ ENTENDIÓ BIEN: Lo entendio bine en ciertos aspectos 
+QUÉ NECESITA REPASAR:La interpretacion.
+
+--------------------------------------------------------------------------------------------------------
+
+EVALUADOR:Yojan Yobriner Lavado Limaylla 
+EVALUADO: Jordan Brandon Soplin Natorce
+ESCENARIO ELEGIDO:  Abre CarritoPage.jsx. Sin ejecutarlo, señálame exactamente dónde vive el estado del carrito, dónde cambia y dónde se usa en el JSX. Luego explícame por qué setCarrito([...carrito, plato]) funciona y carrito.push(plato) no.
+RESUMEN DE LA RESPUESTA: Identificó correctamente donde vive, cambia y se renderiza el estado del carrito, también explicó la diferencia entre actualizar de forma inmmutable y mutarlo directamente o sea la diferencia entre usar push o no.
+QUÉ ENTENDIÓ BIEN: Entendió bien cómo React detecta cambios de estado usando nuevas referencias en memoria.
+QUÉ NECESITA REPASAR: Necesita repasar cuando conviene más usar map, filter según el tipo de actualización de estado.
+
