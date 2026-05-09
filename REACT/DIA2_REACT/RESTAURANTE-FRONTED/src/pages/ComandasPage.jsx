@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import OrderForm from '../components/OrderForm';
+import OrderForm from '../components1/OrderForm';
 import { mesasMock } from '../data1/mesas.mock';
 
 function ComandasPage() {
