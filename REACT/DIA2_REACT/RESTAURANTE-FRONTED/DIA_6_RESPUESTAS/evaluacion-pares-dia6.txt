@@ -9,8 +9,8 @@ QUÉ NECESITA REPASAR:forma de expresarce sus ideas
 
 EVALUADOR: Yojan Yobriner Lavado Limaylla
 EVALUADO: Jordan Brandon Soplin Natorce
-ESCENARIO ELEGIDO:
-RESUMEN DE LA RESPUESTA:
-QUÉ ENTENDIÓ BIEN:
-QUÉ NECESITA REPASAR:
+ESCENARIO ELEGIDO: ¿Por qué VITE_API_URL vive en .env.local y no directamente en api.js como una constante? Da dos razones concretas — una técnica y una de seguridad.
+RESUMEN DE LA RESPUESTA: La primera razón sería eso es porque permite cambiar fácilmente la URL del backen según ene l entorno en el que trabajemos sin moficar el código. Así el código funciona en distintos ambientes. En temas de seguridad nos ayudaria a seprar las configuraciones de nuestro código para así evitar exponer algovital del respositorio.
+QUÉ ENTENDIÓ BIEN: Entendió correctamente la función del entorno y porque Vite ncesita el profijo VITE_.
+QUÉ NECESITA REPASAR: Necesita reforzar un poco más la diferencia entre la configuración de seguridad real de datos sensibles en fronted.
 
