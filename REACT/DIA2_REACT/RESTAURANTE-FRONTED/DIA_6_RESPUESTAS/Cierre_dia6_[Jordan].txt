@@ -1,0 +1,15 @@
+El mock del Día 5 y la API del Día 6 devuelven platos con la misma forma. ¿Qué ventaja tiene eso? ¿Qué habrían tenido que cambiar en el componente si la API devolviera una estructura diferente?
+
+-La ventaja que tenemos con frontend, es que este puede seguir funcionando igual, aun que el mock cambie a la api real y como ambos devuelven los datos desde la misma estructura, no suele ser necesario modificar la logica de los componentes, solo cambiaria su origen
+
+Explica el patrón loading/error/data con tus propias palabras. ¿Por qué los tres estados son necesarios? ¿Qué pasa con la experiencia del usuario si falta alguno de los tres?
+
+-El dicho patron nos sirve para manejar de forma correcta las peticiones que se le da al backend, suelen ser necesarios los 3 porque las peticiones pueden ser de diferentes situaciones y la intefaz debe reaccionar a cada una, y este patron mejora mucha la experiencia del usuario ya que siempre comunica lo que pasa
+
+El jueves comienza la integración cruzada con el Grupo A. ¿Qué preguntas concretas tienes sobre el backend que necesitas que el de Node te explique para conectar bien el sistema?
+
+-cual es la url del api, que metodo http usa cada endpoint,  que datos necesita recibir cada endpoint en el body.
+
+Describe con tus palabras qué es un JWT y cómo fluye entre frontend y backend. No uses código — solo la idea. Si no puedes explicarlo sin mirar los apuntes, ¿qué parte no entendiste?
+
+-El JWT suele ser un token que nos sirve para identificar y autentificar a un usuario despues de iniciar sesion, la idea principal de este token es que funcione como una prueba de identidad temporal sin tener que iniciar sesion en cada peticion.
