@@ -1,0 +1,16 @@
+EVALUADOR: Jordan Brandon Soplin Natorce
+EVALUADO: Yojan Yobriner Lavado Limaylla
+ESCENARIO ELEGIDO: El backend devuelve un error 500. Traza exactamente qué pasa en el código — qué atrapa el catch, qué estado cambia, qué ve el usuario. Luego dime cómo lo probarías sin apagar el backend.
+RESUMEN DE LA RESPUESTA: cuando eso el pasa, lo captura el catch, react renderiza el coponente para asi usar la condicional if, y se probaria cambiar el puerto del local a un numero diferente para saber si el error continua
+QUÉ ENTENDIÓ BIEN:comprendido
+QUÉ NECESITA REPASAR:forma de expresarce sus ideas
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+EVALUADOR: Yojan Yobriner Lavado Limaylla
+EVALUADO: Jordan Brandon Soplin Natorce
+ESCENARIO ELEGIDO:
+RESUMEN DE LA RESPUESTA:
+QUÉ ENTENDIÓ BIEN:
+QUÉ NECESITA REPASAR:
+
