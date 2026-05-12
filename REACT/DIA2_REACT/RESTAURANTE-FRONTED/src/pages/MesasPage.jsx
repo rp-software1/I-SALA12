@@ -1,5 +1,6 @@
-import { mesasMock } from '../data1/mesas.mock.js';
-import MesaCard from '../components1/MesaCard.jsx';
+import { mesasMock } from '../data/mesas.mock.js';
+import MesaCard from '../components/MesaCard.jsx';
+import { Link } from 'react-router-dom';
 
 function MesasPage() {
     return (
@@ -7,17 +8,18 @@ function MesasPage() {
             <h2>Mesas del Restaurante</h2>
 
             {mesasMock.map((mesa) => (
-                <MesaCard
-                    key={mesa.id}
-                    numero={mesa.numero}
-                    capacidad={mesa.capacidad}
-                    estado={mesa.estado}
-                    comensales={mesa.comensales}
-                />
+                <div key={mesa.id}>
+                    <MesaCard
+                        numero={mesa.numero}
+                        capacidad={mesa.capacidad}
+                        estado={mesa.estado}
+                        comensales={mesa.comensales}
+                    />
+                    <Link to={`/mesas/${mesa.id}`}>Ver Detalle</Link>
+                </div>
             ))}
         </div>
     );
 }
 
 export default MesasPage;
-
