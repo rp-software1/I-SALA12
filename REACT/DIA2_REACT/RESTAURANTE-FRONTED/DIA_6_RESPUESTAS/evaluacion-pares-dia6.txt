@@ -1,0 +1,16 @@
+EVALUADOR: Jordan Brandon Soplin Natorce
+EVALUADO: Yojan Yobriner Lavado Limaylla
+ESCENARIO ELEGIDO: El backend devuelve un error 500. Traza exactamente qué pasa en el código — qué atrapa el catch, qué estado cambia, qué ve el usuario. Luego dime cómo lo probarías sin apagar el backend.
+RESUMEN DE LA RESPUESTA: cuando eso el pasa, lo captura el catch, react renderiza el coponente para asi usar la condicional if, y se probaria cambiar el puerto del local a un numero diferente para saber si el error continua
+QUÉ ENTENDIÓ BIEN:comprendido
+QUÉ NECESITA REPASAR:forma de expresarce sus ideas
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+EVALUADOR: Yojan Yobriner Lavado Limaylla
+EVALUADO: Jordan Brandon Soplin Natorce
+ESCENARIO ELEGIDO: ¿Por qué VITE_API_URL vive en .env.local y no directamente en api.js como una constante? Da dos razones concretas — una técnica y una de seguridad.
+RESUMEN DE LA RESPUESTA: La primera razón sería eso es porque permite cambiar fácilmente la URL del backen según ene l entorno en el que trabajemos sin moficar el código. Así el código funciona en distintos ambientes. En temas de seguridad nos ayudaria a seprar las configuraciones de nuestro código para así evitar exponer algovital del respositorio.
+QUÉ ENTENDIÓ BIEN: Entendió correctamente la función del entorno y porque Vite ncesita el profijo VITE_.
+QUÉ NECESITA REPASAR: Necesita reforzar un poco más la diferencia entre la configuración de seguridad real de datos sensibles en fronted.
+
