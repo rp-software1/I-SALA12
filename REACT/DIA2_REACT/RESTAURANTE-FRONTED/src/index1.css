@@ -1,0 +1,176 @@
+.disponible {
+    color: black;
+}
+
+.agotado {
+    color: red;
+}
+
+.verde {
+    color: green;
+}
+
+.rojo {
+    color: red;
+}
+
+.amarillo {
+    color: yellow;
+}
+
+.bg-gray-800 {
+    background-color: #1f2937;
+}
+
+.text-white {
+    color: white;
+}
+
+.px-6 {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.py-3 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.gap-8 {
+    gap: 32px;
+}
+
+.gap-6 {
+    gap: 24px;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.text-lg {
+    font-size: 20px;
+}
+
+.text-yellow-400 {
+    color: #facc15;
+}
+
+.border-b-2 {
+    border-bottom: 2px solid #facc15;
+}
+
+.pb-1 {
+    padding-bottom: 4px;
+}
+
+.hover\:text-yellow-300:hover {
+    color: #fde047;
+}
+
+.transition-colors {
+    transition: color 0.2s ease;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.detalle-container {
+    padding: 24px;
+    max-width: 500px;
+}
+
+.volver-link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.volver-link:hover {
+    text-decoration: underline;
+}
+
+.titulo-mesa {
+    font-size: 32px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.estado-libre {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.estado-ocupada {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.error-text {
+    color: #ef4444;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.volver-btn {
+    margin-top: 16px;
+    padding: 10px 16px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.volver-btn:hover {
+    background-color: #2563eb;
+}
+
+.notfound-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.notfound-title {
+    font-size: 80px;
+    color: #d1d5db;
+    margin: 0;
+}
+
+.notfound-text {
+    color: #6b7280;
+    font-size: 18px;
+}
+
+.notfound-btn {
+    background-color: #eab308;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.notfound-btn:hover {
+    background-color: #ca8a04;
+}

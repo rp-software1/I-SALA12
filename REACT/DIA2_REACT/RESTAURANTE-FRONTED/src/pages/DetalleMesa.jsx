@@ -5,27 +5,47 @@ export default function DetalleMesa() {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    const mesa = mesasMock.find((m) => String(m.id) === id);
+    const mesa = mesasMock.find(m => String(m.id) === id);
 
     if (!mesa) {
         return (
-            <div>
-                <p>Mesa {id} no encontrada</p>
+            <div className="detalle-container">
+                <p className="error-text">Mesa {id} no encontrada</p>
 
-                <button onClick={() => navigate('/mesas')}>Volver a mesas</button>
+                <button
+                    className="volver-btn"
+                    onClick={() => navigate('/mesas')}
+                >
+                    Volver a mesas
+                </button>
             </div>
         );
     }
 
     return (
-        <div>
-            <Link to="/mesas">← Volver</Link>
+        <div className="detalle-container">
+            <Link to="/mesas" className="volver-link">
+                ← Volver
+            </Link>
 
-            <h1>Mesa {mesa.numero}</h1>
+            <h1 className="titulo-mesa">
+                Mesa {mesa.numero}
+            </h1>
 
             <p>Capacidad: {mesa.capacidad}</p>
 
-            <p>Estado: {mesa.estado}</p>
+            <p>
+                Estado:
+                <span
+                    className={
+                        mesa.estado === 'libre'
+                            ? 'estado-libre'
+                            : 'estado-ocupada'
+                    }
+                >
+                    {' '}{mesa.estado}
+                </span>
+            </p>
 
             <p>Comensales: {mesa.comensales}</p>
         </div>
