@@ -1,11 +1,18 @@
-// 1. createContext — crea el contenedor global
-//    Va en un archivo separado: src/context/PedidoContext.jsx
+import { createContext, useContext, useState } from 'react';
+
 const PedidoContext = createContext(null);
 
-// 2. Provider — el componente que tiene el estado y lo comparte
-//    Envuelve la app en main.jsx o App.jsx
-function PedidoProvider({ children }) {
+const estadoInicial = {
+    mesaId: null,
+    tipo: 'mesa',
+    estado: 'pendiente',
+    items: [],
+    total: 0,
+};
+
+export function PedidoProvider({ children }) {
     const [pedido, setPedido] = useState(estadoInicial);
+
     return (
         <PedidoContext.Provider value={{ pedido, setPedido }}>
             {children}
@@ -13,9 +20,12 @@ function PedidoProvider({ children }) {
     );
 }
 
-// 3. useContext — el hook que usa cualquier componente para leer el estado
-//    No importa qué tan adentro esté el componente en el árbol
-function CarritoPage() {
-    const { pedido } = useContext(PedidoContext);
-    return <p>Items: {pedido.items.length}</p>;
+export function usePedido() {
+    const context = useContext(PedidoContext);
+
+    if (!context) {
+        throw new Error('usePedido debe usarse dentro de PedidoProvider');
+    }
+
+    return context;
 }
