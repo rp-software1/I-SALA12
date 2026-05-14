@@ -1,0 +1,26 @@
+1. ¿Qué hace BrowserRouter exactamente?
+Pues nos que React maneje las rutas sin recargar toda la página.
+
+¿Qué pasa si envuelves solo una parte de la app en lugar de toda?
+Pasría que solo los componentes que estén dentro de BrowserRouter podrán usar rutas, Links o hooks como useNavigate. Lo demás quedaría fuera del sistema de navegación y podría dar errores.
+
+2. ¿Por qué NavLink recibe className como función y no string?
+Porque así puede revisar si el link está activo o no, entonces dpendiendo de eso devuelve estilos diferentes automáticamente.
+
+¿Qué tiene que devolver esa función?
+Pues un string con clases CSS. Por ejemplo un color amarillo cuando la ruta está activa y otro estilo cuando no lo está.
+
+3. El usuario está en /mesas/5 y hace clic en Atrás del navegador. ¿Qué pasa? ¿A dónde va?
+React Router usa el historial del navegador, así que vuelve a la ruta anterior donde estaba el usuario antes de entrar a /mesas/5.
+
+4. ¿Por qué path='*' tiene que ir al final de Routes?
+Porque captura cualquier ruta que no coincida. 
+
+¿Qué pasaría si va al principio?
+Siempre mostraría el 404 aunque la ruta exista, porque el asterisco coincide con todo.
+
+5. useParams devuelve string. Si el ID en el mock es número, ¿qué problema aparece al comparar?
+El problema es que uno sería texto y el otro número, entonces la comparación puede fallar aunque tengan el mismo valor.
+
+¿Cómo lo resuelven?
+Convirtiendo el id de useParams a número usando Number() o parseInt() antes de comparar.
