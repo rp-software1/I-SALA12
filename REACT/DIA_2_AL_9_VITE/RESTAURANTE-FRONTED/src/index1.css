@@ -174,3 +174,36 @@ ul {
 .notfound-btn:hover {
     background-color: #ca8a04;
 }
+
+.carrito-container {
+    padding: 20px;
+}
+
+.carrito-titulo {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.carrito-info {
+    color: gray;
+    margin-bottom: 15px;
+}
+
+.carrito-vacio {
+    color: #777;
+}
+
+.carrito-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.carrito-total {
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+    font-size: 20px;
+}

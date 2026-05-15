@@ -1,5 +1,5 @@
-import { mesasMock } from '../data/mesas.mock.js';
-import MesaCard from '../components/MesaCard.jsx';
+import { mesasMock } from '../data1/mesas.mock.js';
+import MesaCard from '../components1/MesaCard.jsx';
 import { Link } from 'react-router-dom';
 
 function MesasPage() {

@@ -1,5 +1,5 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { mesasMock } from '../data/mesas.mock';
+import { mesasMock } from '../data1/mesas.mock';
 
 export default function DetalleMesa() {
     const { id } = useParams();
