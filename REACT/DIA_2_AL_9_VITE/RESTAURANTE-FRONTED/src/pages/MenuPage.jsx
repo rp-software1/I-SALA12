@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getPlatos } from '../services/api';
 import { usePedido } from '../context/PedidoContext';
+import PlatoCard1 from '../components1/PlatoCard1';
 
 export default function MenuPage() {
     const [platos, setPlatos] = useState([]);
@@ -40,16 +41,18 @@ export default function MenuPage() {
     return (
         <div>
             <h2>Menú del Restaurante</h2>
+
             {totalItems > 0 && (
-                <div>
+                <div className="badge-comanda">
                     Comanda: {totalItems} items
                 </div>
             )}
-            {platos.map((plato) => (
-                <div key={plato._id}>
-                    <strong>{plato.nombre}</strong> — S/ {plato.precio}
-                </div>
-            ))}
+
+            <div className="contenedor-platos">
+                {platos.map((plato) => (
+                    <PlatoCard1 key={plato._id} plato={plato} />
+                ))}
+            </div>
         </div>
     );
 }

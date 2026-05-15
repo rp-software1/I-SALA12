@@ -207,3 +207,40 @@ ul {
     margin-top: 20px;
     font-size: 20px;
 }
+
+.plato-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+
+.plato-card button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #facc15;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.plato-card button:hover {
+    background-color: #eab308;
+}
+
+.badge-comanda {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #eab308;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-weight: bold;
+}
+
+.contenedor-platos {
+    display: flex;
+    flex-wrap: wrap;
+}

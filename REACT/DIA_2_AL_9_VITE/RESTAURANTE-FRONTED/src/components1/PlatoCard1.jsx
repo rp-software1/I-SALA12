@@ -1,15 +1,31 @@
-function PLatoCard1({ nombre, categoria, precio, stock, disponible }) {
+import { usePedido } from '../context/PedidoContext';
+
+function PlatoCard1({ plato }) {
+    const { agregarPlato } = usePedido();
+    console.log(plato)
+
     return (
-        <div>
-            <h3>{nombre}</h3>
-            <p>Categoría: {categoria}</p>
-            <p>Precio: {precio}</p>
-            <p>Stock: {stock}</p>
-            <p className={disponible ? 'disponible' : 'agotado'}>
-                {disponible ? '✅ Disponible' : '❌ Agotado'}
+        <div className="plato-card">
+            <h3>{plato.nombre}</h3>
+
+            <p>Categoría: {plato.categoria}</p>
+
+            <p>Precio: S/ {plato.precio}</p>
+
+            <p>Stock: {plato.stock}</p>
+
+            <p className={plato.disponible ? 'disponible' : 'agotado'}>
+                {plato.disponible ? '✅ Disponible' : '❌ Agotado'}
             </p>
+
+            <button
+                onClick={() => agregarPlato(plato)}
+                disabled={!plato.disponible}
+            >
+                Agregar a comanda
+            </button>
         </div>
     );
 }
 
-export default PLatoCard1;
+export default PlatoCard1;
