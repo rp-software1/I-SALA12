@@ -1,0 +1,22 @@
+EVALUADOR: Jordan Brandon Soplin Natorce
+EVALUADO: Yojan Yobriner Lavado Limaylla
+
+ESCENARIO ELEGIDO:  ¿Por qué no se puede hacer pedido.items.push(nuevoItem) directamente? Explica qué es la inmutabilidad en
+ React y por qué importa para que el componente se re-renderice.
+
+RESUMEN DE LA RESPUESTA: Por que eso modifica el array original, por lo que no se puede hacer directamente para que asi detecte
+ mas el cambio si, se usaba un push detectaria un solo cambia, sin unar un nuevo array y eso nos ayudaria a ver el codigo mas 
+ predensible.
+
+QUÉ ENTENDIÓ BIEN: Entendido 
+QUÉ NECESITA REPASAR: Fluides.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+EVALUADOR: Yojan Yobriner Lavado Limaylla
+EVALUADO: Jordan Brandon Soplin Natorce
+ESCENARIO ELEGIDO:
+RESUMEN DE LA RESPUESTA:
+QUÉ ENTENDIÓ BIEN:
+QUÉ NECESITA REPASAR:
+
