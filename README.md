@@ -1,4 +1,4 @@
-## ESTRUCTURA DEL PROYECTO
+## ESTRUCTURA DEL PROYECTO 
 
 El sistema app.js fue dividido en módulos para mejorar la organización y escalabilidad del código.
 

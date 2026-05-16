@@ -1,0 +1,23 @@
+1. El mock del Día 5 y la API del Día 6 devuelven platos con la misma forma. ¿Qué ventaja tiene eso?
+La ventaja es que el componente puede seguir funcionando sin muchos cambios porque los datos llegan con la misma estructura y propiedades.
+
+¿Qué habrían tenido que cambiar en el componente si la API devolviera una estructura diferente?
+Habríamos tenido que cambiar las propiedades usadas en el componente, por ejemplo nombres de campos, rutas de acceso o la forma de recorrer los datos.
+
+2. Explica el patrón loading/error/data con tus propias palabras.
+Es una forma de controlar los estados principales de una petición: mientras carga, cuando ocurre un error y cuando los datos llegan correctamente.
+
+¿Por qué los tres estados son necesarios?
+Porque permiten manejar correctamente cada situación y mostrar información clara al usuario dependiendo de lo que esté pasando.
+
+¿Qué pasa con la experiencia del usuario si falta alguno de los tres?
+Si falta loading el usuario no sabe si está cargando. Si falta error no entenderá qué falló. Si falta data no habrá información para mostrar aunque la petición funcione.
+
+El jueves comienza la integración cruzada con el Grupo A. ¿Qué preguntas concretas tienes sobre el backend que necesitas que el de Node te explique para conectar bien el sistema?
+Necesito saber las rutas exactas de la API, qué datos devuelve cada endpoint, cómo se envían los pedidos y si habrá autenticación o tokens para acceder al sistema.
+
+Describe con tus palabras qué es un JWT y cómo fluye entre frontend y backend. No uses código, solo la idea.
+Un JWT es un token que sirve para identificar y validar usuarios. El backend lo genera cuando el usuario inicia sesión y el frontend lo guarda para enviarlo después en las peticiones protegidas. Así el backend verifica si el usuario tiene permiso para acceder.
+
+Si no puedes explicarlo sin mirar los apuntes, ¿qué parte no entendiste?
+Entendí la idea general del flujo, aunque todavía necesito practicar más cómo se valida internamente el token en el backend.
