@@ -11,6 +11,6 @@ loom: (agregar link al terminar)
 - [ ] A — createContext y PedidoProvider
 - [X] B — useContext en MenuPage y CarritoPage
 - [ ] C — Acciones del pedido: agregar, quitar, cambiar tipo
-- [X] D — Exploración con Claude
+- [x] D — Exploración con Claude
 - [ ] E — Evaluación entre pares
 - [ ] F — Cierre del día
