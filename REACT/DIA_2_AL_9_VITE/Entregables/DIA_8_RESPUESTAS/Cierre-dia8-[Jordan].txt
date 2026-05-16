@@ -4,4 +4,4 @@ Se le diseño de esa manera por motivos de que el frontend y el backend esten en
 
 - Describe en tus palabras la diferencia entre createContext, Provider y useContext. ¿Cuándo se usa cada uno? ¿Quién crea el estado, quién lo comparte y quién lo lee?
 
-createContext, como su mismo nombre lo dice, crea un contenedo de un dicho contexto y eso nos ayuda a definir un contexto; Provider  nos ayuda a compartir los estados de la aplicacion; useContext es el que nos ayuda leer y usar cada estado creado. 
+createContext, como su mismo nombre lo dice, crea un contenedo de un dicho contexto y eso nos ayuda a definir un contexto; Provider  nos ayuda a compartir los estados de la aplicacion; useContext es el que nos ayuda leer y usar cada estado. 
