@@ -15,8 +15,8 @@ QUÉ NECESITA REPASAR: Fluides.
 
 EVALUADOR: Yojan Yobriner Lavado Limaylla
 EVALUADO: Jordan Brandon Soplin Natorce
-ESCENARIO ELEGIDO:
-RESUMEN DE LA RESPUESTA:
-QUÉ ENTENDIÓ BIEN:
-QUÉ NECESITA REPASAR:
+ESCENARIO ELEGIDO: ¿Cuál es la diferencia entre el Context y un useState normal? ¿Qué problema específico del restaurante resuelve el Context que useState no puede resolver?
+RESUMEN DE LA RESPUESTA: Explicó que useState sirve par amanejar estado dentro de un componente específico, mientras que Context permite compartir ese estado entre varios componenetes sin pasar props manualmente. También comentó que en el restaurante el Context ayuda a compartir la comanda entre MenuPage y CarritoPage haciendo que vean los mismo datos actualizados.
+QUÉ ENTENDIÓ BIEN: Entendió correctamente ue Context evita el problema de prop drilling y comparte el estado global entre páginas.
+QUÉ NECESITA REPASAR: Necesita entender mejor cómo funciona internamente el Provider y cómo React detecta los cambios del Context.
 
