@@ -13,4 +13,4 @@ loom: (agregar link al terminar)
 - [ ] C — Acciones del pedido: agregar, quitar, cambiar tipo
 - [x] D — Exploración con Claude
 - [X] E — Evaluación entre pares
-- [x] F — Cierre del día
+- [X] F — Cierre del día
