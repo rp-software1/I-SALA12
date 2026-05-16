@@ -3,8 +3,8 @@ alumno: [Yojan]
 sala: I-SALA12
 curso: REACT
 dia: 8
-estado: en_progreso
-loom: (agregar link al terminar)
+estado: CULMINADO
+loom: (https://www.loom.com/share/61350052c98a4d7b95635931e20d5183)
 ---
 
 ## Secciones
