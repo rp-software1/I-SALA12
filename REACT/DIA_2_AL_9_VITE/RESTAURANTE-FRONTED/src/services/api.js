@@ -12,6 +12,7 @@ api.interceptors.request.use((config) => {
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
     }
+
     return config;
 });
 
@@ -21,6 +22,7 @@ api.interceptors.response.use(
         if (error.response?.status === 401) {
             localStorage.removeItem('token');
         }
+
         return Promise.reject(error);
     }
 );
@@ -30,9 +32,10 @@ export async function login(correo, password) {
         correo,
         password,
     });
-    localStorage.setItem('token', response.data.token);
-    return response.data;
 
+    localStorage.setItem('token', response.data.token);
+
+    return response.data;
 }
 
 export async function getPlatos() {
@@ -47,6 +50,7 @@ export async function getMesas() {
 
 export async function getMesasDisponibles() {
     const response = await api.get('/api/mesas');
+
     return response.data.filter(
         (mesa) => mesa.estado === 'libre'
     );
@@ -57,6 +61,7 @@ export async function crearPedido(pedidoData) {
         '/api/pedidos',
         pedidoData
     );
+
     return response.data;
 }
 
@@ -66,6 +71,10 @@ export async function getPedido(id) {
 }
 
 export async function cambiarEstadoPedido(id, estado) {
-    const response = await api.patch(`/api/pedidos/${id}/estado`, { estado });
+    const response = await api.patch(
+        `/api/pedidos/${id}/estado`,
+        { estado }
+    );
+
     return response.data;
 }
