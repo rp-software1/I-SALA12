@@ -1,4 +1,4 @@
-import MenuPage from "./MenuPage";
+import MenuPage from './MenuPage';
 
 function Home() {
     return (
