@@ -244,3 +244,86 @@ ul {
     display: flex;
     flex-wrap: wrap;
 }
+
+.p-6 {
+    padding: 24px;
+}
+
+.text-2xl {
+    font-size: 32px;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.mb-6 {
+    margin-bottom: 24px;
+}
+
+.text-gray {
+    color: gray;
+}
+
+.text-red {
+    color: red;
+}
+
+.grid-mesas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.mesa-card {
+    border: 2px solid #ccc;
+    border-radius: 16px;
+    padding: 20px;
+    background-color: white;
+}
+
+.estado-card-libre {
+    border-color: green;
+    background-color: #eaffea;
+}
+
+.estado-card-ocupada {
+    border-color: red;
+    background-color: #ffeaea;
+}
+
+.estado-card-reservada {
+    border-color: orange;
+    background-color: #fff4df;
+}
+
+.estado-libre {
+    color: green;
+    font-weight: bold;
+}
+
+.estado-ocupada {
+    color: red;
+    font-weight: bold;
+}
+
+.estado-reservada {
+    color: orange;
+    font-weight: bold;
+}
+
+.btn-seleccionar {
+    margin-top: 12px;
+    width: 100%;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-seleccionar:hover {
+    background-color: darkgreen;
+}

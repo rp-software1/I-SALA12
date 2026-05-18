@@ -13,6 +13,13 @@ const estadoInicial = {
 export function PedidoProvider({ children }) {
     const [pedido, setPedido] = useState(estadoInicial);
 
+    function asignarMesa(mesaId) {
+        setPedido((prev) => ({
+            ...prev,
+            mesaId,
+        }));
+    }
+
     function agregarPlato(plato) {
         setPedido((prev) => {
             const existe = prev.items.find(
@@ -93,6 +100,10 @@ export function PedidoProvider({ children }) {
         setPedido((prev) => ({
             ...prev,
             tipo: nuevoTipo,
+            mesaId:
+                nuevoTipo === 'para_llevar'
+                    ? null
+                    : prev.mesaId,
         }));
     }
 
@@ -100,6 +111,7 @@ export function PedidoProvider({ children }) {
         <PedidoContext.Provider
             value={{
                 pedido,
+                asignarMesa,
                 agregarPlato,
                 quitarPlato,
                 limpiarPedido,
