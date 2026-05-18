@@ -1,0 +1,1 @@
+FEEDBACK:SeccionA: La seccuib fue clara y kas funciones de api.js se pudieron implementar sin muchos problemas. Lo único que generó duda fue como probar getMesas() manualmente desde la consola del navegador
