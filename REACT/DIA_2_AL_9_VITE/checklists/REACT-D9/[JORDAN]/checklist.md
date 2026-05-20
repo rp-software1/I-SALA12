@@ -1,6 +1,10 @@
 ---
-alumno: [JORDAN]  sala: I-SALA12  curso: REACT  dia: 9
-estado: en_progreso  loom: 
+alumno: [JORDAN]  
+sala: I-SALA12  
+curso: REACT  
+dia: 9
+estado: en_progreso  
+loom: 
 ---
 ## Secciones
 - [ ] A — APIs de mesas y pedidos en api.js

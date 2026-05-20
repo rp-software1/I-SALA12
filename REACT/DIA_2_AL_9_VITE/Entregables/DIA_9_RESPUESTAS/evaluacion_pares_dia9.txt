@@ -1,0 +1,17 @@
+EVALUADOR: Jordan Brandon Soplin Natorce
+EVALUADO: Yojan Yobriner Lavado Limaylla
+
+ESCENARIO ELEGIDO:
+Traza el flujo completo desde que el mesero hace clic en 'Seleccionar mesa' hasta que el pedido aparece en MongoDB. 
+Menciona cada función, cada cambio de estado, cada llamada HTTP.
+
+RESUMEN DE LA RESPUESTA:
+Explicó bien el flujo desde MesasPage hasta la creación del pedido en el backend. Mencionó el uso de asignarMesa dentro de PedidoContext, la navegación hacia CarritoPage, el uso de crearPedido con axios y la actualización del estado de la mesa en el backend.
+
+QUÉ ENTENDIÓ BIEN:
+Comprendió correctamente cómo fluye la información entre Context, frontend y backend.
+
+QUÉ NECESITA REPASAR:
+Necesita repasar un poco más cómo se actualiza el estado de las mesas después de crear un pedido y cómo fluye el mesaId dentro del Context.
+
+---------------------------------------------------------------------------------------------------------------------------------

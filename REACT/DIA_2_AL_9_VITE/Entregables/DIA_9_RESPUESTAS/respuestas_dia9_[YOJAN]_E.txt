@@ -1,0 +1,2 @@
+FEEDBACK:SeccionE:
+La evaluación ayudó a reforzar cómo se conectan React Context, axios y las APIs reales del backend. El escenario permitió entender mejor el flujo completo de creación de pedidos y cómo los cambios de estado afectan a las mesas. No hubo bloqueos importantes durante la actividad.
