@@ -12,4 +12,4 @@ loom:
 - [ ] C — CarritoPage conectada con POST /api/pedidos
 - [x] D — Exploración con Claude
 - [x] E — Evaluación entre pares
-- [ ] F — Cierre del día
+- [x] F — Cierre del día
