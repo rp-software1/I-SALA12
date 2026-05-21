@@ -1,0 +1,3 @@
+FEEDBACK:SeccionC:
+La conexión entre CarritoPage y el backend fue entendible ya que permitió comprobar cómo se crea un pedido real usando POST /api/pedidos.
+LEso si fue complicado entender cuándo limpiar el PedidoContext después de enviar la comanda pero igual al final se entendió. No hubo bloqueos graves y la confirmación visual del pedido ayudó a verificar que el flujo funcionaba correctamente.

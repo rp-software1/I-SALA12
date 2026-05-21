@@ -1,0 +1,2 @@
+FEEDBACK:SeccionF:
+La reflexión final ayudó a recordar todo el avance desde los primeros componentes hasta conectar APIs reales. No hubo confusión en las instrucciones. Lo único que tomó más tiempo fue ordenar mentalmente todas las etapas aprendidas durante los 9 días de React.

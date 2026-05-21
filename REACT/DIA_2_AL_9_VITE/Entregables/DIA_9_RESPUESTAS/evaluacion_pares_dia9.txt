@@ -1,0 +1,32 @@
+EVALUADOR: Yojan Yobriner Lavado Limaylla
+EVALUADO: Jordan Brandon Soplin Natorce
+
+ESCENARIO ELEGIDO:
+Traza el flujo completo desde que el mesero hace clic en 'Seleccionar mesa' hasta que el pedido aparece en MongoDB. 
+Menciona cada función, cada cambio de estado, cada llamada HTTP.
+
+RESUMEN DE LA RESPUESTA:
+Explicó bien el flujo desde MesasPage hasta la creación del pedido en el backend. Mencionó el uso de asignarMesa dentro de PedidoContext, la navegación hacia CarritoPage, el uso de crearPedido con axios y la actualización del estado de la mesa en el backend.
+
+QUÉ ENTENDIÓ BIEN:
+Comprendió correctamente cómo fluye la información entre Context, frontend y backend.
+
+QUÉ NECESITA REPASAR:
+Necesita repasar un poco más cómo se actualiza el estado de las mesas después de crear un pedido y cómo fluye el mesaId dentro del Context.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+EVALUADOR: Jordan Brandon Soplin Natorce
+EVALUADO: Yojan Yobriner Lavado Limaylla
+
+ESCENARIO ELEGIDO: 
+Dos meseros abren MesasPage al mismo tiempo y ambos ven la Mesa 5 como disponible.
+ Los dos hacen clic en 'Seleccionar'. ¿Qué pasa? ¿Quién lo detecta primero — el frontend o el backend?
+
+RESUMEN: el backend es quien lo detecta primero ya que es quien detecta primero el error y mientras que el frontend solo detecta ya informacion ingresada
+
+QUÉ ENTENDIÓ BIEN: 
+Comprendio de manera correcta las funciones del backend y frontend
+
+QUÉ NECESITA REPASAR:
+Se necesitaria repasar los puntos mas detallados

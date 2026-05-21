@@ -1,0 +1,1 @@
+FEEDBACK:Seccion B: Si se llego a terminar el criterio final, una de las parte como que nos costo fue en conectar correctamente asignarmesa() con el pedidocontex y verificar que mesaid se termine guardando antes de ir a navegar al carritopage.

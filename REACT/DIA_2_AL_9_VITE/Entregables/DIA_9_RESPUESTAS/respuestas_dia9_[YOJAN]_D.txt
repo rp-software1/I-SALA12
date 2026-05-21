@@ -1,0 +1,3 @@
+FEEDBACK:SeccionD:
+La explicación sobre la diferencia entre el estado del Context y los datos guardados en el backend fue clara ya que ayudó a entender por qué el pedido desaparece al recargar la página aunque siga existiendo en el servidor. 
+No hubo problemas al realizar la exploración y se entendió cómo localStorage podría ayudar a recuperar el pedido después de refrescar React.
