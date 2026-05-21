@@ -3,8 +3,8 @@ alumno: [JORDAN]
 sala: I-SALA12  
 curso: REACT  
 dia: 9
-estado: en_progreso  
-loom: 
+estado: Finalizado
+loom: https://www.loom.com/share/419664bcf774490eb57062c1a308c8fa
 ---
 ## Secciones
 - [ ] A — APIs de mesas y pedidos en api.js
