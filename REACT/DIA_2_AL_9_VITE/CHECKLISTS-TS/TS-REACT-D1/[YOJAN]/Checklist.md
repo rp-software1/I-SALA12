@@ -1,5 +1,5 @@
 # TS-REACT-D1 — Checklist
-Nombre: __YOJAN__    Fecha: __21/05/2026__
+Nombre: __YOJAN__    Fecha: __21/05/26__
 Sala: I-SALA1              Rol inicio: Driver / Navigator
 
 ## Bloques
