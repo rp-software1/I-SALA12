@@ -1,5 +1,5 @@
-EVALUADOR: Jordan Brandon Soplin Natorce
-EVALUADO: Yojan Yobriner Lavado Limaylla
+EVALUADOR: Yojan Yobriner Lavado Limaylla
+EVALUADO: Jordan Brandon Soplin Natorce
 
 ESCENARIO ELEGIDO:
 Traza el flujo completo desde que el mesero hace clic en 'Seleccionar mesa' hasta que el pedido aparece en MongoDB. 
