@@ -4,7 +4,7 @@ Sala: I-SALA1              Rol inicio: Driver / Navigator
 
 ## Bloques
 - [ ] Bloque A — Instalación y configuración de TypeScript
-- [ ] Bloque B — Renombrar archivos y primer error TS
+- [x] Bloque B — Renombrar archivos y primer error TS
 - [ ] Bloque C — Tipar props de PlatoCard
 - [ ] Bloque D — Tipar props de MesaCard y NavBar
 - [ ] Bloque E — Tipar funciones de api.js
