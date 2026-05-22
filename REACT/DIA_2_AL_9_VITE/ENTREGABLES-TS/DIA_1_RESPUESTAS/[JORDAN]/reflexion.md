@@ -1,3 +1,4 @@
+BLOQUE A:
 ¿Qué parte de la instalación fue confusa?
 
 Ninguna 

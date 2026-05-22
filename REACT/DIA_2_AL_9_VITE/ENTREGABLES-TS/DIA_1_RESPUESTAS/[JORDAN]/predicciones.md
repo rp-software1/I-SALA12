@@ -1,3 +1,5 @@
+Predicción A:
+
 ¿Qué archivo generará el comando de instalación además de actualizar package.json?
 
 - Se generara un archivo package-lock como tambien actualizar el que ya esta existente y junto a eso se descargara dependencias de node 
