@@ -1,8 +1,21 @@
 import { usePedido } from '../context/PedidoContext';
 
-function PlatoCard1({ plato }) {
+interface Plato {
+    _id: string;
+    nombre: string;
+    categoria: string;
+    precio: number;
+    stock: number;
+    disponible: boolean;
+}
+
+interface PlatoCardProps {
+    plato: Plato;
+}
+
+function PlatoCard1({ plato }: PlatoCardProps) {
     const { agregarPlato } = usePedido();
-    console.log(plato)
+    console.log(plato);
 
     return (
         <div className="plato-card">
