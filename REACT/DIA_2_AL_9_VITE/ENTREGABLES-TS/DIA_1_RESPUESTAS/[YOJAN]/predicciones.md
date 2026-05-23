@@ -36,3 +36,12 @@ nombre:       string
 precio:       number
 categoria:    string
 disponible:   boolean
+
+==============================================================================================
+
+# Predicción D:
+¿Qué props recibe MesaCard? 
+MesaCard recibe una prop llamada mesa y posiblemente una función onClick para seleccionar o manejar la mesa.
+
+¿TypeScript puede inferir el tipo de retorno de una función que retorna JSX sin que lo declares?
+Sí, TypeScript puede inferir automáticamente el tipo de retorno de una función que retorna JSX aunque no se declare explícitamente.
