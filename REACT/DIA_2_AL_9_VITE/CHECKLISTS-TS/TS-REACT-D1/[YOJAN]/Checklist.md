@@ -7,7 +7,7 @@ Sala: I-SALA1              Rol inicio: Driver / Navigator
 - [x] Bloque B — Renombrar archivos y primer error TS
 - [x] Bloque C — Tipar props de PlatoCard
 - [x] Bloque D — Tipar props de MesaCard y NavBar
-- [ ] Bloque E — Tipar funciones de api.js
+- [x] Bloque E — Tipar funciones de api.js
 - [ ] Bloque F — Cero errores y verificación final
 
 ## Verificación
