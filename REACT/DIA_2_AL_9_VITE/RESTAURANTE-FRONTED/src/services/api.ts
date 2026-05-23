@@ -1,5 +1,38 @@
 import axios from 'axios';
 
+type EstadoMesa =
+    | 'libre'
+    | 'ocupada'
+    | 'reservada';
+
+interface Mesa {
+    _id: string;
+    numero: number;
+    capacidad: number;
+    estado: EstadoMesa;
+    comensales?: number;
+}
+
+interface Plato {
+    _id: string;
+    nombre: string;
+    descripcion?: string;
+    precio: number;
+    categoria: string;
+    disponible: boolean;
+    stock?: number;
+}
+
+interface LoginResponse {
+    token: string;
+}
+
+interface PedidoData {
+    mesaId?: string;
+    platos?: Plato[];
+    total?: number;
+}
+
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 const api = axios.create({
@@ -27,36 +60,55 @@ api.interceptors.response.use(
     }
 );
 
-export async function login(correo, password) {
-    const response = await api.post('/auth/login', {
-        correo,
-        password,
-    });
+export async function login(
+    correo: string,
+    password: string
+): Promise<LoginResponse> {
+    const response = await api.post<LoginResponse>(
+        '/auth/login',
+        {
+            correo,
+            password,
+        }
+    );
 
-    localStorage.setItem('token', response.data.token);
+    localStorage.setItem(
+        'token',
+        response.data.token
+    );
 
     return response.data;
 }
 
-export async function getPlatos() {
-    const response = await api.get('/api/platos');
+export async function getPlatos(): Promise<Plato[]> {
+    const response = await api.get<Plato[]>(
+        '/api/platos'
+    );
+
     return response.data;
 }
 
-export async function getMesas() {
-    const response = await api.get('/api/mesas');
+export async function getMesas(): Promise<Mesa[]> {
+    const response = await api.get<Mesa[]>(
+        '/api/mesas'
+    );
+
     return response.data;
 }
 
-export async function getMesasDisponibles() {
-    const response = await api.get('/api/mesas');
+export async function getMesasDisponibles(): Promise<Mesa[]> {
+    const response = await api.get<Mesa[]>(
+        '/api/mesas'
+    );
 
     return response.data.filter(
         (mesa) => mesa.estado === 'libre'
     );
 }
 
-export async function crearPedido(pedidoData) {
+export async function crearPedido(
+    pedidoData: PedidoData
+) {
     const response = await api.post(
         '/api/pedidos',
         pedidoData
@@ -65,12 +117,18 @@ export async function crearPedido(pedidoData) {
     return response.data;
 }
 
-export async function getPedido(id) {
-    const response = await api.get(`/api/pedidos/${id}`);
+export async function getPedido(id: string) {
+    const response = await api.get(
+        `/api/pedidos/${id}`
+    );
+
     return response.data;
 }
 
-export async function cambiarEstadoPedido(id, estado) {
+export async function cambiarEstadoPedido(
+    id: string,
+    estado: EstadoMesa
+) {
     const response = await api.patch(
         `/api/pedidos/${id}/estado`,
         { estado }

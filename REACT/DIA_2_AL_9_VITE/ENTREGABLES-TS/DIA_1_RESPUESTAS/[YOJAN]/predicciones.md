@@ -45,3 +45,10 @@ MesaCard recibe una prop llamada mesa y posiblemente una función onClick para s
 
 ¿TypeScript puede inferir el tipo de retorno de una función que retorna JSX sin que lo declares?
 Sí, TypeScript puede inferir automáticamente el tipo de retorno de una función que retorna JSX aunque no se declare explícitamente.
+
+==============================================================================================
+
+# Predicción E:
+Si getMesas() retorna Promise<Mesa[]>, ¿qué tipo tiene 'mesas' en este código?
+  const mesas = await getMesas();
+mesas es de tipo Mesa[].
