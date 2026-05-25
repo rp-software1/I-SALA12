@@ -1,37 +1,9 @@
 import axios from 'axios';
-
-type EstadoMesa =
-    | 'libre'
-    | 'ocupada'
-    | 'reservada';
-
-interface Mesa {
-    _id: string;
-    numero: number;
-    capacidad: number;
-    estado: EstadoMesa;
-    comensales?: number;
-}
-
-interface Plato {
-    _id: string;
-    nombre: string;
-    descripcion?: string;
-    precio: number;
-    categoria: string;
-    disponible: boolean;
-    stock?: number;
-}
-
-interface LoginResponse {
-    token: string;
-}
-
-interface PedidoData {
-    mesaId?: string;
-    platos?: Plato[];
-    total?: number;
-}
+import type {
+    Mesa,
+    Pedido,
+    EstadoPedido,
+} from '../types';
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -63,8 +35,8 @@ api.interceptors.response.use(
 export async function login(
     correo: string,
     password: string
-): Promise<LoginResponse> {
-    const response = await api.post<LoginResponse>(
+) {
+    const response = await api.post(
         '/auth/login',
         {
             correo,
@@ -80,8 +52,8 @@ export async function login(
     return response.data;
 }
 
-export async function getPlatos(): Promise<Plato[]> {
-    const response = await api.get<Plato[]>(
+export async function getPlatos() {
+    const response = await api.get(
         '/api/platos'
     );
 
@@ -102,23 +74,29 @@ export async function getMesasDisponibles(): Promise<Mesa[]> {
     );
 
     return response.data.filter(
-        (mesa) => mesa.estado === 'libre'
+        (mesa) => mesa.estado === 'disponible'
     );
 }
 
 export async function crearPedido(
-    pedidoData: PedidoData
-) {
-    const response = await api.post(
+    datos: Omit<
+        Pedido,
+        '_id' | 'creadoEn' | 'actualizadoEn'
+    >
+
+): Promise<Pedido> {
+    const response = await api.post<Pedido>(
         '/api/pedidos',
-        pedidoData
+        datos
     );
 
     return response.data;
 }
 
-export async function getPedido(id: string) {
-    const response = await api.get(
+export async function getPedido(
+    id: string
+): Promise<Pedido> {
+    const response = await api.get<Pedido>(
         `/api/pedidos/${id}`
     );
 
@@ -126,11 +104,11 @@ export async function getPedido(id: string) {
 }
 
 export async function cambiarEstadoPedido(
-    id: string,
-    estado: EstadoMesa
-) {
-    const response = await api.patch(
-        `/api/pedidos/${id}/estado`,
+    pedidoId: string,
+    estado: EstadoPedido
+): Promise<Pedido> {
+    const response = await api.patch<Pedido>(
+        `/api/pedidos/${pedidoId}/estado`,
         { estado }
     );
 

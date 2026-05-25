@@ -1,37 +1,21 @@
-type EstadoMesa = 'libre' | 'ocupada' | 'reservada';
+import type { Mesa } from '../types';
 
 interface MesaCardProps {
-    numero: number;
-    capacidad: number;
-    estado: EstadoMesa;
-    comensales: number;
+    mesa: Mesa;
+    onClick: (mesa: Mesa) => void;
 }
 
 function MesaCard({
-    numero,
-    capacidad,
-    estado,
-    comensales,
+    mesa,
+    onClick,
 }: MesaCardProps) {
     return (
-        <div>
-            <h3>Mesa {numero}</h3>
+        <div onClick={() => onClick(mesa)}>
+            <h3>Mesa {mesa.numero}</h3>
 
-            <p>Capacidad: {capacidad}</p>
+            <p>Capacidad: {mesa.capacidad}</p>
 
-            <p>Comensales: {comensales}</p>
-
-            <p
-                className={
-                    estado === 'libre'
-                        ? 'verde'
-                        : estado === 'ocupada'
-                            ? 'rojo'
-                            : 'amarillo'
-                }
-            >
-                {estado}
-            </p>
+            <p>{mesa.estado}</p>
         </div>
     );
 }
