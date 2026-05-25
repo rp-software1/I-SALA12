@@ -11,5 +11,5 @@ Sala: I-SALA1              Rol inicio: Driver / Navigator
 - [X] Bloque F — Cero errores y verificación final
 
 ## Verificación
-- [ ] npx tsc --noEmit ejecuta sin errores
+- [X] npx tsc --noEmit ejecuta sin errores
 
