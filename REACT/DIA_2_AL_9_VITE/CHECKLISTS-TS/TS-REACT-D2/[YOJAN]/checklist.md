@@ -3,8 +3,8 @@ Nombre: __JORDAN__    Fecha: __25/05/2026__
 Sala: I-SALA1              Rol inicio: Driver / Navigator
 
 ## Bloques
-- [] Bloque A — Crear src/types/index.ts con todos los modelos
-- [ ] Bloque B — Importar tipos en api.ts y eliminar duplicados
+- [ ] Bloque A — Crear src/types/index.ts con todos los modelos
+- [x] Bloque B — Importar tipos en api.ts y eliminar duplicados
 - [ ] Bloque C — Tipar PedidoContext.tsx completo
 - [ ] Bloque D — Exploración con Claude
 - [ ] Bloque E — Evaluación entre pares
