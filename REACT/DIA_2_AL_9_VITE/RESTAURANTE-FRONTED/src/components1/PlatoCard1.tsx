@@ -14,7 +14,9 @@ interface PlatoCardProps {
 }
 
 function PlatoCard1({ plato }: PlatoCardProps) {
-    const { agregarPlato } = usePedido();
+    const { agregarPlato } = usePedido() as {
+        agregarPlato: (plato: Plato) => void;
+    }
     console.log(plato);
 
     return (
