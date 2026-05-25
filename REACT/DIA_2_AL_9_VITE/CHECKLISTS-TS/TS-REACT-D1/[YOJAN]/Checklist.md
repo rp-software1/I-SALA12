@@ -1,0 +1,15 @@
+# TS-REACT-D1 — Checklist
+Nombre: __YOJAN__    Fecha: __21/05/26__
+Sala: I-SALA1              Rol inicio: Driver / Navigator
+
+## Bloques
+- [ ] Bloque A — Instalación y configuración de TypeScript
+- [x] Bloque B — Renombrar archivos y primer error TS
+- [x] Bloque C — Tipar props de PlatoCard
+- [x] Bloque D — Tipar props de MesaCard y NavBar
+- [x] Bloque E — Tipar funciones de api.js
+- [ ] Bloque F — Cero errores y verificación final
+
+## Verificación
+- [ ] npx tsc --noEmit ejecuta sin errores
+

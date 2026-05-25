@@ -1,11 +1,26 @@
-import PropTypes from 'prop-types';
+type EstadoMesa = 'libre' | 'ocupada' | 'reservada';
 
-function MesaCard({ numero, capacidad, estado, comensales }) {
+interface MesaCardProps {
+    numero: number;
+    capacidad: number;
+    estado: EstadoMesa;
+    comensales: number;
+}
+
+function MesaCard({
+    numero,
+    capacidad,
+    estado,
+    comensales,
+}: MesaCardProps) {
     return (
         <div>
             <h3>Mesa {numero}</h3>
+
             <p>Capacidad: {capacidad}</p>
+
             <p>Comensales: {comensales}</p>
+
             <p
                 className={
                     estado === 'libre'
@@ -20,12 +35,5 @@ function MesaCard({ numero, capacidad, estado, comensales }) {
         </div>
     );
 }
-
-MesaCard.propTypes = {
-    numero: PropTypes.number.isRequired,
-    capacidad: PropTypes.number.isRequired,
-    estado: PropTypes.oneOf(['libre', 'ocupada', 'reservada']).isRequired,
-    comensales: PropTypes.number.isRequired,
-};
 
 export default MesaCard;
