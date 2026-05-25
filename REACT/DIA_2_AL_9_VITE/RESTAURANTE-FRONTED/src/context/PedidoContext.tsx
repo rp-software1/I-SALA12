@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 
-const PedidoContext = createContext(null);
+const PedidoContext = createContext<any>(null);
 
 const estadoInicial = {
     mesaId: null,
