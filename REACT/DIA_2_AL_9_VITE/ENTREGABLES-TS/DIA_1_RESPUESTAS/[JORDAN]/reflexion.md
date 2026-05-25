@@ -21,4 +21,4 @@ De que nos ayuda a definir los tipos de datos con los que tabajaremos y ambos so
 
 • Total de errores TypeScript al cierre: ___ (lo bajaremos mañana)
 
-Sen encontro un error en la parte de platoCard pero se logro solucionar, haciendo haci que no haya error en nuestro codigo 
+Se encontro un total de 59 errores en nuestro proyecto.
