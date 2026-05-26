@@ -1,0 +1,16 @@
+# TS-REACT-D3 — Checklist
+Nombre: __JORDAN__    Fecha: __26/05/2026__
+Sala: I-SALA1              Rol inicio: Driver / Navigator
+
+## Bloques
+- [ ] Bloque A — Tipar MesasPage.tsx (useEffect, loading/error/data, handler)
+- [ ] Bloque B — Tipar MenuPage.tsx y CarritoPage.tsx
+- [ ] Bloque C — Tipar DetalleMesa.tsx (useParams y useNavigate)
+- [ ] Bloque D — Verificación final: npx tsc --noEmit → 0 errores
+- [ ] Bloque E — Exploración con Claude
+- [ ] Bloque F — Cierre de los 3 días de TypeScript
+
+## Verificación final
+- [ ] npx tsc --noEmit retorna 0 errores en todo el proyecto
+- [ ] npm run dev corre sin crash y todas las páginas cargan
+
