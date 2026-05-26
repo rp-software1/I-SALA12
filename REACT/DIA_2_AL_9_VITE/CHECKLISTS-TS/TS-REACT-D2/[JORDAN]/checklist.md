@@ -8,8 +8,8 @@ Sala: I-SALA1              Rol inicio: Driver / Navigator
 - [ ] Bloque C — Tipar PedidoContext.tsx completo
 - [X] Bloque D — Exploración con Claude
 - [X] Bloque E — Evaluación entre pares
-- [ ] Bloque F — Cierre del día y verificación final
+- [X] Bloque F — Cierre del día y verificación final
 
 ## Verificación
 - [ ] npx tsc --noEmit no muestra errores en types/, services/, context/
-- [ ] La app corre sin crash con npm run dev
+- [X] La app corre sin crash con npm run dev
