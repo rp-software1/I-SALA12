@@ -1,15 +1,15 @@
 # TS-REACT-D2 — Checklist
 Nombre: __JORDAN__    Fecha: __25/05/2026__
-Sala: I-SALA1              Rol inicio: Driver / Navigator
+Sala: I-SALA1              Rol inicio: Driver 
 
 ## Bloques
-- [X] Bloque A — Crear src/types/index.ts con todos los modelos
+- [x] Bloque A — Crear src/types/index.ts con todos los modelos
 - [ ] Bloque B — Importar tipos en api.ts y eliminar duplicados
 - [ ] Bloque C — Tipar PedidoContext.tsx completo
-- [X] Bloque D — Exploración con Claude
-- [X] Bloque E — Evaluación entre pares
-- [X] Bloque F — Cierre del día y verificación final
+- [x] Bloque D — Exploración con Claude
+- [x] Bloque E — Evaluación entre pares
+- [x] Bloque F — Cierre del día y verificación final
 
 ## Verificación
-- [ ] npx tsc --noEmit no muestra errores en types/, services/, context/
-- [X] La app corre sin crash con npm run dev
+- [x] npx tsc --noEmit no muestra errores en types/, services/, context/
+- [x] La app corre sin crash con npm run dev
