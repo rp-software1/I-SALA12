@@ -10,3 +10,7 @@ Al tener un archivo unico donde se olojen varios tipos, se podria tomar como una
 ✓  Ambos pueden explicar con sus propias palabras qué es un union type y para qué sirve en el proyecto.
 
 .La union type nos permite a que una variable pueda haceptar mas que un solo tipo de datos, con la ayuda del simbolo "|" con eso se podria dicer si el tipo de dato es string o number y muchos mas. Tambien nos ayuda a que no se lleguen a guardar datos con valores incorrectos y de manera segura.
+
+-BLOQUE E
+
+-- Se me fue complicado el entender el concepto del por qué PedidoContext usa createContext<PedidoContextType | undefined> en lugar de createContext<PedidoContextType> fue un poco confuso ya que la union type nos permite a que una variable pueda haceptar mas que un solo tipo de datos, pero  todo se puede quedar mas claro con una explicacion mas profunda.
