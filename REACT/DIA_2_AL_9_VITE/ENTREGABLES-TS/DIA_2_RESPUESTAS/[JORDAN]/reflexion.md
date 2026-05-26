@@ -14,3 +14,19 @@ Al tener un archivo unico donde se olojen varios tipos, se podria tomar como una
 -BLOQUE E
 
 -- Se me fue complicado el entender el concepto del por qué PedidoContext usa createContext<PedidoContextType | undefined> en lugar de createContext<PedidoContextType> fue un poco confuso ya que la union type nos permite a que una variable pueda haceptar mas que un solo tipo de datos, pero  todo se puede quedar mas claro con una explicacion mas profunda.
+
+------------------------------------------------------------------------------------------------------
+
+— Bloque F — Cierre del día
+• ¿Qué concepto de TypeScript te costó más entender hoy?
+
+una de la partes que me cuesta entender es en las partes de typear los codigos que teniamos creados, todo eso me confundia un poco de como poder desarrollarlo.
+
+• ¿Qué ventaja concreta viste de centralizar los tipos en types/index.ts?
+
+una ejecucion mas limpia y segura por medio del typeScrip
+
+• Total de errores TypeScript al cierre del Día 2: 23 (los eliminaremos mañana)
+
+
+• Anota en reflexion.md sección "Cierre del día".
