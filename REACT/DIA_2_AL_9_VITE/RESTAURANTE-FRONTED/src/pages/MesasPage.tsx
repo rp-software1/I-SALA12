@@ -65,10 +65,8 @@ function MesasPage() {
                         className={`mesa-card estado-card-${mesa.estado}`}
                     >
                         <MesaCard
-                            numero={mesa.numero}
-                            capacidad={mesa.capacidad}
-                            estado={mesa.estado}
-                            comensales={mesa.comensales}
+                            mesa={mesa}
+                            onClick={handleSeleccionarMesa}
                         />
 
                         <p>

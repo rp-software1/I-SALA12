@@ -1,23 +1,12 @@
 import { usePedido } from '../context/PedidoContext';
-
-interface Plato {
-    _id: string;
-    nombre: string;
-    categoria: string;
-    precio: number;
-    stock: number;
-    disponible: boolean;
-}
+import type { Plato } from '../types';
 
 interface PlatoCardProps {
     plato: Plato;
 }
 
 function PlatoCard1({ plato }: PlatoCardProps) {
-    const { agregarPlato } = usePedido() as {
-        agregarPlato: (plato: Plato) => void;
-    }
-    console.log(plato);
+    const { agregarPlato } = usePedido();
 
     return (
         <div className="plato-card">
@@ -27,10 +16,10 @@ function PlatoCard1({ plato }: PlatoCardProps) {
 
             <p>Precio: S/ {plato.precio}</p>
 
-            <p>Stock: {plato.stock}</p>
-
             <p className={plato.disponible ? 'disponible' : 'agotado'}>
-                {plato.disponible ? '✅ Disponible' : '❌ Agotado'}
+                {plato.disponible
+                    ? '✅ Disponible'
+                    : '❌ Agotado'}
             </p>
 
             <button

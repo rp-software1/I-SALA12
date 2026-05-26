@@ -1,59 +1,95 @@
-import { createContext, useContext, useState } from 'react';
+import React, {
+    createContext,
+    useContext,
+    useState,
+} from 'react';
 
-const PedidoContext = createContext(null);
+import type {
+    Plato,
+    TipoPedido,
+    EstadoPedidoContext,
+    PedidoContextType,
+} from '../types';
 
-const estadoInicial = {
+const initialState: EstadoPedidoContext = {
     mesaId: null,
-    tipo: 'mesa',
+    tipo: 'para_llevar',
     estado: 'pendiente',
     items: [],
     total: 0,
 };
 
-export function PedidoProvider({ children }) {
-    const [pedido, setPedido] = useState(estadoInicial);
+const PedidoContext = createContext<
+    PedidoContextType | undefined
+>(undefined);
 
-    function asignarMesa(mesaId) {
+interface PedidoProviderProps {
+    children: React.ReactNode;
+}
+
+export function PedidoProvider({
+    children,
+}: PedidoProviderProps) {
+    const [pedido, setPedido] =
+        useState<EstadoPedidoContext>(
+            initialState
+        );
+
+    function asignarMesa(
+        mesaId: string
+    ): void {
         setPedido((prev) => ({
             ...prev,
             mesaId,
+            tipo: 'mesa',
         }));
     }
 
-    function agregarPlato(plato) {
+    function agregarPlato(
+        plato: Plato
+    ): void {
         setPedido((prev) => {
             const existe = prev.items.find(
-                (item) => item._id === plato._id
+                (item) =>
+                    item.platoId === plato._id
             );
 
             let nuevosItems;
 
             if (existe) {
-                nuevosItems = prev.items.map((item) =>
-                    item._id === plato._id
-                        ? {
-                            ...item,
-                            cantidad: item.cantidad + 1,
-                        }
-                        : item
+                nuevosItems = prev.items.map(
+                    (item) =>
+                        item.platoId ===
+                            plato._id
+                            ? {
+                                ...item,
+                                cantidad:
+                                    item.cantidad +
+                                    1,
+                            }
+                            : item
                 );
             } else {
                 nuevosItems = [
                     ...prev.items,
                     {
-                        _id: plato._id,
+                        platoId: plato._id,
                         nombre: plato.nombre,
-                        precioUnitario: plato.precio,
+                        precioUnitario:
+                            plato.precio,
                         cantidad: 1,
                     },
                 ];
             }
 
-            const nuevoTotal = nuevosItems.reduce(
-                (acc, item) =>
-                    acc + item.precioUnitario * item.cantidad,
-                0
-            );
+            const nuevoTotal =
+                nuevosItems.reduce(
+                    (acc, item) =>
+                        acc +
+                        item.precioUnitario *
+                        item.cantidad,
+                    0
+                );
 
             return {
                 ...prev,
@@ -63,24 +99,33 @@ export function PedidoProvider({ children }) {
         });
     }
 
-    function quitarPlato(platoId) {
+    function quitarPlato(
+        platoId: string
+    ): void {
         setPedido((prev) => {
             const nuevosItems = prev.items
                 .map((item) =>
-                    item._id === platoId
+                    item.platoId === platoId
                         ? {
                             ...item,
-                            cantidad: item.cantidad - 1,
+                            cantidad:
+                                item.cantidad -
+                                1,
                         }
                         : item
                 )
-                .filter((item) => item.cantidad > 0);
+                .filter(
+                    (item) => item.cantidad > 0
+                );
 
-            const nuevoTotal = nuevosItems.reduce(
-                (acc, item) =>
-                    acc + item.precioUnitario * item.cantidad,
-                0
-            );
+            const nuevoTotal =
+                nuevosItems.reduce(
+                    (acc, item) =>
+                        acc +
+                        item.precioUnitario *
+                        item.cantidad,
+                    0
+                );
 
             return {
                 ...prev,
@@ -90,41 +135,45 @@ export function PedidoProvider({ children }) {
         });
     }
 
-    function limpiarPedido() {
-        setPedido({
-            ...estadoInicial,
-        });
+    function limpiarPedido(): void {
+        setPedido(initialState);
     }
 
-    function cambiarTipo(nuevoTipo) {
+    function cambiarTipo(
+        nuevoTipo: TipoPedido
+    ): void {
         setPedido((prev) => ({
             ...prev,
             tipo: nuevoTipo,
             mesaId:
-                nuevoTipo === 'para_llevar'
+                nuevoTipo ===
+                    'para_llevar'
                     ? null
                     : prev.mesaId,
         }));
     }
 
+    const value: PedidoContextType = {
+        pedido,
+        asignarMesa,
+        agregarPlato,
+        quitarPlato,
+        limpiarPedido,
+        cambiarTipo,
+    };
+
     return (
         <PedidoContext.Provider
-            value={{
-                pedido,
-                asignarMesa,
-                agregarPlato,
-                quitarPlato,
-                limpiarPedido,
-                cambiarTipo,
-            }}
+            value={value}
         >
             {children}
         </PedidoContext.Provider>
     );
 }
 
-export function usePedido() {
-    const context = useContext(PedidoContext);
+export function usePedido(): PedidoContextType {
+    const context =
+        useContext(PedidoContext);
 
     if (!context) {
         throw new Error(
@@ -134,3 +183,5 @@ export function usePedido() {
 
     return context;
 }
+
+export default PedidoContext;
