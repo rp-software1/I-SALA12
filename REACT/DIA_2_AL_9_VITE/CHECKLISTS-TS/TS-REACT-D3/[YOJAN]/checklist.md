@@ -3,7 +3,7 @@ Nombre: __YOJAN__    Fecha: __25/05/26__
 Sala: I-SALA1              Rol inicio: Driver / Navigator
 
 ## Bloques
-- [ ] Bloque A — Tipar MesasPage.tsx (useEffect, loading/error/data, handler)
+- [x] Bloque A — Tipar MesasPage.tsx (useEffect, loading/error/data, handler)
 - [ ] Bloque B — Tipar MenuPage.tsx y CarritoPage.tsx
 - [ ] Bloque C — Tipar DetalleMesa.tsx (useParams y useNavigate)
 - [ ] Bloque D — Verificación final: npx tsc --noEmit → 0 errores
