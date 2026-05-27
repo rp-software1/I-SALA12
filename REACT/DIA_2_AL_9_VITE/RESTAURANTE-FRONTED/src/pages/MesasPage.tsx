@@ -1,26 +1,40 @@
 import { useEffect, useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
+
+import MesaCard from '../components1/MesaCard.jsx';
+
+import { getMesas } from '../services/api';
+
+import { usePedido } from '../context/PedidoContext';
 
 import type { Mesa } from '../types';
 
-import MesaCard from '../components1/MesaCard';
-
-import { getMesas } from '../services/api';
-import { usePedido } from '../context/PedidoContext';
-
 function MesasPage() {
-    const [mesas, setMesas] = useState<Mesa[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
+
+    // Estados tipados
+    const [mesas, setMesas] =
+        useState<Mesa[]>([]);
+
+    const [loading, setLoading] =
+        useState<boolean>(true);
+
+    const [error, setError] =
+        useState<string | null>(null);
 
     const { asignarMesa } = usePedido();
 
     const navigate = useNavigate();
 
     useEffect(() => {
+
+        // useEffect no puede ser async directamente
         const cargarMesas = async (): Promise<void> => {
+
             try {
-                const data: Mesa[] = await getMesas();
+
+                const data: Mesa[] =
+                    await getMesas();
 
                 setMesas(data);
 
@@ -44,6 +58,7 @@ function MesasPage() {
 
     }, []);
 
+    // Handler tipado
     function handleSeleccionarMesa(
         mesa: Mesa
     ): void {
@@ -54,6 +69,7 @@ function MesasPage() {
     }
 
     if (loading) {
+
         return (
             <p className="p-6 text-gray">
                 Cargando mesas...
@@ -62,6 +78,7 @@ function MesasPage() {
     }
 
     if (error) {
+
         return (
             <p className="p-6 text-red">
                 {error}
@@ -70,6 +87,7 @@ function MesasPage() {
     }
 
     return (
+
         <div className="p-6">
 
             <h2 className="text-2xl font-bold mb-6">
@@ -92,6 +110,7 @@ function MesasPage() {
 
                         <p>
                             Estado:{' '}
+
                             <span
                                 className={`estado-${mesa.estado}`}
                             >
