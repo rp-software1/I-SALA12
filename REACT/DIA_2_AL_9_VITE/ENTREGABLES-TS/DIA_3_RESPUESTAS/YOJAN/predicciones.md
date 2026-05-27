@@ -20,3 +20,9 @@ Campos que NO van (los excluye Omit):
 - _id
 - creadoEn
 - actualizadoEn
+
+# Bloque C
+useParams<{ mesaId: string }>() — ¿el campo mesaId del objeto retornado tiene tipo string o string | undefined? Predice el tipo antes de probarlo.
+Tipo de mesaId después de useParams<{ mesaId: string }>(): string | undefined
+¿Necesitas un guard de undefined o TypeScript ya garantiza que es string? Se necesita un guard porque el genérico no garantiza que el parámero exita realmente
+
