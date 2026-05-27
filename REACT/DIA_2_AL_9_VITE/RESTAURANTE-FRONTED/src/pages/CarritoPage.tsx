@@ -4,7 +4,10 @@ import { usePedido } from '../context/PedidoContext';
 
 import { crearPedido } from '../services/api';
 
+import type { Pedido } from '../types';
+
 export default function CarritoPage() {
+
     const {
         pedido,
         quitarPlato,
@@ -13,14 +16,17 @@ export default function CarritoPage() {
     } = usePedido();
 
     const [enviando, setEnviando] =
-        useState(false);
+        useState<boolean>(false);
 
-    const [error, setError] = useState(null);
+    const [error, setError] =
+        useState<string | null>(null);
 
     const [pedidoCreado, setPedidoCreado] =
-        useState(null);
+        useState<Pedido | null>(null);
 
-    async function handleEnviarComanda() {
+    async function handleEnviarComanda():
+        Promise<void> {
+
         if (pedido.items.length === 0) {
             return;
         }
@@ -30,28 +36,56 @@ export default function CarritoPage() {
         setError(null);
 
         try {
-            const nuevoPedido =
-                await crearPedido({
-                    mesaId: pedido.mesaId,
-                    tipo: pedido.tipo,
-                    items: pedido.items,
-                });
+
+
+            const body:
+                Omit<
+                    Pedido,
+                    '_id' |
+                    'creadoEn' |
+                    'actualizadoEn'
+                > = {
+
+                mesaId: pedido.mesaId,
+
+                tipo: pedido.tipo,
+
+                estado: 'pendiente',
+
+                items: pedido.items,
+
+                total: pedido.total,
+            };
+
+            const nuevoPedido: Pedido =
+                await crearPedido(body);
 
             setPedidoCreado(nuevoPedido);
 
             limpiarPedido();
-        } catch (err) {
-            setError(
-                'No se pudo crear el pedido'
-            );
+
+        } catch (err: unknown) {
+
+            const mensaje =
+                err instanceof Error
+                    ? err.message
+                    : 'No se pudo crear el pedido';
+
+            setError(mensaje);
+
         } finally {
+
             setEnviando(false);
+
         }
     }
 
     if (pedidoCreado) {
+
         return (
+
             <div className="p-6 text-center">
+
                 <div className="check-icon">
                     ✅
                 </div>
@@ -72,16 +106,17 @@ export default function CarritoPage() {
 
                 <p className="text-gray">
                     Total: S/{' '}
-                    {pedidoCreado.total.toFixed(
-                        2
-                    )}
+                    {pedidoCreado.total.toFixed(2)}
                 </p>
+
             </div>
         );
     }
 
     return (
+
         <div className="carrito-container">
+
             <h1 className="text-2xl font-bold mb-6">
                 Comanda activa
             </h1>
@@ -92,6 +127,7 @@ export default function CarritoPage() {
             </p>
 
             <div className="tipo-buttons">
+
                 <button
                     className="btn-tipo"
                     onClick={() =>
@@ -111,70 +147,82 @@ export default function CarritoPage() {
                 >
                     Para llevar
                 </button>
+
             </div>
 
             {pedido.items.length === 0 ? (
+
                 <p className="text-gray">
-                    No hay items en la
-                    comanda
+                    No hay items en la comanda
                 </p>
+
             ) : (
+
                 <div>
-                    {pedido.items.map(
-                        (item) => (
-                            <div
-                                key={item._id}
-                                className="item-carrito"
+
+                    {pedido.items.map((item) => (
+
+                        <div
+                            key={item.platoId}
+                            className="item-carrito"
+                        >
+
+                            <span>
+                                {item.nombre} x
+                                {item.cantidad}
+                            </span>
+
+                            <span>
+
+                                S/{' '}
+
+                                {(
+                                    item.precioUnitario *
+                                    item.cantidad
+                                ).toFixed(2)}
+
+                            </span>
+
+                            <button
+                                className="btn-quitar"
+                                onClick={() =>
+                                    quitarPlato(
+                                        item.platoId
+                                    )
+                                }
                             >
-                                <span>
-                                    {item.nombre} x
-                                    {
-                                        item.cantidad
-                                    }
-                                </span>
+                                Quitar
+                            </button>
 
-                                <span>
-                                    S/{' '}
-                                    {(
-                                        item.precioUnitario *
-                                        item.cantidad
-                                    ).toFixed(
-                                        2
-                                    )}
-                                </span>
+                        </div>
 
-                                <button
-                                    className="btn-quitar"
-                                    onClick={() =>
-                                        quitarPlato(
-                                            item._id
-                                        )
-                                    }
-                                >
-                                    Quitar
-                                </button>
-                            </div>
-                        )
-                    )}
+                    ))}
+
                 </div>
+
             )}
 
             <div className="total-box">
+
                 <span>Total</span>
 
                 <span>
                     S/{' '}
                     {pedido.total.toFixed(2)}
                 </span>
+
             </div>
 
             {error && (
+
                 <p className="text-red">
                     {error}
                 </p>
+
             )}
 
             <div className="acciones-carrito">
+
                 <button
                     className="btn-limpiar"
                     onClick={limpiarPedido}
@@ -192,11 +240,15 @@ export default function CarritoPage() {
                         handleEnviarComanda
                     }
                 >
+
                     {enviando
                         ? 'Enviando comanda...'
                         : 'Enviar comanda'}
+
                 </button>
+
             </div>
+
         </div>
     );
 }
