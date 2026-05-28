@@ -12,7 +12,7 @@ import type { Mesa } from '../types';
 
 function MesasPage() {
 
-    // Estados tipados
+
     const [mesas, setMesas] =
         useState<Mesa[]>([]);
 
@@ -28,7 +28,7 @@ function MesasPage() {
 
     useEffect(() => {
 
-        // useEffect no puede ser async directamente
+
         const cargarMesas = async (): Promise<void> => {
 
             try {
@@ -58,7 +58,7 @@ function MesasPage() {
 
     }, []);
 
-    // Handler tipado
+
     function handleSeleccionarMesa(
         mesa: Mesa
     ): void {

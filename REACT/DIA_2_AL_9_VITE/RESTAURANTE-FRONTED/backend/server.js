@@ -54,7 +54,7 @@ const mesas = [
         _id: 1,
         numero: 1,
         capacidad: 4,
-        estado: 'libre',
+        estado: 'disponible',
         comensales: 0,
     },
     {
@@ -75,7 +75,7 @@ const mesas = [
         _id: 4,
         numero: 4,
         capacidad: 4,
-        estado: 'libre',
+        estado: 'disponible',
         comensales: 0,
     },
     {

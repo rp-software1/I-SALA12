@@ -11,6 +11,6 @@ Sala: I-SALA1              Rol inicio: Driver / Navigator
 - [X] Bloque F — Cierre de los 3 días de TypeScript
 
 ## Verificación final
-- [ ] npx tsc --noEmit retorna 0 errores en todo el proyecto
-- [ ] npm run dev corre sin crash y todas las páginas cargan
+- [x] npx tsc --noEmit retorna 0 errores en todo el proyecto
+- [x] npm run dev corre sin crash y todas las páginas cargan
 

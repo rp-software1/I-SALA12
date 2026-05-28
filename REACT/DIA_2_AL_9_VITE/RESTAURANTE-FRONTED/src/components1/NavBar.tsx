@@ -30,12 +30,6 @@ function NavBar({
                 </li>
 
                 <li>
-                    <NavLink to="/comandas" className={linkClass}>
-                        Comandas
-                    </NavLink>
-                </li>
-
-                <li>
                     <NavLink to="/carrito" className={linkClass}>
                         Carrito
                     </NavLink>
