@@ -19,3 +19,12 @@ quitar IDs automáticos antes de un POST
 # Bloque C
 • ¿El comportamiento de useParams te sorprendió? ¿Por qué el genérico no garantiza el tipo?
 Sí, porque aunque useParams<{ id: string }>() parece indicar que id siempre será string, React Router sigue devolviendo string | undefined. Esto pasa porque TypeScript no puede garantizar que la URL realmente tenga ese parámetro en tiempo de ejecución. El genérico solo describe la forma esperada del objeto, pero no valida que el valor exista. Por eso es necesario usar un guard como if (!id) antes de utilizarlo.
+
+# Bloque D
+• ¿Cuántos errores había al inicio del Día 1? ¿Y ahora? Anota la diferencia en reflexion.md sección D.
+Al inicio del Día 1 había varios errores relacionados con TypeScript porque muchos componentes, estados, props y funciones no tenían tipos definidos. También había errores en imports, hooks y archivos .jsx sin tipado. Después de los 3 días de trabajo, todos los errores fueron corregidos y el comando "npx tsc --noEmit" terminó sin errores. La diferencia principal fue que ahora el proyecto tiene tipado más seguro, mejor organización y validación automática de errores antes de ejecutar la aplicación.
+
+¿Qué error fue el más difícil de resolver en los 3 días? ¿Por qué?
+
+Respuesta:
+El error más difícil fue el relacionado con los archivos ".jsx" que TypeScript detectaba como módulos sin declaración de tipos, especialmente en App1.tsx y ComandasPage.tsx. Fue complicado porque el problema no estaba en la lógica del componente, sino en cómo TypeScript interpreta los imports y los tipos implícitos "any". También costó entender por qué algunos hooks como "useParams" seguían devolviendo "string | undefined" incluso usando genéricos. Al final se resolvió corrigiendo imports, renombrando archivos y agregando tipado explícito en estados, parámetros y hooks.
