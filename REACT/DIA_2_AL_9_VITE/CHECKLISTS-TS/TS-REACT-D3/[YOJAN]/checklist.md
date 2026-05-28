@@ -6,7 +6,7 @@ Sala: I-SALA1              Rol inicio: Driver / Navigator
 - [x] Bloque A — Tipar MesasPage.tsx (useEffect, loading/error/data, handler)
 - [x] Bloque B — Tipar MenuPage.tsx y CarritoPage.tsx
 - [x] Bloque C — Tipar DetalleMesa.tsx (useParams y useNavigate)
-- [ ] Bloque D — Verificación final: npx tsc --noEmit → 0 errores
+- [x] Bloque D — Verificación final: npx tsc --noEmit → 0 errores
 - [ ] Bloque E — Exploración con Claude
 - [ ] Bloque F — Cierre de los 3 días de TypeScript
 
