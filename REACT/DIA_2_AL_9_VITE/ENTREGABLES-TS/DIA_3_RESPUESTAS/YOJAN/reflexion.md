@@ -50,3 +50,27 @@ export default async function ProductoPage({
 }
 Concepto nuevo aprendido:
 Aprendí a tipar parámetros dinámicos y componentes server en Next.js usando TypeScript
+
+# Bloque F
+¿Qué concepto de TypeScript te resultó más difícil en los 3 días?
+Lo más difícil fue entender los tipos genéricos, el manejo de unknown y algunos errores relacionados con imports y módulos tsx.
+
+¿Qué error de los 3 días fue el más útil para aprender? ¿Por qué?
+El error más útil fue cuando TypeScript no reconocía archivos jsx y tsx porque ayudó a entender mejor cómo funcionan los imports, las extensiones y los tipos implícitos dentro del proyecto.
+
+¿En qué parte del proyecto React del Día 9 detectarías bugs ahora que antes no veías?
+Ahora detectaría bugs en props incorrectas, estados undefined, parámetros de rutas, datos de APIs y errores de tipos que antes pasaban desapercibidos en JavaScript.
+
+Total de errores al inicio del Día 1: 47 → Total de errores hoy: 0
+
+Una cosa que cambiaría de la forma en que escribí JavaScript antes de TypeScript:
+Ahora tiparía estados, props y respuestas de APIs desde el inicio para evitar errores y tener el código más ordenado.
+
+# FEEDBACK
+¿Qué parte del sprint cambiarías si lo hicieras de nuevo?
+
+Organizaría mejor los tipos y archivos desde el principio para evitar tantos errores acumulados después.
+
+Navigator le pregunta al Driver: ¿qué es lo que más recuerdas de TypeScript después de estos 3 días?
+
+Lo que más recuerdo es cómo TypeScript ayuda a detectar errores antes de ejecutar la aplicación y cómo hace que el proyecto sea mucho más fácil de mantener y entender.
