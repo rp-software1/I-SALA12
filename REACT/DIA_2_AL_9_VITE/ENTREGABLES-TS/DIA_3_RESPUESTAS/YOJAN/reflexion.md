@@ -28,3 +28,25 @@ Al inicio del Día 1 había varios errores relacionados con TypeScript porque mu
 
 Respuesta:
 El error más difícil fue el relacionado con los archivos ".jsx" que TypeScript detectaba como módulos sin declaración de tipos, especialmente en App1.tsx y ComandasPage.tsx. Fue complicado porque el problema no estaba en la lógica del componente, sino en cómo TypeScript interpreta los imports y los tipos implícitos "any". También costó entender por qué algunos hooks como "useParams" seguían devolviendo "string | undefined" incluso usando genéricos. Al final se resolvió corrigiendo imports, renombrando archivos y agregando tipado explícito en estados, parámetros y hooks.
+
+# Bloque E
+¿Cuál es la diferencia entre TypeScript en React y TypeScript en Next.js? ¿Qué tipos nuevos voy a necesitar aprender cuando empecemos Next.js? Muéstrame un ejemplo de un componente server de Next.js tipado.
+Mira por ejemplo en React normalmente TypeScript se usa para tipar props, estados y eventos. En Next.js también se tipan rutas dinámicas, parámetros, componentes server y datos obtenidos desde APIs. Aprendí que en Next.js existen componentes cliente y server, y que un componente server puede ser async directamente.
+TypeScript
+type Props = {
+    params: {
+        id: string;
+    };
+};
+
+export default async function ProductoPage({
+    params,
+}: Props) {
+    return (
+        <div>
+            <h1>Producto {params.id}</h1>
+        </div>
+    );
+}
+Concepto nuevo aprendido:
+Aprendí a tipar parámetros dinámicos y componentes server en Next.js usando TypeScript
