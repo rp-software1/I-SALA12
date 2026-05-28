@@ -1,42 +1,75 @@
 import { useEffect, useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 
 import MesaCard from '../components1/MesaCard.jsx';
 
 import { getMesas } from '../services/api';
+
 import { usePedido } from '../context/PedidoContext';
 
+import type { Mesa } from '../types';
+
 function MesasPage() {
-    const [mesas, setMesas] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+
+
+    const [mesas, setMesas] =
+        useState<Mesa[]>([]);
+
+    const [loading, setLoading] =
+        useState<boolean>(true);
+
+    const [error, setError] =
+        useState<string | null>(null);
 
     const { asignarMesa } = usePedido();
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        getMesas()
-            .then((data) => {
+
+
+        const cargarMesas = async (): Promise<void> => {
+
+            try {
+
+                const data: Mesa[] =
+                    await getMesas();
+
                 setMesas(data);
-            })
-            .catch(() => {
-                setError(
-                    'No se pudieron cargar las mesas'
-                );
-            })
-            .finally(() => {
+
+            } catch (err: unknown) {
+
+                const mensaje =
+                    err instanceof Error
+                        ? err.message
+                        : 'No se pudieron cargar las mesas';
+
+                setError(mensaje);
+
+            } finally {
+
                 setLoading(false);
-            });
+
+            }
+        };
+
+        cargarMesas();
+
     }, []);
 
-    function handleSeleccionarMesa(mesa) {
+
+    function handleSeleccionarMesa(
+        mesa: Mesa
+    ): void {
+
         asignarMesa(mesa._id);
 
         navigate('/carrito');
     }
 
     if (loading) {
+
         return (
             <p className="p-6 text-gray">
                 Cargando mesas...
@@ -45,6 +78,7 @@ function MesasPage() {
     }
 
     if (error) {
+
         return (
             <p className="p-6 text-red">
                 {error}
@@ -53,17 +87,22 @@ function MesasPage() {
     }
 
     return (
+
         <div className="p-6">
+
             <h2 className="text-2xl font-bold mb-6">
                 Mesas del Restaurante
             </h2>
 
             <div className="grid-mesas">
-                {mesas.map((mesa) => (
+
+                {mesas.map((mesa: Mesa) => (
+
                     <div
                         key={mesa._id}
                         className={`mesa-card estado-card-${mesa.estado}`}
                     >
+
                         <MesaCard
                             mesa={mesa}
                             onClick={handleSeleccionarMesa}
@@ -71,6 +110,7 @@ function MesasPage() {
 
                         <p>
                             Estado:{' '}
+
                             <span
                                 className={`estado-${mesa.estado}`}
                             >
@@ -78,21 +118,25 @@ function MesasPage() {
                             </span>
                         </p>
 
-                        {mesa.estado === 'libre' && (
+                        {mesa.estado === 'disponible' && (
+
                             <button
                                 className="btn-seleccionar"
                                 onClick={() =>
-                                    handleSeleccionarMesa(
-                                        mesa
-                                    )
+                                    handleSeleccionarMesa(mesa)
                                 }
                             >
                                 Seleccionar mesa
                             </button>
+
                         )}
+
                     </div>
+
                 ))}
+
             </div>
+
         </div>
     );
 }

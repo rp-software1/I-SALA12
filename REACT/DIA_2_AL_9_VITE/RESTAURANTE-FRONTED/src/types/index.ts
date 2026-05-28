@@ -6,7 +6,6 @@ export type TipoPedido = 'mesa' | 'para_llevar';
 export type EstadoPedido =
     'pendiente' | 'en_preparacion' | 'lista' | 'entregada' | 'cancelada' | 'cerrada';
 
-// ─── Interfaces de entidades ────────────────────────────────────────────
 export interface Mesa {
     _id: string;
     numero: number;
@@ -42,7 +41,6 @@ export interface Pedido {
     actualizadoEn: string;
 }
 
-// ─── Tipos del Context ─────────────────────────────────────────────────
 export interface EstadoPedidoContext {
     mesaId: string | null;
     tipo: TipoPedido;
