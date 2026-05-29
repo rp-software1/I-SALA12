@@ -14,3 +14,5 @@ Sala: I-SALA1              Rol inicio: Driver / Navigator
 - [x] npx tsc --noEmit retorna 0 errores en todo el proyecto
 - [x] npm run dev corre sin crash y todas las páginas cargan
 
+## Listo
+
