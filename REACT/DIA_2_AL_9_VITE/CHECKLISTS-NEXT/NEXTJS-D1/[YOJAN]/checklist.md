@@ -7,7 +7,7 @@ loom: (agregar link al terminar)
 ---
 
 ## Bloques
-- [ ] A — Videos + crear proyecto + limpiar + entender estructura
+- [x] A — Videos + crear proyecto + limpiar + entender estructura
 - [ ] B — Layout raíz + migrar NavBar
 - [ ] C — Mapear rutas del restaurante como carpetas
 - [ ] D — Ruta dinámica /mesa/[mesaId] + Link en NavBar
