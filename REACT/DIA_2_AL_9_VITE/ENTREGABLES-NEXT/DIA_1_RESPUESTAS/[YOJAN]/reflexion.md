@@ -14,3 +14,7 @@ En que NavBar necesita acceso al navegador y a la ruta actual para resaltar el e
 # Bloque C
 • La tabla React Router → App Router: ¿fue el momento donde el App Router "hizo clic"? ¿Qué parte fue la más reveladora?
 El momento donde App Router me hizo clic fue cuando vi que crear una carpeta con un page.tsx ya generaba una ruta automáticamente. Viniendo de React Router me sorprendió no tener que registrar rutas en un archivo central. La estructura de carpetas se siente más simple y fácil de seguir.
+
+# Bloque D
+• ¿params como prop fue lo que predijiste o esperabas un hook como en React? ¿Qué implica esa diferencia?
+Esperaba un hook como useParams() porque es lo que usaba en React. En Next.js los parámetros llegan como props, lo que permite que la página funcione como Server Component. La principal diferencia es que no depende directamente del navegador para obtener los datos de la URL.

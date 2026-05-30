@@ -57,3 +57,11 @@ Archivos page.tsx a crear:
 - app/mesas/page.tsx
 - app/menu/page.tsx
 - app/carrito/page.tsx
+
+# Bloque D
+¿Cómo llega el parámetro mesaId al componente page.tsx? ¿Como prop, como hook, o de otra forma?
+¿Cómo llega mesaId al componente?
+Llega mediante la propiedad params que recibe page.tsx.
+
+¿Es string o number?
+Es string porque Next.js entrega los parámetros de la URL como texto.
