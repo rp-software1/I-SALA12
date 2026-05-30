@@ -15,27 +15,27 @@ No. Next.js usa App Router basado en carpetas.
 
 ---
 
-## Exploración de estructura
+Exploración de estructura:
 
-### layout.tsx
+- layout.tsx
 Sirve como layout global.
 Envuelve todas las páginas usando {children}.
 Aquí normalmente van navbar, footer y estilos globales.
 
-### page.tsx
+- page.tsx
 Representa una ruta.
 El page.tsx principal corresponde a "/".
 
-### globals.css
+- globals.css
 Aplica estilos globales a toda la aplicación.
 
-### public/
+- public/
 Aquí van imágenes, íconos y archivos estáticos.
 
-### tsconfig.json
+- tsconfig.json
 Configura TypeScript para Next.js.
 
-### next.config.ts
+- next.config.ts
 Sirve para configuraciones especiales de Next.js.
 
 # Bloque B
@@ -45,3 +45,15 @@ No directamente, porque Next.js no usa react-router-dom.
 
 ¿Qué import cambia? 
 NavLink se reemplaza por Link de next/link y usePathname de next/navigation para detectar la ruta activa.
+
+# Bloque C
+¿Cuántas carpetas van a crear en este bloque? Lista los nombres de las carpetas antes de ejecutar el primer mkdir.
+Carpetas a crear: 
+- app/mesas
+- app/menu
+- app/carrito
+
+Archivos page.tsx a crear: 
+- app/mesas/page.tsx
+- app/menu/page.tsx
+- app/carrito/page.tsx

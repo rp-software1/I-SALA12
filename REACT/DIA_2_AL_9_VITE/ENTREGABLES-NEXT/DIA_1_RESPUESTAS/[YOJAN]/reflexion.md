@@ -10,3 +10,7 @@ En cambio, layout.tsx no utiliza hooks del navegador ni interacción del usuario
 
 ¿Qué diferencia hay?
 En que NavBar necesita acceso al navegador y a la ruta actual para resaltar el enlace activo. Layout.tsx solo organiza la estructura general de la aplicación y renderiza los componentes hijos.
+
+# Bloque C
+• La tabla React Router → App Router: ¿fue el momento donde el App Router "hizo clic"? ¿Qué parte fue la más reveladora?
+El momento donde App Router me hizo clic fue cuando vi que crear una carpeta con un page.tsx ya generaba una ruta automáticamente. Viniendo de React Router me sorprendió no tener que registrar rutas en un archivo central. La estructura de carpetas se siente más simple y fácil de seguir.
