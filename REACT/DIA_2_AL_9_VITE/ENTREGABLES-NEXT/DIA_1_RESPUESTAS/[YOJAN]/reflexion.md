@@ -18,3 +18,8 @@ El momento donde App Router me hizo clic fue cuando vi que crear una carpeta con
 # Bloque D
 • ¿params como prop fue lo que predijiste o esperabas un hook como en React? ¿Qué implica esa diferencia?
 Esperaba un hook como useParams() porque es lo que usaba en React. En Next.js los parámetros llegan como props, lo que permite que la página funcione como Server Component. La principal diferencia es que no depende directamente del navegador para obtener los datos de la URL.
+
+# Bloque E
+• ¿El archivo not-found.tsx fue el que esperabas, o esperabas un nombre diferente?
+Al principio pensé que Next.js usaría un archivo llamado 404.tsx, parecido a otros frameworks. Me sorprendió que use la convención not-found.tsx para detectar automáticamente las rutas inexistentes.
+También comprobé que TypeScript seguía funcionando sin errores después de crear las nuevas rutas.
