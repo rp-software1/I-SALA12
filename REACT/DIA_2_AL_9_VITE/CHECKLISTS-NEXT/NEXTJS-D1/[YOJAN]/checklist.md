@@ -10,7 +10,7 @@ loom: (agregar link al terminar)
 - [x] A — Videos + crear proyecto + limpiar + entender estructura
 - [x] B — Layout raíz + migrar NavBar
 - [x] C — Mapear rutas del restaurante como carpetas
-- [ ] D — Ruta dinámica /mesa/[mesaId] + Link en NavBar
+- [x] D — Ruta dinámica /mesa/[mesaId] + Link en NavBar
 - [ ] E — not-found.tsx + verificación TypeScript
 - [ ] F — Evaluación entre pares + Loom + PR
 
