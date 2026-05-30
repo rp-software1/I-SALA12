@@ -37,3 +37,11 @@ Configura TypeScript para Next.js.
 
 ### next.config.ts
 Sirve para configuraciones especiales de Next.js.
+
+# Bloque B
+El NavBar de React Día 1 usaba NavLink con activeClassName o className con función. ¿Eso va a funcionar en Next.js sin cambios, o necesita adaptación?
+¿NavLink funciona en Next.js? 
+No directamente, porque Next.js no usa react-router-dom.
+
+¿Qué import cambia? 
+NavLink se reemplaza por Link de next/link y usePathname de next/navigation para detectar la ruta activa.
