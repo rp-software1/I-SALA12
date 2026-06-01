@@ -1,0 +1,3 @@
+# Bloque A
+¿La diferencia entre NEXT_PUBLIC_ y las variables sin prefijo fue lo que predijiste?
+Sí, fue bastante parecido a lo que esperaba. Aprendí que las variables con el prefijo NEXT_PUBLIC_ pueden utilizarse tanto en el navegador como en el servidor, mientras que las variables sin ese prefijo solo están disponibles en el servidor. También entendí mejor la importancia de usar .env.local para configurar direcciones y valores que podrían cambiar entre entornos sin modificar el código fuente.
