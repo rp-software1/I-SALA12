@@ -10,3 +10,7 @@ Lo único raro al inicio es cambiar el chip: dejar de pensar en “cargar despu�
 # Bloque D
 ¿Qué haría distinto en PlatoCard cuando llegue el Context en Día 3? ¿Qué línea va a cambiar?
 Cuando llegue el context ya no se usará el estado lcoal agregado para simulara la acción, sino que se llamará a agregarPlato(plato) del PedidoContext para que el plato se agregue correctamente al carrito, entonces handleAgregar cambiará la función.
+
+# Bloque E
+¿Cuántos errores TypeScript había antes de resolver? ¿Cuál fue el más difícil?
+No tenia errores TypeScript al ejeciar la verifiación final. El proyecto compiló correctamente con npx, por lo que no fue necesario hacer correcciones adicionales. En parte debido a que se simuló su propio backend para este nuevo proyecto.
