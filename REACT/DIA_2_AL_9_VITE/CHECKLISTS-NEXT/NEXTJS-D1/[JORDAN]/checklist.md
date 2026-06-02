@@ -2,8 +2,8 @@
 sala: I-SALA12
 curso: Next.js
 dia: 1
-estado: en_progreso
-loom: (agregar link al terminar)
+estado: CULMINADO
+loom: (https://www.loom.com/share/58cb49cd73594cb7ba99d5d4ac49d40b)
 ---
 
 ## Bloques
