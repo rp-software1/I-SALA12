@@ -6,3 +6,7 @@ Sí, fue bastante parecido a lo que esperaba. Aprendí que las variables con el 
 ¿El fetch en un Server Component sin useEffect fue más o menos complicado de lo que esperabas?
 Al principio pensé que iba a ser más “enredado” porque estaba acostumbrado a usar useEffect para todo, como si fuera el interruptor universal. Pero en Server Components el fetch va directo, casi como si el dato ya “naciera servido en plato”.
 Lo único raro al inicio es cambiar el chip: dejar de pensar en “cargar después” y pasar a “cargar mientras se renderiza”. Pero una vez entiendes eso, se siente bastante limpio y hasta más simple.
+
+# Bloque D
+¿Qué haría distinto en PlatoCard cuando llegue el Context en Día 3? ¿Qué línea va a cambiar?
+Cuando llegue el context ya no se usará el estado lcoal agregado para simulara la acción, sino que se llamará a agregarPlato(plato) del PedidoContext para que el plato se agregue correctamente al carrito, entonces handleAgregar cambiará la función.
