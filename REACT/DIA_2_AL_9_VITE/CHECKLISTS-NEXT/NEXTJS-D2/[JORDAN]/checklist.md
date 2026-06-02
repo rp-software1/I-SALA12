@@ -19,4 +19,4 @@ loom: (https://www.loom.com/share/549d072f80664f44a1c07e02392985f4)
 - [X] /mesas muestra loading antes del contenido
 - [X] /menu muestra platos reales del backend
 - [X] npx tsc --noEmit → 0 errores
-- [X] PR aprobado por sala par
+- [x] PR aprobado por sala par
