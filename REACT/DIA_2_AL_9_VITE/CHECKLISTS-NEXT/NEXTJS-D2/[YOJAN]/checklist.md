@@ -2,8 +2,8 @@
 sala: I-SALA12
 curso: Next.js
 dia: 2
-estado: en_progreso
-loom: (agregar link al terminar)
+estado: CULMINADO
+loom: (https://www.loom.com/share/549d072f80664f44a1c07e02392985f4)
 ---
 
 ## Bloques
@@ -12,12 +12,12 @@ loom: (agregar link al terminar)
 - [ ] C — loading.tsx + error.tsx en /mesas
 - [x] D — MenuPage Server Component + PlatoCard Client Component
 - [x] E — Verificación TypeScript completa
-- [ ] F — Evaluación entre pares + Loom + PR
+- [x] F — Evaluación entre pares + Loom + PR
 
 ## Verificación final
-- [ ] /mesas muestra mesas reales del backend
-- [ ] /mesas muestra loading antes del contenido
-- [ ] /menu muestra platos reales del backend
-- [ ] npx tsc --noEmit → 0 errores
-- [ ] PR aprobado por sala par
+- [x] /mesas muestra mesas reales del backend
+- [x] /mesas muestra loading antes del contenido
+- [x] /menu muestra platos reales del backend
+- [x] npx tsc --noEmit → 0 errores
+- [x] PR aprobado por sala par
 
