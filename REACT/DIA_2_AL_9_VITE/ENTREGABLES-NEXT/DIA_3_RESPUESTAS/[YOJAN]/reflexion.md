@@ -1,0 +1,3 @@
+# BLOQUE B
+¿El TODO era más simple de conectar de lo que esperabas, o fue complicado?
+Conectar el TODO de PlatoCard al PedidoContext fue más simple de lo que esperaba. La mayor parte del trabajo ya estaba hecha gracias al PedidoProvider, por lo que solo fue necesario importar el hook usePedido() y llamar a agregarPlato(plato) dentro de handleAgregar(). También fue interesante ver cómo el NavBar se actualiza automáticamente al leer el mismo Context, sin necesidad de pasar props entre componentes.
