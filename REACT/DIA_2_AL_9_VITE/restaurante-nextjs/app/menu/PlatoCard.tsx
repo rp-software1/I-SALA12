@@ -2,21 +2,21 @@
 
 import { useState } from 'react';
 import type { Plato } from '../../src/types';
+import { usePedido } from '../../src/context/PedidoProvider';
 
 interface PlatoCardProps {
     plato: Plato;
 }
 
 export default function PlatoCard({ plato }: PlatoCardProps) {
+    const { agregarPlato } = usePedido();
     const [agregado, setAgregado] = useState<boolean>(false);
 
     const handleAgregar = (): void => {
-        setAgregado(true);
+        agregarPlato(plato);         // ← Context real — reemplaza el TODO
+        setAgregado(true);           // ← feedback visual — se mantiene
         setTimeout(() => setAgregado(false), 1500);
     };
-    const btnClass = agregado
-        ? 'bg-green-600 text-white px-4 py-2 rounded'
-        : 'bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700';
 
     return (
         <div className="border rounded-lg p-4 bg-white shadow-sm">
@@ -27,7 +27,8 @@ export default function PlatoCard({ plato }: PlatoCardProps) {
                 <span className="font-bold text-blue-700">S/ {plato.precio.toFixed(2)}</span>
                 <button
                     onClick={handleAgregar}
-                    className={btnClass}
+                    className={`px-4 py-1 rounded text-sm font-medium transition-colors ${agregado ? 'bg-green-600 text-white' : 'bg-blue-600 text-white hover:bg-blue-700'
+                        }`}
                 >
                     {agregado ? '✓ Agregado' : 'Agregar'}
                 </button>
@@ -35,3 +36,4 @@ export default function PlatoCard({ plato }: PlatoCardProps) {
         </div>
     );
 }
+
