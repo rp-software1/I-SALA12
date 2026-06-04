@@ -18,4 +18,4 @@ loom: (PE   NDIENTE)
 - [X] Agregar plato en /menu → aparece en /carrito
 - [X] Enviar comanda desde /carrito → POST real al backend
 - [X] npx tsc --noEmit → 0 errores
-- [] PR aprobado por sala par
+- [X] PR aprobado por sala par
