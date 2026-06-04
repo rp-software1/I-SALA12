@@ -17,5 +17,5 @@ loom: (PE   NDIENTE)
 ## Verificación final
 - [X] Agregar plato en /menu → aparece en /carrito
 - [X] Enviar comanda desde /carrito → POST real al backend
-- [] npx tsc --noEmit → 0 errores
+- [X] npx tsc --noEmit → 0 errores
 - [] PR aprobado por sala par
