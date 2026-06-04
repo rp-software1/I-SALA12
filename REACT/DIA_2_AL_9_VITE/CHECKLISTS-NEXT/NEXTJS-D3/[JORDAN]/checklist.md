@@ -2,8 +2,8 @@
 sala: I-SALA12
 curso: Next.js
 dia: 3
-estado: en_progreso
-loom: (agregar link al terminar)
+estado: CULMINADO
+loom: (OENDIENTE)
 ---
 
 ## Bloques
@@ -18,4 +18,4 @@ loom: (agregar link al terminar)
 - [X] Agregar plato en /menu → aparece en /carrito
 - [X] Enviar comanda desde /carrito → POST real al backend
 - [X] npx tsc --noEmit → 0 errores
-- [] PR aprobado por sala par
+- [X] PR aprobado por sala par
