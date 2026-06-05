@@ -52,3 +52,9 @@ export async function cambiarEstadoPedido(
     return res.json();
 }
 
+export async function getMesaById(id: string): Promise<Mesa> {
+    const todas = await getMesas();
+    const mesa = todas.find(m => m._id === id);
+    if (!mesa) throw new Error(`Mesa con ID ${id} no encontrada`);
+    return mesa;
+}
