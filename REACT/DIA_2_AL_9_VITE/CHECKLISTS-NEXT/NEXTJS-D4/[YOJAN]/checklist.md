@@ -3,7 +3,7 @@ sala: I-SALA12
 curso: Next.js
 dia: 4
 estado: en_progreso
-loom: (agregar link al terminar)
+loom: 
 ---
 
 ## Bloques
@@ -11,7 +11,7 @@ loom: (agregar link al terminar)
 - [x] B — page.tsx con fetch real + generateMetadata + notFound()
 - [x] C — MesaDetalle Client Component + Suspense manual
 - [x] D — Server Action cambiarEstadoMesa + revalidatePath
-- [ ] E — Verificación TypeScript + flujo completo
+- [x] E — Verificación TypeScript + flujo completo
 - [ ] F — Evaluación entre pares + Loom + PR
 
 ## Verificación final
