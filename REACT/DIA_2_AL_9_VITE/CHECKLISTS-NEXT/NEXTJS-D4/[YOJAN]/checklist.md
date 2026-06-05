@@ -9,7 +9,7 @@ loom: (agregar link al terminar)
 ## Bloques
 - [x] A — getMesaById en api.ts + verificar con Postman
 - [x] B — page.tsx con fetch real + generateMetadata + notFound()
-- [ ] C — MesaDetalle Client Component + Suspense manual
+- [x] C — MesaDetalle Client Component + Suspense manual
 - [ ] D — Server Action cambiarEstadoMesa + revalidatePath
 - [ ] E — Verificación TypeScript + flujo completo
 - [ ] F — Evaluación entre pares + Loom + PR
