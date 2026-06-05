@@ -12,3 +12,11 @@ Sí, puede ser una función async.
 
 ¿Puede llamar a getMesaById()? 
 Sí, puede llamar a getMesaById() para obtener información real de la mesa y construir el título dinámico de la página.
+
+# Bloque C
+¿El Suspense manual que envuelve <MesaDetalle> en page.tsx — cuándo exactamente muestra el skeleton? ¿MesaDetalle hace algún fetch asíncrono?
+¿Cuándo se muestra el skeleton de MesaDetalle? 
+Se muestra mientras el componente envuelto por Suspense termina de cargarse o hidratarse.
+
+¿MesaDetalle hace fetch o solo usa los datos que recibe por prop? 
+MesaDetalle solo utiliza los datos que recibe mediante la prop mesa.
