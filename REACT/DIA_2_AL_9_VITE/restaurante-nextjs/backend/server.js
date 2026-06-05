@@ -135,6 +135,22 @@ app.patch('/pedidos/:id/estado', (req, res) => {
     res.json(pedido);
 });
 
+app.patch('/mesas/:id', (req, res) => {
+    const mesa = mesas.find(
+        (m) => m._id === req.params.id
+    );
+
+    if (!mesa) {
+        return res.status(404).json({
+            message: 'Mesa no encontrada',
+        });
+    }
+
+    mesa.estado = req.body.estado;
+
+    res.json(mesa);
+});
+
 const PORT = 3001;
 
 app.listen(PORT, () => {

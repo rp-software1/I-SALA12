@@ -20,3 +20,11 @@ Se muestra mientras el componente envuelto por Suspense termina de cargarse o hi
 
 ¿MesaDetalle hace fetch o solo usa los datos que recibe por prop? 
 MesaDetalle solo utiliza los datos que recibe mediante la prop mesa.
+
+# Bloque D
+Después de llamar a cambiarEstadoMesa() con éxito, ¿el usuario tiene que recargar /mesas manualmente para ver el nuevo estado, o Next.js lo actualiza solo?
+¿Next.js actualiza /mesas automáticamente? 
+Sí, después de invalidar el caché con revalidatePath y volver a navegar a la ruta.
+
+¿Qué hace revalidatePath para que eso ocurra? 
+Marca una ruta como desactualizada para que en la siguiente visita se vuelva a obtener información fresca desde el servidor.

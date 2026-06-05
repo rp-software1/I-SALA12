@@ -13,3 +13,7 @@ Mi predicción fue correcta. generateMetadata puede ser una función async y obt
 La verdad que fue un poco más complejo de entender que un useState para loading porque introduce actualizaciones no urgentes. Sin embargo, ayuda a mantener la interfaz responsiva mientras se realizan cambios de estado.
 
 El Suspense manual quedó implementado correctamente, aunque en este caso el skeleton apenas se aprecia porque MesaDetalle no realiza operaciones asíncronas y recibe toda la información mediante props.
+
+# Bloque D
+¿revalidatePath fue lo que predijiste? ¿Actualiza en tiempo real o al siguiente request?
+Mi predicción fue parcialmente correcta. Pensé que revalidatePath actualizaría inmediatamente todas las vistas, pero en realidad invalida el caché y la actualización se refleja cuando la ruta vuelve a solicitar los datos. El concepto fue más sencillo de entender después de probar el flujo completo entre /mesa/[id] y /mesas.
