@@ -24,6 +24,7 @@ export async function cambiarEstadoMesa(
     }
 
     try {
+        await new Promise(resolve => setTimeout(resolve, 1500));
         const res = await fetch(
             `${BASE_URL}/mesas/${mesaId}`,
             {

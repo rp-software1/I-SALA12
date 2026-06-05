@@ -17,3 +17,7 @@ El Suspense manual quedó implementado correctamente, aunque en este caso el ske
 # Bloque D
 ¿revalidatePath fue lo que predijiste? ¿Actualiza en tiempo real o al siguiente request?
 Mi predicción fue parcialmente correcta. Pensé que revalidatePath actualizaría inmediatamente todas las vistas, pero en realidad invalida el caché y la actualización se refleja cuando la ruta vuelve a solicitar los datos. El concepto fue más sencillo de entender después de probar el flujo completo entre /mesa/[id] y /mesas.
+
+# Bloque E
+¿Cuántos errores TypeScript había antes de resolver? 
+Antes de la verificación final no se encontraron errores TypeScript significativos en los archivos del Día 4. La validación con "npx tsc --noEmit" confirmó que tanto "restaurante-nextjs" como "restaurante-frontend" quedaron con 0 errores, por lo que no fue necesario realizar correcciones adicionales.
