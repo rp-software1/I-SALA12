@@ -105,6 +105,10 @@ app.get('/platos', (req, res) => {
     res.json(platos);
 });
 
+app.get('/pedidos', (req, res) => {
+    res.json(pedidos);
+});
+
 app.post('/pedidos', (req, res) => {
     const nuevoPedido = {
         _id: String(Date.now()),
