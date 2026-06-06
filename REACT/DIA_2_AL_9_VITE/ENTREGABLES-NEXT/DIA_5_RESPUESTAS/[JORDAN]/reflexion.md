@@ -6,3 +6,7 @@ Primero se debe de verificar la API, para ver si soporta, ya que el estado=pendi
 — Bloque D
 • ¿La lista se actualizó automáticamente o necesitaron router.refresh()?
 la lista se actualizo correctamente sin la necesidad del router
+
+— Bloque E
+• ¿Cuántos errores TypeScript había?
+habia 0 errores
