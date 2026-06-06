@@ -2,7 +2,8 @@
 
 import { useTransition } from 'react';
 import type { Pedido, EstadoPedido } from '../../src/types';
-// import { avanzarEstadoPedido } from './actions';
+import { avanzarEstadoPedido } from './actions';
+
 // Flujo del negocio — solo estados con siguiente
 const SIGUIENTE: Partial<Record<EstadoPedido, EstadoPedido>> = {
     pendiente: 'en_preparacion',
@@ -24,18 +25,13 @@ export default function ComandaCard({ pedido }: { pedido: Pedido }) {
     const [isPending, startTransition] = useTransition();
     const config = CONFIG[pedido.estado] ?? CONFIG.cancelada;
     const siguiente = SIGUIENTE[pedido.estado];
-    const hora = new Date(pedido.creadoEn)
-        .toISOString()
-        .slice(11, 16);
+    const hora = new Date(pedido.creadoEn).toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-digit' });
 
     const handleAvanzar = (): void => {
         if (!siguiente) return;
-
         startTransition(async () => {
-            console.log(
-                `Simulacion: ${pedido._id}
-    -> ${siguiente}`
-            );
+            const r = await avanzarEstadoPedido(pedido._id, siguiente);
+            if (!r.ok) alert(`Error: ${r.error}`);
         });
     };
 
