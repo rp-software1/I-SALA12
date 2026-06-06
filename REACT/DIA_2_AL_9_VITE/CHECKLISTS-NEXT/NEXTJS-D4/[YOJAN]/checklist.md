@@ -2,8 +2,8 @@
 sala: I-SALA12
 curso: Next.js
 dia: 4
-estado: en_progreso
-loom: 
+estado: Culminado
+loom: https://www.loom.com/share/e9814fa41a99460b862d2ee4ced238fa
 ---
 
 ## Bloques
@@ -12,11 +12,11 @@ loom:
 - [x] C — MesaDetalle Client Component + Suspense manual
 - [x] D — Server Action cambiarEstadoMesa + revalidatePath
 - [x] E — Verificación TypeScript + flujo completo
-- [ ] F — Evaluación entre pares + Loom + PR
+- [X] F — Evaluación entre pares + Loom + PR
 
 ## Verificación final
-- [ ] Clic en mesa → /mesa/[id] muestra datos reales
-- [ ] Pestaña del browser muestra "Mesa N — Restaurante"
-- [ ] Cambiar estado → la mesa en /mesas se actualiza
-- [ ] npx tsc --noEmit → 0 errores
-- [ ] PR aprobado por sala par
+- [X] Clic en mesa → /mesa/[id] muestra datos reales
+- [X] Pestaña del browser muestra "Mesa N — Restaurante"
+- [X] Cambiar estado → la mesa en /mesas se actualiza
+- [X] Npx tsc --noEmit → 0 errores
+- [X] PR aprobado por sala par
