@@ -11,7 +11,7 @@ loom: (agregar link al terminar
 - [ ] B — ComandasPage Server Component + metadata estática
 - [ ] C — ComandaCard Client Component + flujo de estados
 - [X] D — avanzarEstadoPedido Server Action + revalidatePath
-- [ ] E — NavBar actualizado + loading + error + verificación TypeScript
+- [X] E — NavBar actualizado + loading + error + verificación TypeScript
 - [ ] F — Evaluación entre pares + Loom + PR
 
 ## Verificación final
