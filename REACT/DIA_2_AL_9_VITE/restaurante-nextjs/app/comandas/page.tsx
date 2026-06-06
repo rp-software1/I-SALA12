@@ -3,12 +3,10 @@ import type { Pedido } from "../../src/types";
 import { getPedidos } from '../../src/services/api';
 import ComandaCard from "./ComandaCard";
 
-// Metadata estática — sin async
 export const metadata: Metadata = {
     title: 'Comandas — Restaurante',
 };
 
-// Ordenar por urgencia
 const ORDEN: Record<string, number> = {
     pendiente: 0, en_preparacion: 1, lista: 2, entregada: 3, cancelada: 4,
 }
