@@ -106,7 +106,7 @@ app.get('/platos', (req, res) => {
 });
 
 app.get('/pedidos', (req, res) => {
-    res, json(pedidos);
+    res.json(pedidos);
 });
 
 app.post('/pedidos', (req, res) => {
