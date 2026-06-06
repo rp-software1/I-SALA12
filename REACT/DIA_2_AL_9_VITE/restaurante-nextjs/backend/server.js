@@ -105,8 +105,8 @@ app.get('/platos', (req, res) => {
     res.json(platos);
 });
 
-app.get('/pedidos', (rep, res) => {
-    res, json(platos);
+app.get('/pedidos', (req, res) => {
+    res, json(pedidos);
 });
 
 app.post('/pedidos', (req, res) => {
