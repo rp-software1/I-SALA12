@@ -4,12 +4,10 @@ import { useTransition } from 'react';
 import type { Pedido, EstadoPedido } from '../../src/types';
 import { avanzarEstadoPedido } from './actions';
 
-// Flujo del negocio — solo estados con siguiente
 const SIGUIENTE: Partial<Record<EstadoPedido, EstadoPedido>> = {
     pendiente: 'en_preparacion',
     en_preparacion: 'lista',
     lista: 'entregada',
-    // entregada y cancelada no tienen siguiente
 }
 
 const CONFIG: Record<EstadoPedido, { color: string; label: string }> = {
