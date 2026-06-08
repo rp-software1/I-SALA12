@@ -15,8 +15,8 @@ loom: https://www.loom.com/share/16670dfa3b4349e388915120eccec047
 - [X] F — Evaluación entre pares + Loom + PR
 
 ## Verificación final
-- [ ] /comandas muestra pedidos reales del backend
-- [ ] Avanzar estado → lista actualizada automáticamente
-- [ ] Flujo pendiente→en_preparacion→lista→entregada funciona
-- [ ] npx tsc --noEmit → 0 errores
-- [ ] PR aprobado por sala par
+- [X] /comandas muestra pedidos reales del backend
+- [X] Avanzar estado → lista actualizada automáticamente
+- [X] Flujo pendiente→en_preparacion→lista→entregada funciona
+- [X] npx tsc --noEmit → 0 errores
+- [X] PR aprobado por sala par
