@@ -9,7 +9,7 @@ loom: (agregar link al terminar)
 ## Bloques
 - [x] A — Metadata completa en /mesas /menu /carrito
 - [ ] B — Open Graph en layout.tsx + next.config.ts
-- [ ] C — Auditoría del proyecto (TODO, console.log, imports)
+- [x] C — Auditoría del proyecto (TODO, console.log, imports)
 - [ ] D — npm run build sin errores + .env.production.local
 - [ ] E — Verificación TypeScript final en ambos proyectos
 - [ ] F — Evaluación entre pares + Loom + PR
