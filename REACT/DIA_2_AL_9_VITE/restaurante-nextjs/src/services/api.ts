@@ -13,6 +13,9 @@ if (!BASE_URL) {
 // cache: "no-store" = siempre pide datos frescos al backend
 // cache: "force-cache" = cachea la respuesta (default Next.js)
 
+
+
+
 export async function getMesas(): Promise<Mesa[]> {
     const res = await fetch(`${BASE_URL}/mesas`, { cache: 'no-store' });
     if (!res.ok) throw new Error(`Error al obtener mesas: ${res.status}`);
@@ -52,9 +55,16 @@ export async function cambiarEstadoPedido(
     return res.json();
 }
 
+export async function getPedidos(): Promise<Pedido[]> {
+    const res = await fetch(`${BASE_URL}/pedidos`, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`Error al obtener pedidos: ${res.status}`);
+    return res.json();
+}
+
 export async function getMesaById(id: string): Promise<Mesa> {
     const todas = await getMesas();
     const mesa = todas.find(m => m._id === id);
     if (!mesa) throw new Error(`Mesa con ID ${id} no encontrada`);
     return mesa;
 }
+
