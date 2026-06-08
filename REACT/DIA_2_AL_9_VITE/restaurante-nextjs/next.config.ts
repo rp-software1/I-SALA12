@@ -1,4 +1,4 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   images: {
@@ -6,11 +6,10 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: '**.cloudinary.com',
-        // agregar otros dominios si el restaurante usa imágenes externas
       },
     ],
   },
-  // Headers de seguridad básicos
+
   async headers() {
     return [
       {

@@ -13,8 +13,8 @@ export default function PlatoCard({ plato }: PlatoCardProps) {
     const [agregado, setAgregado] = useState<boolean>(false);
 
     const handleAgregar = (): void => {
-        agregarPlato(plato);         // ← Context real — reemplaza el TODO
-        setAgregado(true);           // ← feedback visual — se mantiene
+        agregarPlato(plato);
+        setAgregado(true);
         setTimeout(() => setAgregado(false), 1500);
     };
 
