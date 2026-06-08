@@ -3,7 +3,7 @@ sala: I-SALA12
 curso: Next.js
 dia: 5
 estado: CULMINADO
-loom: https://www.loom.com/share/16670dfa3b4349e388915120eccec047
+loom: (https://www.loom.com/share/16670dfa3b4349e388915120eccec047)
 ---
 
 ## Bloques
