@@ -1,16 +1,53 @@
-## ESTRUCTURA DEL PROYECTO 
+Sistema de Restaurante - RPSoft Bootcamp
 
-El sistema app.js fue dividido en módulos para mejorar la organización y escalabilidad del código.
+Proyectos
 
-Siendo así que:
+restaurante-nextjs (producción)
 
-- index.html es la parte principal donde se gestionan los botones y el enlace con el archivo main.js.
+Stack
 
-- menu.js contiene los datos del menú y funciones para gestionarlos (agregar platos, actualizar stock)
+- Next.js
+- TypeScript
+- Tailwind CSS
+- App Router
 
-- operaciones.js contiene la lógica del negocio (buscar platos, vender, filtrar stock, estado general, estado por producto)
+Backend
 
-- ui.js que maneja la interfaz del usuario (renderizado del menú, listas, mensajes y eventos del DOM)
+- NestJS
 
-- main.js posee los puntos de inicio del sistema. Conecta los módulos e iniciar  la apliación.
+Instalación
+
+cd restaurante-nextjs
+npm install
+npm run dev
+
+Variables de entorno
+
+NEXT_PUBLIC_API_URL=http://localhost:3001
+
+Rutas disponibles
+
+- "/" → Home
+- "/mesas" → Gestión de mesas
+- "/menu" → Menú de platos
+- "/carrito" → Carrito de comandas
+- "/comandas" → Gestión de comandas
+- "/mesa/[id]" → Detalle de mesa
+
+---
+
+restaurante-frontend (referencia)
+
+Stack
+
+- React
+- TypeScript
+- Axios
+- React Router DOM
+
+Proyecto utilizado como referencia durante la migración a Next.js.
+
+Equipo
+
+I-SALA12 - RPSoft Bootcamp
 

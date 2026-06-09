@@ -1,6 +1,3 @@
-// src/services/api.ts
-// En Next.js no usamos Axios por defecto — fetch nativo es suficiente
-// El fetch nativo de Next.js tiene superpoderes: cache, revalidación
 import type { Mesa, Plato, Pedido, EstadoPedido } from '../types';
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -8,13 +5,6 @@ const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 if (!BASE_URL) {
     throw new Error("NEXT_PUBLIC_API_URL no está definida en .env.local");
 }
-
-// Funciones de fetching — se llaman desde Server Components
-// cache: "no-store" = siempre pide datos frescos al backend
-// cache: "force-cache" = cachea la respuesta (default Next.js)
-
-
-
 
 export async function getMesas(): Promise<Mesa[]> {
     const res = await fetch(`${BASE_URL}/mesas`, { cache: 'no-store' });

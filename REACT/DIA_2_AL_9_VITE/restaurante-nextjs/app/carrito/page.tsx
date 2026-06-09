@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { usePedido } from '../../src/context/PedidoProvider';
 import { enviarComanda } from './actions';
@@ -13,6 +13,12 @@ export default function CarritoPage() {
     const [enviando, setEnviando] = useState<boolean>(false);
     const [confirmacion, setConfirmacion] = useState<string | null>(null);
     const [errorEnvio, setErrorEnvio] = useState<string | null>(null);
+
+    useEffect(() => {
+        document.title = pedido.items.length > 0
+            ? `Carrito (${pedido.items.length}) — Sistema de Restaurante`
+            : 'Carrito — Sistema de Restaurante';
+    }, [pedido.items.length]);
 
     const totalVisual = pedido.items.reduce(
         (acc: number, item: ItemPedido) =>
