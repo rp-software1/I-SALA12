@@ -8,3 +8,12 @@ No encontramos problemas graves. Lo único que apareció fue un comentario relac
 
 ¿Qué fue lo más común?
 Lo más común fueron comentarios que quedaron después de completar tareas anteriores. No encontramos console.log de depuración ni imports sin usar, por lo que el proyecto ya estaba bastante limpio.
+
+# BLOQUE E
+¿Cuántos errores TypeScript quedaban antes de este bloque?
+Antes de este bloque quedaban 0 errores de TypeScript.
+
+La verificación final se realizó en ambos proyectos utilizando "npx tsc --noEmit" y no se encontraron errores. También se actualizó el README con las instrucciones de instalación, variables de entorno y rutas principales del sistema.
+
+# BLOQUE F
+Las preguntas de evaluación se respondieron sin necesidad de consultar el código. El proyecto quedó listo para pasar al proceso de despliegue en Vercel. La parte más importante fue comprender la diferencia entre metadata en Server Components y Client Components, así como el flujo de build y configuración de producción.
