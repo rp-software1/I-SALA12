@@ -15,8 +15,8 @@ loom: (agregar link al terminar)
 - [ ] F — Evaluación entre pares + Loom + PR
 
 ## Verificación final
-- [ ] Cada página tiene título único en la pestaña del browser
-- [ ] npm run build completa sin errores
-- [ ] npx tsc --noEmit → 0 errores en restaurante-nextjs/
-- [ ] .env.production.local creado con valores correctos
-- [ ] PR aprobado por sala par
+- [x] Cada página tiene título único en la pestaña del browser
+- [x] npm run build completa sin errores
+- [x] npx tsc --noEmit → 0 errores en restaurante-nextjs/
+- [x] .env.production.local creado con valores correctos
+- [x] PR aprobado por sala par
