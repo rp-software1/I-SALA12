@@ -9,7 +9,7 @@ loom: (agregar link al terminar)
 ---
 
 ## Bloques
-- [ ] A — Verificar .gitignore y estado del repositorio
+- [x] A — Verificar .gitignore y estado del repositorio
 - [ ] B — Conectar a Vercel y primer deploy
 - [ ] C — Configurar variables de entorno en Vercel + redeploy
 - [ ] D — Verificación completa en producción
