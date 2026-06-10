@@ -10,8 +10,8 @@ loom: (agregar link al terminar)
 
 ## Bloques
 - [x] A — Verificar .gitignore y estado del repositorio
-- [X] B — Conectar a Vercel y primer deploy
-- [ ] C — Configurar variables de entorno en Vercel + redeploy
+- [x] B — Conectar a Vercel y primer deploy
+- [x] C — Configurar variables de entorno en Vercel + redeploy
 - [ ] D — Verificación completa en producción
 - [ ] E — Actualizar openGraph y README con URL real
 - [ ] F — Evaluación final del sprint Next.js + Loom
