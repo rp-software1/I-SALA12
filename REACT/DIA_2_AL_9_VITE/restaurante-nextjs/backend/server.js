@@ -155,10 +155,8 @@ app.patch('/mesas/:id', (req, res) => {
     res.json(mesa);
 });
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
-    console.log(
-        `Servidor Backend corriendo en http://localhost:${PORT}`
-    );
+    console.log(`Servidor Backend corriendo en puerto ${PORT}`);
 });

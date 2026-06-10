@@ -9,3 +9,9 @@ Sí, falló como se predijo. El error fue que NEXT_PUBLIC_API_URL no estaba conf
 # BLOQUE C
 ¿El redeploy fue automático o tuvieron que triggerearlo manualmente?
 Tuvimos que ejecutarlo manualmente desde el dashboard de Vercel después de configurar la variable de entorno NEXT_PUBLIC_API_URL. Una vez hecho el redeploy, el proyecto pasó a estado Ready sin errores.
+
+# BLOQUE D
+¿Qué ruta tuvo más problemas en producción? ¿Cómo lo resolvieron?
+Las rutas que consumían datos del backend, como /menu y /mesas, presentaron problemas porque en Vercel no estaba configurada correctamente la variable NEXT_PUBLIC_API_URL. Además, el backend simulado todavía no estaba desplegado públicamente.
+
+La solución fue desplegar el backend en Railway, generar una URL pública, configurar esa URL en las variables de entorno de Vercel y ejecutar un redeploy manual del proyecto. Después de eso las rutas comenzaron a cargar los datos correctamente.
